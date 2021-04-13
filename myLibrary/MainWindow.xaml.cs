@@ -25,7 +25,7 @@ namespace myLibrary
             InitializeComponent();
         }
 
-        private void loginB_Click(object sender, RoutedEventArgs e)
+        private void login_Click(object sender, RoutedEventArgs e)
         {
             loginLib win = new loginLib();
             win.Show();
@@ -36,5 +36,7 @@ namespace myLibrary
         {
             this.Close();
         }
+
+       
     }
 }

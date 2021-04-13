@@ -1,26 +1,28 @@
 ﻿<Window x:Class="myLibrary.MainWindow"
+       
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:myLibrary"
         mc:Ignorable="d"
-        Title="MyLibrary" Height="480.571" Width="520.24" WindowStyle="ThreeDBorderWindow">
-    <Grid Cursor="None" Margin="0,0,0,0.2" HorizontalAlignment="Left" Width="510">
+        Title="MyLibrary" Height="430.971" Width="520.24" WindowStyle="ThreeDBorderWindow">
+    <Grid Cursor="None" Margin="0,0,3.6,-0.4">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
-            <ColumnDefinition Width="0*"/>
         </Grid.ColumnDefinitions>
-        <Button x:Name="loginB" Content="Log in (librarian)" Template="{StaticResource btTemplate}" HorizontalAlignment="Left" Margin="166,134,0,0" VerticalAlignment="Top" Width="189" Height="50" Background="#FF2AB740" Foreground="White" FontSize="24" Click="loginB_Click"/>
-        <Label Content="MyLibrary" HorizontalAlignment="Left" Margin="142,28,0,0" VerticalAlignment="Top" Height="88" Width="239" FontSize="52" Background="White" Foreground="#FF195C1A"/>
-        <Button x:Name="loginU" Content="Log in (user)" Template="{StaticResource btTemplate}" HorizontalAlignment="Left" Margin="166,206,0,0" VerticalAlignment="Top" Width="189" Height="50" Background="#FF2AB740" Foreground="White" FontSize="24"/>
-        <Button x:Name="SignIn" Content="Sign in " Template="{StaticResource btTemplate}" HorizontalAlignment="Left" Margin="166,280,0,0" VerticalAlignment="Top" Width="189" Height="50" Background="#FF2AB740" Foreground="White" FontSize="24"/>
-        <Button  Template="{StaticResource btTemplate}" HorizontalAlignment="Left" Margin="452,400,0,0" VerticalAlignment="Top" Width="38" Height="34" Foreground="White" FontSize="24" RenderTransformOrigin="1.433,2.115" BorderBrush="White">
+        <Button x:Name="login" Content="Log in" Template="{StaticResource btTemplate}" HorizontalAlignment="Left" Margin="166,156,0,0" VerticalAlignment="Top" Width="173" Height="50" Background="#FF2AB740" Foreground="White" FontSize="24" FontFamily="Arial" Click="login_Click"/>
+        <Button x:Name="SignIn" Content="Sign in " Template="{StaticResource btTemplate}" HorizontalAlignment="Left" Margin="166,230,0,0" VerticalAlignment="Top" Width="173" Height="50" Background="#FF2AB740" Foreground="White" FontSize="24" FontFamily="Arial"/>
+        <Button  Template="{StaticResource btTemplate}" HorizontalAlignment="Left" Margin="438,350,0,0" VerticalAlignment="Top" Width="32" Height="29" Foreground="White" FontSize="24" RenderTransformOrigin="1.433,2.115" BorderBrush="White">
             <Button.Background>
                 <ImageBrush ImageSource="info.png"/>
             </Button.Background>
         </Button>
-        <Button x:Name="exit" Content="Exit " Template="{StaticResource btTemplate}" HorizontalAlignment="Left" Margin="195,368,0,0" VerticalAlignment="Top" Width="132" Height="44" Background="#BD0404 " Foreground="White" FontSize="24" Click="exit_Click"/>
+        <Button x:Name="exit" Content="Exit " Template="{StaticResource btTemplate}" HorizontalAlignment="Left" Margin="193,314,0,0" VerticalAlignment="Top" Width="121" Height="37" Background="#BD0404 " Foreground="White" FontSize="24" Click="exit_Click" FontFamily="Arial"/>
+        <Image x:Name="myLib" HorizontalAlignment="Left" Height="90" Margin="43,32,0,0" VerticalAlignment="Top" Width="441" Source="library.png"/>
 
     </Grid>
 

@@ -5,14 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:myLibrary"
         mc:Ignorable="d"
-        Title="Library" Height="450" Width="800">
+        Title="Library" Height="450" Width="851.6">
 
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="22*"/>
             <ColumnDefinition Width="375*"/>
         </Grid.ColumnDefinitions>
-        <Button x:Name="back" Content="Back " Template="{StaticResource btTemplate}" HorizontalAlignment="Left" Margin="617,350,0,0" VerticalAlignment="Top" Width="103" Height="48" Foreground="White" BorderBrush="#FFEA6C6C" FontSize="20" Click="Back_Click" Grid.Column="1">
+        <Button x:Name="back" Content="Back " Template="{StaticResource btTemplate}" HorizontalAlignment="Left" Margin="671.8,86,0,0" VerticalAlignment="Top" Width="103" Height="48" Foreground="White" BorderBrush="#FFEA6C6C" FontSize="20" Click="Back_Click" Grid.Column="1">
             <Button.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FFC36666"/>
@@ -20,8 +20,8 @@
                 </LinearGradientBrush>
             </Button.Background>
         </Button>
-        <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Height="285" Margin="2,39,0,0" ItemsSource="{Binding}" VerticalAlignment="Top" Width="687" Grid.Column="1"/>
-        <Button x:Name="load" Content="Load" Template="{StaticResource btTemplate}" HorizontalAlignment="Left" Margin="277,350,0,0" VerticalAlignment="Top" Width="129" Height="48" Foreground="White" BorderBrush="#FFEA6C6C" FontSize="20" Click="Load_Click" Grid.Column="1">
+        <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Height="327" Margin="35,33,0,0" ItemsSource="{Binding}" VerticalAlignment="Top" Width="666" Grid.ColumnSpan="2"/>
+        <Button x:Name="load" Content="Load" Template="{StaticResource btTemplate}" HorizontalAlignment="Left" Margin="671.8,33,0,0" VerticalAlignment="Top" Width="103" Height="48" Foreground="White" BorderBrush="#FFEA6C6C" FontSize="20" Click="Load_Click" Grid.Column="1">
             <Button.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FFB2F0A2"/>
