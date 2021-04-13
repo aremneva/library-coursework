@@ -5,8 +5,24 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:myLibrary"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-       
+        Title="MyLibrary" Height="480.571" Width="520.24" WindowStyle="ThreeDBorderWindow">
+    <Grid Cursor="None" Margin="0,0,0,0.2" HorizontalAlignment="Left" Width="510">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="0*"/>
+        </Grid.ColumnDefinitions>
+        <Button x:Name="loginB" Content="Log in (librarian)" Template="{StaticResource btTemplate}" HorizontalAlignment="Left" Margin="166,134,0,0" VerticalAlignment="Top" Width="189" Height="50" Background="#FF2AB740" Foreground="White" FontSize="24" Click="loginB_Click"/>
+        <Label Content="MyLibrary" HorizontalAlignment="Left" Margin="142,28,0,0" VerticalAlignment="Top" Height="88" Width="239" FontSize="52" Background="White" Foreground="#FF195C1A"/>
+        <Button x:Name="loginU" Content="Log in (user)" Template="{StaticResource btTemplate}" HorizontalAlignment="Left" Margin="166,206,0,0" VerticalAlignment="Top" Width="189" Height="50" Background="#FF2AB740" Foreground="White" FontSize="24"/>
+        <Button x:Name="SignIn" Content="Sign in " Template="{StaticResource btTemplate}" HorizontalAlignment="Left" Margin="166,280,0,0" VerticalAlignment="Top" Width="189" Height="50" Background="#FF2AB740" Foreground="White" FontSize="24"/>
+        <Button  Template="{StaticResource btTemplate}" HorizontalAlignment="Left" Margin="452,400,0,0" VerticalAlignment="Top" Width="38" Height="34" Foreground="White" FontSize="24" RenderTransformOrigin="1.433,2.115" BorderBrush="White">
+            <Button.Background>
+                <ImageBrush ImageSource="info.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="exit" Content="Exit " Template="{StaticResource btTemplate}" HorizontalAlignment="Left" Margin="195,368,0,0" VerticalAlignment="Top" Width="132" Height="44" Background="#BD0404 " Foreground="White" FontSize="24" Click="exit_Click"/>
+
     </Grid>
+
+
 </Window>
