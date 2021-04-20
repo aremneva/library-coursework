@@ -106,10 +106,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="connect.cs" />
     <Compile Include="dataSetLib.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>dataSetLib.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="logpas.xaml.cs">
+      <DependentUpon>logpas.xaml</DependentUpon>
     </Compile>
     <Compile Include="newlibraryDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -119,11 +123,23 @@
     <Compile Include="registr.xaml.cs">
       <DependentUpon>registr.xaml</DependentUpon>
     </Compile>
+    <Page Include="Colors.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Dictionary1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="loginLib.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="loginUs.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="logpas.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -168,6 +184,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="connection.config" />
     <None Include="dataSetLib.xsc">
       <DependentUpon>dataSetLib.xsd</DependentUpon>
     </None>

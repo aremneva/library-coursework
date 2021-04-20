@@ -23,11 +23,12 @@ namespace myLibrary
         public MainWindow()
         {
             InitializeComponent();
+            
         }
 
         private void login_Click(object sender, RoutedEventArgs e)
         {
-            loginLib win = new loginLib();
+            logpas win = new logpas("");
             win.Show();
             this.Close();
         }
@@ -37,6 +38,11 @@ namespace myLibrary
             this.Close();
         }
 
-       
+        private void SignIn_Click(object sender, RoutedEventArgs e)
+        {
+            registr win = new registr();
+            win.Show();
+            this.Close();
+        }
     }
 }

@@ -5,8 +5,39 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:myLibrary"
         mc:Ignorable="d"
-        Title="registr" Height="450" Width="800">
+        Title="registr" Height="450" Width="530">
     <Grid>
-        
+        <Button x:Name="login" Content="Sign in"  HorizontalAlignment="Left" Margin="194,305,0,0" VerticalAlignment="Top" Width="153" Height="49" Foreground="White" BorderBrush="FloralWhite" FontSize="20" Click="Login" Style="{DynamicResource Rounded}"  >
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFB2F0A9"/>
+                    <GradientStop Color="#FF258816" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Button x:Name="back" Content="Back"  HorizontalAlignment="Left" Margin="394,364,0,0" VerticalAlignment="Top" Width="91" Height="33" Foreground="White" BorderBrush="#FFEA6C6C" FontSize="20" Click="Back_Click" Style="{DynamicResource Rounded}">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Red"/>
+                    <GradientStop Color="DarkRed" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <TextBox x:Name="name"   TextWrapping="Wrap"  VerticalAlignment="Top" Opacity="0.85" TabIndex="0" Margin="162,127,0,0" Height="39" TextAlignment="Center" FontSize="22" FontFamily="{DynamicResource {x:Static SystemFonts.MessageFontFamilyKey}}" Background="White" Foreground="Black" HorizontalAlignment="Left" Width="231"/>
+        <PasswordBox x:Name="pas1" HorizontalAlignment="Left" Margin="162,185,0,0" VerticalAlignment="Top" Width="231" Height="40" FontSize="22"/>
+        <Label Content="SIGN IN" HorizontalAlignment="Left" Margin="175,35,0,0" VerticalAlignment="Top" Background="White" FontSize="60" FontFamily="Poor Richard" Height="66" Width="205">
+            <Label.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF093D07" Offset="0"/>
+                    <GradientStop Color="#FF3AC037" Offset="1"/>
+                </LinearGradientBrush>
+            </Label.Foreground>
+        </Label>
+        <Label Content="Login:" HorizontalAlignment="Left" Margin="93,127,0,0" VerticalAlignment="Top" Background="White" Foreground="#FF024002" FontSize="20"/>
+        <Label Content="Password:" HorizontalAlignment="Left" Margin="59,185,0,0" VerticalAlignment="Top" Background="White" Foreground="#FF024002" FontSize="20"/>
+        <PasswordBox x:Name="pas2" HorizontalAlignment="Left" Margin="162,240,0,0" VerticalAlignment="Top" Width="231" Height="40" FontSize="22"/>
+        <Label Content="Password:" HorizontalAlignment="Left" Margin="59,240,0,0" VerticalAlignment="Top" Background="White" Foreground="#FF024002" FontSize="20"/>
+        <Image x:Name="myLib" HorizontalAlignment="Left" Height="29" Margin="11,10,0,0" VerticalAlignment="Top" Width="159" Source="library.png"/>
+
     </Grid>
 </Window>

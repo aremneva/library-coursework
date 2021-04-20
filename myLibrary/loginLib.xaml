@@ -5,14 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:myLibrary"
         mc:Ignorable="d"
-        Title="Library" Height="450" Width="851.6">
+        Title="Library" Height="450" Width="867.2" Loaded="Window_Loaded">
+    <Window.Resources>
+        <local:newlibraryDataSet x:Key="newlibraryDataSet"/>
+        <CollectionViewSource x:Key="booksViewSource" Source="{Binding books, Source={StaticResource newlibraryDataSet}}"/>
+    </Window.Resources>
 
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="22*"/>
-            <ColumnDefinition Width="375*"/>
+            <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <Button x:Name="back" Content="Back " Template="{StaticResource btTemplate}" HorizontalAlignment="Left" Margin="671.8,86,0,0" VerticalAlignment="Top" Width="103" Height="48" Foreground="White" BorderBrush="#FFEA6C6C" FontSize="20" Click="Back_Click" Grid.Column="1">
+        <Button x:Name="back" Content="Back "  HorizontalAlignment="Left" Margin="720,128,0,0" VerticalAlignment="Top" Width="103" Height="48" Foreground="White" BorderBrush="#FFEA6C6C" FontSize="20" Click="Back_Click" Style="{DynamicResource Rounded}">
             <Button.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FFC36666"/>
@@ -20,8 +23,8 @@
                 </LinearGradientBrush>
             </Button.Background>
         </Button>
-        <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Height="327" Margin="35,33,0,0" ItemsSource="{Binding}" VerticalAlignment="Top" Width="666" Grid.ColumnSpan="2"/>
-        <Button x:Name="load" Content="Load" Template="{StaticResource btTemplate}" HorizontalAlignment="Left" Margin="671.8,33,0,0" VerticalAlignment="Top" Width="103" Height="48" Foreground="White" BorderBrush="#FFEA6C6C" FontSize="20" Click="Load_Click" Grid.Column="1">
+        <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Height="327" Margin="33,51,0,0" ItemsSource="{Binding}" VerticalAlignment="Top" Width="666"/>
+        <Button x:Name="load" Content="Load" HorizontalAlignment="Left" Margin="720,75,0,0" VerticalAlignment="Top" Width="103" Height="48" Foreground="White" BorderBrush="FloralWhite" FontSize="20" Click="Load_Click" Style="{DynamicResource Rounded}">
             <Button.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FFB2F0A2"/>
@@ -29,6 +32,9 @@
                 </LinearGradientBrush>
             </Button.Background>
         </Button>
+        <Label x:Name="username" Content="username" HorizontalAlignment="Left" Margin="762,15,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.612,0.855" Foreground="#FF299A05" FontSize="14"/>
+        <Label x:Name="username_Copy" Content="User:" HorizontalAlignment="Left" Margin="720,15,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.612,0.855" Foreground="#FF299A05" FontSize="14"/>
+        <Image x:Name="myLib" HorizontalAlignment="Left" Height="34" Margin="11,10,0,0" VerticalAlignment="Top" Width="149" Source="library.png"/>
 
     </Grid>
 

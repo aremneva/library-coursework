@@ -4,34 +4,14 @@
              xmlns:local="clr-namespace:myLibrary"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-        <ControlTemplate TargetType="Button" x:Key="btTemplate">
-            <Border x:Name="buttonBorder2" CornerRadius="4"
-                    BorderBrush="{TemplateBinding BorderBrush}"
-                    BorderThickness="{TemplateBinding BorderThickness}"
-                    Background="{TemplateBinding Background}"
-                    Height="{TemplateBinding Height}"
-                    Width="{TemplateBinding Width}" >
-                <ContentControl Margin="{TemplateBinding Padding}"
-                                HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
-                                VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
-                                Content="{TemplateBinding Content}" />
-            </Border>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Dictionary1.xaml"/>
+               
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
 
-            <ControlTemplate.Triggers>
-                <Trigger Property="IsMouseOver" Value="true">
-                    <Setter Property="FontWeight" Value="Bold" />
-                    <Setter TargetName="buttonBorder2" Property="Background" Value="Blue" />
-                </Trigger>
-                <Trigger Property="IsPressed" Value="true">
-                    <Setter TargetName="buttonBorder2" Property="Background" Value="Red" />
-                    <Setter TargetName="buttonBorder2" Property="BorderBrush" Value="DarkBlue" />
-                </Trigger>
-                <Trigger Property="IsEnabled" Value="false">
-                    <Setter Property="Foreground" Value="Gray"/>
-                    <Setter TargetName="buttonBorder2" Property="Background" Value="LightGray"/>
-                </Trigger>
-            </ControlTemplate.Triggers>
-
-        </ControlTemplate>
     </Application.Resources>
+    
+    
 </Application>

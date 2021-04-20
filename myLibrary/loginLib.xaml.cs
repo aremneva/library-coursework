@@ -21,9 +21,10 @@ namespace myLibrary
     /// </summary>
     public partial class loginLib : Window
     {
-        public loginLib()
+        public loginLib(string login)
         {
             InitializeComponent();
+            username.Content = login;
         }
 
         private void Load_Click(object sender, RoutedEventArgs e)
@@ -71,6 +72,15 @@ namespace myLibrary
             this.Close();
         }
 
-       
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+
+            myLibrary.newlibraryDataSet newlibraryDataSet = ((myLibrary.newlibraryDataSet)(this.FindResource("newlibraryDataSet")));
+            // Загрузить данные в таблицу books. Можно изменить этот код как требуется.
+            myLibrary.newlibraryDataSetTableAdapters.booksTableAdapter newlibraryDataSetbooksTableAdapter = new myLibrary.newlibraryDataSetTableAdapters.booksTableAdapter();
+            newlibraryDataSetbooksTableAdapter.Fill(newlibraryDataSet.books);
+            System.Windows.Data.CollectionViewSource booksViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("booksViewSource")));
+            booksViewSource.View.MoveCurrentToFirst();
+        }
     }
 }
