@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:myLibrary"
         mc:Ignorable="d"
-        Title="Library" Height="450" Width="867.2" Loaded="Window_Loaded">
+        Title="Library" Height="450" Width="683.6" >
     <Window.Resources>
         <local:newlibraryDataSet x:Key="newlibraryDataSet"/>
         <CollectionViewSource x:Key="booksViewSource" Source="{Binding books, Source={StaticResource newlibraryDataSet}}"/>
@@ -15,7 +15,7 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <Button x:Name="back" Content="Back "  HorizontalAlignment="Left" Margin="720,128,0,0" VerticalAlignment="Top" Width="103" Height="48" Foreground="White" BorderBrush="#FFEA6C6C" FontSize="20" Click="Back_Click" Style="{DynamicResource Rounded}">
+        <Button x:Name="back" Content="Exit"  HorizontalAlignment="Left" Margin="516,261,0,0" VerticalAlignment="Top" Width="103" Height="41" Foreground="White" BorderBrush="#FFEA6C6C" FontSize="20" Click="Back_Click" Style="{DynamicResource Rounded}">
             <Button.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FFC36666"/>
@@ -23,8 +23,8 @@
                 </LinearGradientBrush>
             </Button.Background>
         </Button>
-        <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Height="327" Margin="33,51,0,0" ItemsSource="{Binding}" VerticalAlignment="Top" Width="666"/>
-        <Button x:Name="load" Content="Load" HorizontalAlignment="Left" Margin="720,75,0,0" VerticalAlignment="Top" Width="103" Height="48" Foreground="White" BorderBrush="FloralWhite" FontSize="20" Click="Load_Click" Style="{DynamicResource Rounded}">
+        <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Height="209" Margin="54,135,0,0" ItemsSource="{Binding}" VerticalAlignment="Top" Width="427"/>
+        <Button x:Name="load" Content="Поиск книг" HorizontalAlignment="Left" Margin="531,41,0,0" VerticalAlignment="Top" Width="88" Height="28" Foreground="White" BorderBrush="FloralWhite" FontSize="14" Click="Load_Click" Style="{DynamicResource Rounded}">
             <Button.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FFB2F0A2"/>
@@ -32,9 +32,27 @@
                 </LinearGradientBrush>
             </Button.Background>
         </Button>
-        <Label x:Name="username" Content="username" HorizontalAlignment="Left" Margin="762,15,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.612,0.855" Foreground="#FF299A05" FontSize="14"/>
-        <Label x:Name="username_Copy" Content="User:" HorizontalAlignment="Left" Margin="720,15,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.612,0.855" Foreground="#FF299A05" FontSize="14"/>
-        <Image x:Name="myLib" HorizontalAlignment="Left" Height="34" Margin="11,10,0,0" VerticalAlignment="Top" Width="149" Source="library.png"/>
+        <Label x:Name="username" Content="username" HorizontalAlignment="Left" Margin="547,12,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.612,0.855" Foreground="#FF299A05" FontSize="14"/>
+        <Label x:Name="username_Copy" Content="User:" HorizontalAlignment="Left" Margin="505,12,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.612,0.855" Foreground="#FF299A05" FontSize="14"/>
+        <Image x:Name="myLib" HorizontalAlignment="Left" Height="29" Margin="23,12,0,0" VerticalAlignment="Top" Width="151" Source="library.png"/>
+        <Label x:Name="textBook" Content="Ваши книги и сроки сдачи:" HorizontalAlignment="Left" Margin="54,90,0,0" VerticalAlignment="Top" Background="White" Foreground="#FF154B15" FontSize="22"/>
+        <TextBox x:Name="searchBook" HorizontalAlignment="Left" Height="23" Margin="406,46,0,0" TextWrapping="Wrap" Text="Book" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="fine" Content="Мои штрафы" HorizontalAlignment="Left" Margin="516,196,0,0" VerticalAlignment="Top" Width="103" Height="46" Foreground="White" BorderBrush="FloralWhite" FontSize="14" Click="fine_Click" Style="{DynamicResource Rounded}">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFB2F0A2"/>
+                    <GradientStop Color="#FF258816" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Button x:Name="srok" Content="Мои сроки" HorizontalAlignment="Left" Margin="516,135,0,0" VerticalAlignment="Top" Width="103" Height="43" Foreground="White" BorderBrush="FloralWhite" FontSize="14" Click="srok_Click" Style="{DynamicResource Rounded}">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFB2F0A2"/>
+                    <GradientStop Color="#FF258816" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
 
     </Grid>
 

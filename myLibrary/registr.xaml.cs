@@ -8,10 +8,13 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
+using System.Windows.Forms;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using MessageBox = System.Windows.Forms.MessageBox;
+using System.Configuration;
 
 namespace myLibrary
 {
@@ -46,9 +49,7 @@ namespace myLibrary
 
                 if (result is null)
                 {
-                    /*MessageBox.Show("Регистрация прошла успешно", "Successfull", MessageBoxButtons.OK, MessageBoxIcon.Information,
-        MessageBoxDefaultButton.Button1,
-        MessageBoxOptions.DefaultDesktopOnly));*/
+                    MessageBox.Show("Регистрация прошла успешно", "Successfull", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
                     string ins = "INSERT INTO login(login,password,access) VALUES('"+name.Text+"','"+pas1.Password+"', 'user');";
                     MySqlCommand cmdins = new MySqlCommand(ins, connect.GetConnection());
                     cmdins.ExecuteNonQuery();

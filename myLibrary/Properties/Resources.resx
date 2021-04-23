@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="conn" xml:space="preserve">
-    <value>server=localhost;user=root;password=alina890;database=newlibrary;port=3306</value>
+    <value />
     <comment>строка подключения</comment>
   </data>
 </root>

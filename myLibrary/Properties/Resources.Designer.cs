@@ -61,7 +61,7 @@ namespace myLibrary.Properties {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на server=localhost;user=root;password=alina890;database=newlibrary;port=3306.
+        ///   Ищет локализованную строку, похожую на .
         /// </summary>
         internal static string conn {
             get {

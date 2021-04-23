@@ -25,44 +25,44 @@ namespace myLibrary
         {
             InitializeComponent();
             username.Content = login;
+
+            String user =login;
+            try
+            {
+                string sql = "SELECT * FROM newlibrary.books;";
+                string isdSql = " Select b.nameBook as 'Книги', isd.issuedDate as 'Дата выдачи', isd.returnDate as 'Дата возврата' from issuedbooks as isd inner join library_card as lc inner join books as b inner join login as l on isd.id_library_card = lc.id_library_card and lc.id_login = l.id_login and isd.idBooks = b.idBooks and l.login = '" + user + "'";
+
+                MySqlCommand cmd = new MySqlCommand(isdSql, connect.GetConnection());
+
+                DataTable dt = new DataTable();
+                dt.Load(cmd.ExecuteReader());
+                dataGrid.DataContext = dt;
+
+            }
+            catch (MySqlException)
+            {
+                MessageBox.Show("Ошибка подключения");
+            }
         }
 
         private void Load_Click(object sender, RoutedEventArgs e)
         {
-            string str = "server=localhost;user=root;password=alina890;database=newlibrary;port=3306";
-            MySqlConnection connection = new MySqlConnection(str);
+            textBook.Content = "Доступные книги:";
+            string sql = "SELECT isd.id_library_card, b.nameBook, b.storage from issuedbooks as isd inner join library_card as lc inner join readers as r inner join books as b on lc.idReaders = r.idReaders and b.idBooks = isd.idBooks and isd.id_library_card = lc.id_library_card and b.namebook Like Concat('%', '" + searchBook.Text + "', '%') order by id_library_card; ";
+
             try
             {
-                connection.Open();
-                string sql = "SELECT * FROM newlibrary.books;";
-
-                MySqlCommand cmd = new MySqlCommand(sql,connection);
+                MySqlCommand cmd = new MySqlCommand(sql, connect.GetConnection());
 
                 DataTable dt = new DataTable();
                 dt.Load(cmd.ExecuteReader());
-
-                connection.Close();
-
-           
                 dataGrid.DataContext = dt;
-                /* MySqlDataAdapter adapter = new MySqlDataAdapter(sql, connection);
-                 //MySqlDataReader reader = command.ExecuteReader();
-                 DataSet ds = new DataSet();
-                 adapter.Fill(ds);
-                 // ds.Load(reader);
-                 //dataGrid.AutoGenerateColumns = true;
-                 //dataGrid.ItemsSource = ds.DefaultViewManager;
-                 // dataGrid.DataContext = newlibraryDataSet.booksDataTable[0];
-                 dataGrid.AutoGenerateColumns = true;
-                 //dataGrid.ItemsSource = newlibraryDataSet.DefulView;*/
 
             }
-            catch (MySqlException){
-                
+            catch (MySqlException)
+            {
                 MessageBox.Show("Ошибка подключения");
             }
-            
-
         }
 
         private void Back_Click(object sender, RoutedEventArgs e)
@@ -72,15 +72,46 @@ namespace myLibrary
             this.Close();
         }
 
-        private void Window_Loaded(object sender, RoutedEventArgs e)
-        {
+        private void srok_Click(object sender, RoutedEventArgs e) {
+            textBook.Content = "Ваши книги и сроки:";
 
-            myLibrary.newlibraryDataSet newlibraryDataSet = ((myLibrary.newlibraryDataSet)(this.FindResource("newlibraryDataSet")));
-            // Загрузить данные в таблицу books. Можно изменить этот код как требуется.
-            myLibrary.newlibraryDataSetTableAdapters.booksTableAdapter newlibraryDataSetbooksTableAdapter = new myLibrary.newlibraryDataSetTableAdapters.booksTableAdapter();
-            newlibraryDataSetbooksTableAdapter.Fill(newlibraryDataSet.books);
-            System.Windows.Data.CollectionViewSource booksViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("booksViewSource")));
-            booksViewSource.View.MoveCurrentToFirst();
+            String user = username.Content.ToString();
+            try
+            {
+                string sql = "SELECT * FROM newlibrary.books;";
+                string isdSql = " Select b.nameBook as 'Книги', isd.issuedDate as 'Дата выдачи', isd.returnDate as 'Дата возврата' from issuedbooks as isd inner join library_card as lc inner join books as b inner join login as l on isd.id_library_card = lc.id_library_card and lc.id_login = l.id_login and isd.idBooks = b.idBooks and l.login = '" + user + "'";
+
+                MySqlCommand cmd = new MySqlCommand(isdSql, connect.GetConnection());
+
+                DataTable dt = new DataTable();
+                dt.Load(cmd.ExecuteReader());
+                dataGrid.DataContext = dt;
+
+            }
+            catch (MySqlException)
+            {
+                MessageBox.Show("Ошибка подключения");
+            }
+        }
+
+        private void fine_Click(object sender, RoutedEventArgs e)
+        {
+            textBook.Content = "Ваши штрафы:";
+            try
+            {
+                string sqlq = "SELECT * FROM newlibrary.books;";
+                string sql = "SELECT card.id_library_card as номер, sum(f.sanction) as штраф from card_fines as card inner join library_card as lcard inner join readers as r inner join fines as f on lcard.id_library_card = card.id_library_card and r.idReaders = lcard.idReaders and f.id_fines = card.id_fines and card.id_library_card = (Select id_library_card from library_card where id_login = (Select id_login from login where login = 'user1')) group by card.id_library_card; ";
+                    MySqlCommand cmd = new MySqlCommand(sql, connect.GetConnection());
+
+                DataTable dt = new DataTable();
+                dt.Load(cmd.ExecuteReader());
+                dataGrid.DataContext = dt;
+
+            }
+            catch (MySqlException)
+            {
+                MessageBox.Show("Ошибка подключения");
+            }
         }
     }
 }

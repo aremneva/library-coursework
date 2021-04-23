@@ -184,7 +184,6 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="connection.config" />
     <None Include="dataSetLib.xsc">
       <DependentUpon>dataSetLib.xsd</DependentUpon>
     </None>
