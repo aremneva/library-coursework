@@ -34,6 +34,14 @@ namespace myLibrary
             {
                 MessageBox.Show("Пароли не совпадают!");
             }
+            else if (name.Text =="") {
+                MessageBox.Show("Вы не ввели логин!");
+            }
+            else if ((pas1.Password == "")|| (pas2.Password == ""))
+            {
+                MessageBox.Show("Вы не ввели пароль!");
+            }
+
             else {
                 try
                 {
@@ -43,14 +51,14 @@ namespace myLibrary
                     MessageBox.Show("Ошибка подключения!");
                 }
 
-                string sql = "SELECT * FROM login WHERE login='" + name.Text +"';";
+                string sql = "SELECT * FROM login WHERE login='" + name.Text + "';";
                 MySqlCommand cmd = new MySqlCommand(sql, connect.GetConnection());
                 object result = cmd.ExecuteScalar();
 
                 if (result is null)
                 {
                     MessageBox.Show("Регистрация прошла успешно", "Successfull", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
-                    string ins = "INSERT INTO login(login,password,access) VALUES('"+name.Text+"','"+pas1.Password+"', 'user');";
+                    string ins = "INSERT INTO login(login,password,access) VALUES('" + name.Text + "','" + pas1.Password + "', 'user');";
                     MySqlCommand cmdins = new MySqlCommand(ins, connect.GetConnection());
                     cmdins.ExecuteNonQuery();
 
@@ -59,7 +67,7 @@ namespace myLibrary
                     this.Close();
                 }
                 else MessageBox.Show("Такой пользователь уже есть!");
-                }
+            }
         }
 
         private void Back_Click(object sender, RoutedEventArgs e)

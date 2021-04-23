@@ -5,6 +5,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Configuration;
+using System.Windows;
+using System.Data;
 
 namespace myLibrary
 {
@@ -17,5 +19,5 @@ namespace myLibrary
             connection.Open();
             return connection;
         }
-        }
+    }
 }

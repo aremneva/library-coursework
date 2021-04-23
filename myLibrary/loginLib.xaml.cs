@@ -21,48 +21,37 @@ namespace myLibrary
     /// </summary>
     public partial class loginLib : Window
     {
+        public void testCon(String sql) {
+            try
+            {
+                MySqlCommand cmd = new MySqlCommand(sql, connect.GetConnection());
+                DataTable dt = new DataTable();
+                dt.Load(cmd.ExecuteReader());
+                dataGrid.DataContext = dt;
+            }
+            catch (MySqlException e)
+            {
+                MessageBox.Show("Ошибка подключения "+e);
+            }
+        }
+
         public loginLib(string login)
         {
             InitializeComponent();
             username.Content = login;
 
             String user =login;
-            try
-            {
-                string sql = "SELECT * FROM newlibrary.books;";
-                string isdSql = " Select b.nameBook as 'Книги', isd.issuedDate as 'Дата выдачи', isd.returnDate as 'Дата возврата' from issuedbooks as isd inner join library_card as lc inner join books as b inner join login as l on isd.id_library_card = lc.id_library_card and lc.id_login = l.id_login and isd.idBooks = b.idBooks and l.login = '" + user + "'";
+            string isdSql = "Select b.nameBook as 'Книги', isd.issuedDate as 'Дата выдачи', isd.returnDate as 'Дата возврата' from issuedbooks as isd inner join library_card as lc inner join books as b inner join login as l on isd.id_library_card = lc.id_library_card and lc.id_login = l.id_login and isd.idBooks = b.idBooks and l.login = '" + user + "'";
 
-                MySqlCommand cmd = new MySqlCommand(isdSql, connect.GetConnection());
-
-                DataTable dt = new DataTable();
-                dt.Load(cmd.ExecuteReader());
-                dataGrid.DataContext = dt;
-
-            }
-            catch (MySqlException)
-            {
-                MessageBox.Show("Ошибка подключения");
-            }
+            testCon(isdSql);
         }
 
         private void Load_Click(object sender, RoutedEventArgs e)
         {
-            textBook.Content = "Доступные книги:";
-            string sql = "SELECT isd.id_library_card, b.nameBook, b.storage from issuedbooks as isd inner join library_card as lc inner join readers as r inner join books as b on lc.idReaders = r.idReaders and b.idBooks = isd.idBooks and isd.id_library_card = lc.id_library_card and b.namebook Like Concat('%', '" + searchBook.Text + "', '%') order by id_library_card; ";
+            String book = searchBook.Text;
+            string sql = "SELECT isd.id_library_card, b.nameBook from issuedbooks as isd inner join library_card as lc inner join readers as r inner join books as b on lc.idReaders = r.idReaders and b.idBooks = isd.idBooks and isd.id_library_card = lc.id_library_card and b.namebook Like Concat('%', '" + book + "', '%') order by id_library_card; ";
 
-            try
-            {
-                MySqlCommand cmd = new MySqlCommand(sql, connect.GetConnection());
-
-                DataTable dt = new DataTable();
-                dt.Load(cmd.ExecuteReader());
-                dataGrid.DataContext = dt;
-
-            }
-            catch (MySqlException)
-            {
-                MessageBox.Show("Ошибка подключения");
-            }
+            testCon(sql);
         }
 
         private void Back_Click(object sender, RoutedEventArgs e)
@@ -76,42 +65,20 @@ namespace myLibrary
             textBook.Content = "Ваши книги и сроки:";
 
             String user = username.Content.ToString();
-            try
-            {
-                string sql = "SELECT * FROM newlibrary.books;";
-                string isdSql = " Select b.nameBook as 'Книги', isd.issuedDate as 'Дата выдачи', isd.returnDate as 'Дата возврата' from issuedbooks as isd inner join library_card as lc inner join books as b inner join login as l on isd.id_library_card = lc.id_library_card and lc.id_login = l.id_login and isd.idBooks = b.idBooks and l.login = '" + user + "'";
+            String search = textBook.Content.ToString();
+            string isdSql = "Select b.nameBook as 'Книги', isd.issuedDate as 'Дата выдачи', isd.returnDate as 'Дата возврата' from issuedbooks as isd inner join library_card as lc inner join books as b inner join login as l on isd.id_library_card = lc.id_library_card and lc.id_login = l.id_login and isd.idBooks = b.idBooks and l.login = '" + user + "'";
 
-                MySqlCommand cmd = new MySqlCommand(isdSql, connect.GetConnection());
-
-                DataTable dt = new DataTable();
-                dt.Load(cmd.ExecuteReader());
-                dataGrid.DataContext = dt;
-
-            }
-            catch (MySqlException)
-            {
-                MessageBox.Show("Ошибка подключения");
-            }
+            testCon(isdSql);
         }
 
         private void fine_Click(object sender, RoutedEventArgs e)
         {
             textBook.Content = "Ваши штрафы:";
-            try
-            {
-                string sqlq = "SELECT * FROM newlibrary.books;";
-                string sql = "SELECT card.id_library_card as номер, sum(f.sanction) as штраф from card_fines as card inner join library_card as lcard inner join readers as r inner join fines as f on lcard.id_library_card = card.id_library_card and r.idReaders = lcard.idReaders and f.id_fines = card.id_fines and card.id_library_card = (Select id_library_card from library_card where id_login = (Select id_login from login where login = 'user1')) group by card.id_library_card; ";
-                    MySqlCommand cmd = new MySqlCommand(sql, connect.GetConnection());
+            String user = username.Content.ToString();
+            string sql = "SELECT card.id_library_card as номер, sum(f.sanction) as штраф from card_fines as card inner join library_card as lcard inner join readers as r inner join fines as f on lcard.id_library_card = card.id_library_card and r.idReaders = lcard.idReaders and f.id_fines = card.id_fines and card.id_library_card = (Select id_library_card from library_card where id_login = (Select id_login from login where login = '" + user + "')) group by card.id_library_card; ";
 
-                DataTable dt = new DataTable();
-                dt.Load(cmd.ExecuteReader());
-                dataGrid.DataContext = dt;
-
-            }
-            catch (MySqlException)
-            {
-                MessageBox.Show("Ошибка подключения");
-            }
+            testCon(sql);
+            
         }
     }
 }
