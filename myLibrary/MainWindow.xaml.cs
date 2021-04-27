@@ -44,5 +44,12 @@ namespace myLibrary
             win.Show();
             this.Close();
         }
+
+        private void Guest_Click(object sender, RoutedEventArgs e)
+        {
+            catalog win1 = new catalog();
+            win1.Show();
+            this.Close();
+        }
     }
 }

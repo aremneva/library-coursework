@@ -1,7 +1,6 @@
 C:\Users\alina\repo\library-coursework\myLibrary\bin\Debug\myLibrary.exe.config
 C:\Users\alina\repo\library-coursework\myLibrary\bin\Debug\myLibrary.exe
 C:\Users\alina\repo\library-coursework\myLibrary\bin\Debug\myLibrary.pdb
-C:\Users\alina\repo\library-coursework\myLibrary\obj\Debug\myLibrary.csprojAssemblyReference.cache
 C:\Users\alina\repo\library-coursework\myLibrary\obj\Debug\MainWindow.g.cs
 C:\Users\alina\repo\library-coursework\myLibrary\obj\Debug\App.g.cs
 C:\Users\alina\repo\library-coursework\myLibrary\obj\Debug\myLibrary_MarkupCompile.cache
@@ -50,3 +49,9 @@ C:\Users\alina\repo\library-coursework\myLibrary\obj\Debug\logpas.g.cs
 C:\Users\alina\repo\library-coursework\myLibrary\obj\Debug\logpas.baml
 C:\Users\alina\repo\library-coursework\myLibrary\obj\Debug\Dictionary1.baml
 C:\Users\alina\repo\library-coursework\myLibrary\obj\Debug\Colors.baml
+C:\Users\alina\repo\library-coursework\myLibrary\obj\Debug\myLibrary.csprojAssemblyReference.cache
+C:\Users\alina\repo\library-coursework\myLibrary\obj\Debug\myLibrary.myRes.resources
+C:\Users\alina\repo\library-coursework\myLibrary\obj\Debug\profile.g.cs
+C:\Users\alina\repo\library-coursework\myLibrary\obj\Debug\profile.baml
+C:\Users\alina\repo\library-coursework\myLibrary\obj\Debug\catalog.g.cs
+C:\Users\alina\repo\library-coursework\myLibrary\obj\Debug\catalog.baml

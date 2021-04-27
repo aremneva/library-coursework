@@ -8,6 +8,12 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("libr.ico")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/1.jpeg")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/2.jpg")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/3.jpg")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/info.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/libr.ico")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/library.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/search.png")]
 
 

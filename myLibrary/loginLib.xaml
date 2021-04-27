@@ -11,11 +11,11 @@
         <CollectionViewSource x:Key="booksViewSource" Source="{Binding books, Source={StaticResource newlibraryDataSet}}"/>
     </Window.Resources>
 
-    <Grid>
+    <Grid Margin="-2,0,1.8,0">
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <Button x:Name="back" Content="Exit"  HorizontalAlignment="Left" Margin="516,261,0,0" VerticalAlignment="Top" Width="103" Height="41" Foreground="White" BorderBrush="#FFEA6C6C" FontSize="20" Click="Back_Click" Style="{DynamicResource Rounded}">
+        <Button x:Name="back" Content="Exit"  HorizontalAlignment="Left" Margin="517,312,0,0" VerticalAlignment="Top" Width="103" Height="32" Foreground="White" BorderBrush="#FFEA6C6C" FontSize="20" Click="Back_Click" Style="{DynamicResource Rounded}">
             <Button.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FFC36666"/>
@@ -23,21 +23,13 @@
                 </LinearGradientBrush>
             </Button.Background>
         </Button>
-        <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Height="209" Margin="54,135,0,0" ItemsSource="{Binding}" VerticalAlignment="Top" Width="427"/>
-        <Button x:Name="load" Content="Поиск книг" HorizontalAlignment="Left" Margin="531,41,0,0" VerticalAlignment="Top" Width="88" Height="28" Foreground="White" BorderBrush="FloralWhite" FontSize="14" Click="Load_Click" Style="{DynamicResource Rounded}">
-            <Button.Background>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="#FFB2F0A2"/>
-                    <GradientStop Color="#FF258816" Offset="1"/>
-                </LinearGradientBrush>
-            </Button.Background>
-        </Button>
-        <Label x:Name="username" Content="username" HorizontalAlignment="Left" Margin="547,12,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.612,0.855" Foreground="#FF299A05" FontSize="14"/>
-        <Label x:Name="username_Copy" Content="User:" HorizontalAlignment="Left" Margin="505,12,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.612,0.855" Foreground="#FF299A05" FontSize="14"/>
+        <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Height="209" Margin="54,135,0,0" ItemsSource="{Binding}" VerticalAlignment="Top" Width="445" VerticalGridLinesBrush="#FF262626" HorizontalGridLinesBrush="#FF262626"/>
+        <Label x:Name="username" Content="username" HorizontalAlignment="Left" Margin="517,12,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.612,0.855" Foreground="#FF299A05" FontSize="14"/>
+        <Label x:Name="username_Copy" Content="User:" HorizontalAlignment="Left" Margin="475,12,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.612,0.855" Foreground="#FF299A05" FontSize="14"/>
         <Image x:Name="myLib" HorizontalAlignment="Left" Height="29" Margin="23,12,0,0" VerticalAlignment="Top" Width="151" Source="library.png"/>
         <Label x:Name="textBook" Content="Ваши книги и сроки сдачи:" HorizontalAlignment="Left" Margin="54,90,0,0" VerticalAlignment="Top" Background="White" Foreground="#FF154B15" FontSize="22"/>
-        <TextBox x:Name="searchBook" HorizontalAlignment="Left" Height="23" Margin="406,46,0,0" TextWrapping="Wrap" Text="Book" VerticalAlignment="Top" Width="120"/>
-        <Button x:Name="fine" Content="Мои штрафы" HorizontalAlignment="Left" Margin="516,196,0,0" VerticalAlignment="Top" Width="103" Height="46" Foreground="White" BorderBrush="FloralWhite" FontSize="14" Click="fine_Click" Style="{DynamicResource Rounded}">
+        <TextBox x:Name="searchBook" HorizontalAlignment="Left" Height="23" Margin="231,17,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="198" TextChanged="searchBook_TextChanged" Cursor="IBeam"/>
+        <Button x:Name="fine" Content="Мои штрафы" HorizontalAlignment="Left" Margin="517,198,0,0" VerticalAlignment="Top" Width="103" Height="39" Foreground="White" BorderBrush="FloralWhite" FontSize="14" Click="fine_Click" Style="{DynamicResource Rounded}">
             <Button.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FFB2F0A2"/>
@@ -45,7 +37,7 @@
                 </LinearGradientBrush>
             </Button.Background>
         </Button>
-        <Button x:Name="srok" Content="Мои сроки" HorizontalAlignment="Left" Margin="516,135,0,0" VerticalAlignment="Top" Width="103" Height="43" Foreground="White" BorderBrush="FloralWhite" FontSize="14" Click="srok_Click" Style="{DynamicResource Rounded}">
+        <Button x:Name="srok" Content="Мои сроки" HorizontalAlignment="Left" Margin="517,135,0,0" VerticalAlignment="Top" Width="103" Height="40" Foreground="White" BorderBrush="FloralWhite" FontSize="14" Click="srok_Click" Style="{DynamicResource Rounded}">
             <Button.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FFB2F0A2"/>
@@ -53,7 +45,123 @@
                 </LinearGradientBrush>
             </Button.Background>
         </Button>
+        <Button x:Name="profile" Content="Профиль" HorizontalAlignment="Left" Margin="592,12,0,0" VerticalAlignment="Top" Width="65" Height="27" Foreground="White" BorderBrush="FloralWhite" Click="prof_Click" Style="{DynamicResource Rounded}">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFB2F0A2"/>
+                    <GradientStop Color="#FF258816" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Image HorizontalAlignment="Left" Height="23" Margin="429,17,0,0" VerticalAlignment="Top" Width="24" Source="search.png" RenderTransformOrigin="0.793,0.309" Opacity="0.5"/>
+        <Button x:Name="recom" Content="Рекомендации" HorizontalAlignment="Left" Margin="517,258,0,0" VerticalAlignment="Top" Width="103" Height="40" Foreground="White" BorderBrush="FloralWhite" FontSize="14" Click="recom_Click" Style="{DynamicResource Rounded}">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFB2F0A2"/>
+                    <GradientStop Color="#FF258816" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Button x:Name="catalog" Content="Каталог" HorizontalAlignment="Left" Margin="592,44,0,0" VerticalAlignment="Top" Width="65" Height="27" Foreground="White" BorderBrush="FloralWhite" Click="catalog_Click" Style="{DynamicResource Rounded}">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFB2F0A2"/>
+                    <GradientStop Color="#FF258816" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <StackPanel HorizontalAlignment="Left" Height="20" Margin="371,53,0,0" VerticalAlignment="Top" Width="131" >
+            <ComboBox x:Name="filter" Text="Фильтры" Height="18" Margin="0,0,0.2,0" >
+                <ComboBoxItem  Margin="14,0,-3.4,0" Height="25">
+                    <CheckBox x:Name="firstF" Content="По году" HorizontalAlignment="Left" VerticalAlignment="Top"  Width="129"/>
+                </ComboBoxItem>
+                <ComboBoxItem  Margin="14,0,-3.4,0" Height="25">
+                    <CheckBox x:Name="secondF" Content="По названию" HorizontalAlignment="Left" VerticalAlignment="Top"  Width="129"/>
+                </ComboBoxItem>
+                <ComboBoxItem Height="25"  Margin="14,0,-3.4,0">
+                    <CheckBox x:Name="thirdF" Content="По жанру" HorizontalAlignment="Left" VerticalAlignment="Top"  Width="129"/>
+                </ComboBoxItem>
+                <ComboBoxItem Height="25" Margin="14,0,-3.4,0">
+                    <CheckBox x:Name="fourF" Content="По популярности" HorizontalAlignment="Left" VerticalAlignment="Top" Width="129"/>
 
+                </ComboBoxItem>
+            </ComboBox>
+        </StackPanel>
+        <StackPanel HorizontalAlignment="Left" Height="20" Margin="371,53,0,0" VerticalAlignment="Top" Width="144" >
+            <ComboBox x:Name="filter1" Text="Фильтры" Height="19" >
+                <ComboBoxItem  Margin="14,0,-3.4,0" Height="25">
+                    <RadioButton x:Name="firstF1" Content="По году" HorizontalAlignment="Left" VerticalAlignment="Top"  Width="140" Unchecked="secondF1_Uncheck" Checked="secondF1_Checked"/>
+                </ComboBoxItem>
+                <ComboBoxItem  Margin="14,0,-3.4,0" Height="25">
+                    <RadioButton x:Name="secondF1" Content="По названию" HorizontalAlignment="Left" VerticalAlignment="Top"  Width="140" Checked="secondF2_Checked" Unchecked="secondF2_Uncheck" />
+                </ComboBoxItem>
+            </ComboBox>
+        </StackPanel>
+        <StackPanel HorizontalAlignment="Left" Height="20" Margin="127,51,0,0" VerticalAlignment="Top" Width="131" >
+            <ComboBox x:Name="filter2" Text="Фильтры" Height="18" Margin="0,0,0.2,0" >
+                <ComboBoxItem  Margin="14,0,-3.4,0" Height="25">
+                    <CheckBox x:Name="firstF2" Content="Ужасы" HorizontalAlignment="Left" VerticalAlignment="Top"  Width="129"/>
+                </ComboBoxItem>
+                <ComboBoxItem  Margin="14,0,-3.4,0" Height="25">
+                    <CheckBox x:Name="secondF2" Content="Роман" HorizontalAlignment="Left" VerticalAlignment="Top"  Width="129"/>
+                </ComboBoxItem>
+                <ComboBoxItem Height="25"  Margin="14,0,-3.4,0">
+                    <CheckBox x:Name="thirdF2" Content="Фантастика" HorizontalAlignment="Left" VerticalAlignment="Top"  Width="129"/>
+                </ComboBoxItem>
+                <ComboBoxItem Height="25" Margin="14,0,-3.4,0">
+                    <CheckBox x:Name="fourF2" Content="Драма" HorizontalAlignment="Left" VerticalAlignment="Top" Width="129"/>
+
+                </ComboBoxItem>
+            </ComboBox>
+        </StackPanel>
+        <StackPanel HorizontalAlignment="Left" Height="20" Margin="127,51,0,0" VerticalAlignment="Top" Width="131" >
+            <ComboBox x:Name="filter3" Text="Фильтры" Height="18" Margin="0,0,0.2,0" >
+                <ComboBoxItem  Margin="14,0,-3.4,0" Height="25" >
+                    <CheckBox x:Name="filtG" Content="Боевик" HorizontalAlignment="Left" VerticalAlignment="Top"  Width="129" Checked="gen"/>
+                </ComboBoxItem>
+                <ComboBoxItem  Margin="14,0,-3.4,0" Height="25">
+                    <CheckBox x:Name="filtG2" Content="Авангардная литература" HorizontalAlignment="Left" VerticalAlignment="Top"  Width="129" Checked="gen"/>
+                </ComboBoxItem>
+                <ComboBoxItem Height="25"  Margin="14,0,-3.4,0">
+                    <CheckBox x:Name="filtG3" Content="Детектив" HorizontalAlignment="Left" VerticalAlignment="Top"  Width="129" Checked="gen"/>
+                </ComboBoxItem>
+                <ComboBoxItem Height="25" Margin="14,0,-3.4,0">
+                    <CheckBox x:Name="filtG4" Content="Комедия" HorizontalAlignment="Left" VerticalAlignment="Top" Width="129" Checked="gen"/>
+                </ComboBoxItem>
+                <ComboBoxItem Height="25" Margin="14,0,-3.4,0">
+                    <CheckBox x:Name="filtG5" Content="Трагедия" HorizontalAlignment="Left" VerticalAlignment="Top" Width="129" Checked="gen"/>
+                </ComboBoxItem>
+                <ComboBoxItem Height="25" Margin="14,0,-3.4,0">
+                    <CheckBox x:Name="filtG6" Content="Драма" HorizontalAlignment="Left" VerticalAlignment="Top" Width="129" Checked="gen"/>
+                </ComboBoxItem>
+                <ComboBoxItem Height="25" Margin="14,0,-3.4,0">
+                    <CheckBox x:Name="filtG7" Content="Исторический роман" HorizontalAlignment="Left" VerticalAlignment="Top" Width="129" Checked="gen"/>
+                </ComboBoxItem>
+                <ComboBoxItem Height="25" Margin="14,0,-3.4,0">
+                    <CheckBox x:Name="filtG8" Content="Любовный роман" HorizontalAlignment="Left" VerticalAlignment="Top" Width="129" Checked="gen"/>
+                </ComboBoxItem>
+                <ComboBoxItem Height="25" Margin="14,0,-3.4,0">
+                    <CheckBox x:Name="filtG9" Content="Мистика" HorizontalAlignment="Left" VerticalAlignment="Top" Width="129" Checked="gen"/>
+                </ComboBoxItem>
+                <ComboBoxItem Height="25" Margin="14,0,-3.4,0">
+                    <CheckBox x:Name="filtG10" Content="Приключения" HorizontalAlignment="Left" VerticalAlignment="Top" Width="129" Checked="gen"/>
+                </ComboBoxItem>
+                <ComboBoxItem Height="25" Margin="14,0,-3.4,0">
+                    <CheckBox x:Name="filtG11" Content="Триллер/ужасы" HorizontalAlignment="Left" VerticalAlignment="Top" Width="129" Checked="gen"/>
+                </ComboBoxItem>
+                <ComboBoxItem Height="25" Margin="14,0,-3.4,0">
+                    <CheckBox x:Name="filtG12" Content="Фантастика" HorizontalAlignment="Left" VerticalAlignment="Top" Width="129" Checked="gen"/>
+                </ComboBoxItem>
+                <ComboBoxItem Height="25" Margin="14,0,-3.4,0">
+                    <CheckBox x:Name="filtG13" Content="Фэнтези/сказки" HorizontalAlignment="Left" VerticalAlignment="Top" Width="129" Checked="gen"/>
+                </ComboBoxItem>
+                <ComboBoxItem Height="25" Margin="14,0,-3.4,0">
+                    <CheckBox x:Name="filtG14" Content="Роман" HorizontalAlignment="Left" VerticalAlignment="Top" Width="129" Checked="gen"/>
+                </ComboBoxItem>
+            </ComboBox>
+        </StackPanel>
+        <Label x:Name="textBook_Copy" Content="Жанр:" HorizontalAlignment="Left" Margin="69,46,0,0" VerticalAlignment="Top" Background="White" Foreground="#FF154B15" FontSize="14" Width="53" Height="35"/>
+        <Label x:Name="textBook_Copy1" Content="Сортировать:" HorizontalAlignment="Left" Margin="267,45,0,0" VerticalAlignment="Top" Background="White" Foreground="#FF154B15" FontSize="14" Width="99" Height="31"/>
     </Grid>
 
 </Window>
