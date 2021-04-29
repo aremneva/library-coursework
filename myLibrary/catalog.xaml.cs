@@ -24,7 +24,7 @@ namespace myLibrary
             InitializeComponent();
         }
 
-        private void back_Click(object sender, RoutedEventArgs e)
+        private void Back_Click(object sender, RoutedEventArgs e)
         {
             MainWindow win1 = new MainWindow();
             win1.Show();

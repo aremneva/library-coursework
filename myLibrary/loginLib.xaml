@@ -28,8 +28,8 @@
         <Label x:Name="username_Copy" Content="User:" HorizontalAlignment="Left" Margin="475,12,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.612,0.855" Foreground="#FF299A05" FontSize="14"/>
         <Image x:Name="myLib" HorizontalAlignment="Left" Height="29" Margin="23,12,0,0" VerticalAlignment="Top" Width="151" Source="library.png"/>
         <Label x:Name="textBook" Content="Ваши книги и сроки сдачи:" HorizontalAlignment="Left" Margin="54,90,0,0" VerticalAlignment="Top" Background="White" Foreground="#FF154B15" FontSize="22"/>
-        <TextBox x:Name="searchBook" HorizontalAlignment="Left" Height="23" Margin="231,17,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="198" TextChanged="searchBook_TextChanged" Cursor="IBeam"/>
-        <Button x:Name="fine" Content="Мои штрафы" HorizontalAlignment="Left" Margin="517,198,0,0" VerticalAlignment="Top" Width="103" Height="39" Foreground="White" BorderBrush="FloralWhite" FontSize="14" Click="fine_Click" Style="{DynamicResource Rounded}">
+        <TextBox x:Name="searchBook" HorizontalAlignment="Left" Height="23" Margin="213,16,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="198" TextChanged="SearchBook_TextChanged" Cursor="IBeam"/>
+        <Button x:Name="fine" Content="Мои штрафы" HorizontalAlignment="Left" Margin="517,198,0,0" VerticalAlignment="Top" Width="103" Height="39" Foreground="White" BorderBrush="FloralWhite" FontSize="14" Click="Fine_Click" Style="{DynamicResource Rounded}">
             <Button.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FFB2F0A2"/>
@@ -37,7 +37,7 @@
                 </LinearGradientBrush>
             </Button.Background>
         </Button>
-        <Button x:Name="srok" Content="Мои сроки" HorizontalAlignment="Left" Margin="517,135,0,0" VerticalAlignment="Top" Width="103" Height="40" Foreground="White" BorderBrush="FloralWhite" FontSize="14" Click="srok_Click" Style="{DynamicResource Rounded}">
+        <Button x:Name="srok" Content="Мои сроки" HorizontalAlignment="Left" Margin="517,135,0,0" VerticalAlignment="Top" Width="103" Height="40" Foreground="White" BorderBrush="FloralWhite" FontSize="14" Click="Srok_Click" Style="{DynamicResource Rounded}">
             <Button.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FFB2F0A2"/>
@@ -45,7 +45,7 @@
                 </LinearGradientBrush>
             </Button.Background>
         </Button>
-        <Button x:Name="profile" Content="Профиль" HorizontalAlignment="Left" Margin="592,12,0,0" VerticalAlignment="Top" Width="65" Height="27" Foreground="White" BorderBrush="FloralWhite" Click="prof_Click" Style="{DynamicResource Rounded}">
+        <Button x:Name="profile" Content="Профиль" HorizontalAlignment="Left" Margin="592,12,0,0" VerticalAlignment="Top" Width="65" Height="27" Foreground="White" BorderBrush="FloralWhite" Click="Prof_Click" Style="{DynamicResource Rounded}">
             <Button.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FFB2F0A2"/>
@@ -53,8 +53,8 @@
                 </LinearGradientBrush>
             </Button.Background>
         </Button>
-        <Image HorizontalAlignment="Left" Height="23" Margin="429,17,0,0" VerticalAlignment="Top" Width="24" Source="search.png" RenderTransformOrigin="0.793,0.309" Opacity="0.5"/>
-        <Button x:Name="recom" Content="Рекомендации" HorizontalAlignment="Left" Margin="517,258,0,0" VerticalAlignment="Top" Width="103" Height="40" Foreground="White" BorderBrush="FloralWhite" FontSize="14" Click="recom_Click" Style="{DynamicResource Rounded}">
+        <Image HorizontalAlignment="Left" Height="23" Margin="411,16,0,0" VerticalAlignment="Top" Width="24" Source="search.png" RenderTransformOrigin="0.793,0.309" Opacity="0.5"/>
+        <Button x:Name="recom" Content="Рекомендации" HorizontalAlignment="Left" Margin="517,258,0,0" VerticalAlignment="Top" Width="103" Height="40" Foreground="White" BorderBrush="FloralWhite" FontSize="14" Click="Recom_Click" Style="{DynamicResource Rounded}">
             <Button.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FFB2F0A2"/>
@@ -62,7 +62,7 @@
                 </LinearGradientBrush>
             </Button.Background>
         </Button>
-        <Button x:Name="catalog" Content="Каталог" HorizontalAlignment="Left" Margin="592,44,0,0" VerticalAlignment="Top" Width="65" Height="27" Foreground="White" BorderBrush="FloralWhite" Click="catalog_Click" Style="{DynamicResource Rounded}">
+        <Button x:Name="catalog" Content="Каталог" HorizontalAlignment="Left" Margin="592,44,0,0" VerticalAlignment="Top" Width="65" Height="27" Foreground="White" BorderBrush="FloralWhite" Click="Catalog_Click" Style="{DynamicResource Rounded}">
             <Button.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FFB2F0A2"/>
@@ -90,10 +90,10 @@
         <StackPanel HorizontalAlignment="Left" Height="20" Margin="371,53,0,0" VerticalAlignment="Top" Width="144" >
             <ComboBox x:Name="filter1" Text="Фильтры" Height="19" >
                 <ComboBoxItem  Margin="14,0,-3.4,0" Height="25">
-                    <RadioButton x:Name="firstF1" Content="По году" HorizontalAlignment="Left" VerticalAlignment="Top"  Width="140" Unchecked="secondF1_Uncheck" Checked="secondF1_Checked"/>
+                    <RadioButton x:Name="firstF1" Content="По году" HorizontalAlignment="Left" VerticalAlignment="Top"  Width="140" Unchecked="SecondF1_Uncheck" Checked="SecondF1_Checked"/>
                 </ComboBoxItem>
                 <ComboBoxItem  Margin="14,0,-3.4,0" Height="25">
-                    <RadioButton x:Name="secondF1" Content="По названию" HorizontalAlignment="Left" VerticalAlignment="Top"  Width="140" Checked="secondF2_Checked" Unchecked="secondF2_Uncheck" />
+                    <RadioButton x:Name="secondF1" Content="По названию" HorizontalAlignment="Left" VerticalAlignment="Top"  Width="140" Checked="SecondF2_Checked" Unchecked="SecondF2_Uncheck" />
                 </ComboBoxItem>
             </ComboBox>
         </StackPanel>
@@ -117,46 +117,46 @@
         <StackPanel HorizontalAlignment="Left" Height="20" Margin="127,51,0,0" VerticalAlignment="Top" Width="131" >
             <ComboBox x:Name="filter3" Text="Фильтры" Height="18" Margin="0,0,0.2,0" >
                 <ComboBoxItem  Margin="14,0,-3.4,0" Height="25" >
-                    <CheckBox x:Name="filtG" Content="Боевик" HorizontalAlignment="Left" VerticalAlignment="Top"  Width="129" Checked="gen"/>
+                    <CheckBox x:Name="filtG" Content="Боевик" HorizontalAlignment="Left" VerticalAlignment="Top"  Width="129" Checked="Gen"/>
                 </ComboBoxItem>
                 <ComboBoxItem  Margin="14,0,-3.4,0" Height="25">
-                    <CheckBox x:Name="filtG2" Content="Авангардная литература" HorizontalAlignment="Left" VerticalAlignment="Top"  Width="129" Checked="gen"/>
+                    <CheckBox x:Name="filtG2" Content="Авангардная литература" HorizontalAlignment="Left" VerticalAlignment="Top"  Width="129" Checked="Gen"/>
                 </ComboBoxItem>
                 <ComboBoxItem Height="25"  Margin="14,0,-3.4,0">
-                    <CheckBox x:Name="filtG3" Content="Детектив" HorizontalAlignment="Left" VerticalAlignment="Top"  Width="129" Checked="gen"/>
+                    <CheckBox x:Name="filtG3" Content="Детектив" HorizontalAlignment="Left" VerticalAlignment="Top"  Width="129" Checked="Gen"/>
                 </ComboBoxItem>
                 <ComboBoxItem Height="25" Margin="14,0,-3.4,0">
-                    <CheckBox x:Name="filtG4" Content="Комедия" HorizontalAlignment="Left" VerticalAlignment="Top" Width="129" Checked="gen"/>
+                    <CheckBox x:Name="filtG4" Content="Комедия" HorizontalAlignment="Left" VerticalAlignment="Top" Width="129" Checked="Gen"/>
                 </ComboBoxItem>
                 <ComboBoxItem Height="25" Margin="14,0,-3.4,0">
-                    <CheckBox x:Name="filtG5" Content="Трагедия" HorizontalAlignment="Left" VerticalAlignment="Top" Width="129" Checked="gen"/>
+                    <CheckBox x:Name="filtG5" Content="Трагедия" HorizontalAlignment="Left" VerticalAlignment="Top" Width="129" Checked="Gen"/>
                 </ComboBoxItem>
                 <ComboBoxItem Height="25" Margin="14,0,-3.4,0">
-                    <CheckBox x:Name="filtG6" Content="Драма" HorizontalAlignment="Left" VerticalAlignment="Top" Width="129" Checked="gen"/>
+                    <CheckBox x:Name="filtG6" Content="Драма" HorizontalAlignment="Left" VerticalAlignment="Top" Width="129" Checked="Gen"/>
                 </ComboBoxItem>
                 <ComboBoxItem Height="25" Margin="14,0,-3.4,0">
-                    <CheckBox x:Name="filtG7" Content="Исторический роман" HorizontalAlignment="Left" VerticalAlignment="Top" Width="129" Checked="gen"/>
+                    <CheckBox x:Name="filtG7" Content="Исторический роман" HorizontalAlignment="Left" VerticalAlignment="Top" Width="129" Checked="Gen"/>
                 </ComboBoxItem>
                 <ComboBoxItem Height="25" Margin="14,0,-3.4,0">
-                    <CheckBox x:Name="filtG8" Content="Любовный роман" HorizontalAlignment="Left" VerticalAlignment="Top" Width="129" Checked="gen"/>
+                    <CheckBox x:Name="filtG8" Content="Любовный роман" HorizontalAlignment="Left" VerticalAlignment="Top" Width="129" Checked="Gen"/>
                 </ComboBoxItem>
                 <ComboBoxItem Height="25" Margin="14,0,-3.4,0">
-                    <CheckBox x:Name="filtG9" Content="Мистика" HorizontalAlignment="Left" VerticalAlignment="Top" Width="129" Checked="gen"/>
+                    <CheckBox x:Name="filtG9" Content="Мистика" HorizontalAlignment="Left" VerticalAlignment="Top" Width="129" Checked="Gen"/>
                 </ComboBoxItem>
                 <ComboBoxItem Height="25" Margin="14,0,-3.4,0">
-                    <CheckBox x:Name="filtG10" Content="Приключения" HorizontalAlignment="Left" VerticalAlignment="Top" Width="129" Checked="gen"/>
+                    <CheckBox x:Name="filtG10" Content="Приключения" HorizontalAlignment="Left" VerticalAlignment="Top" Width="129" Checked="Gen"/>
                 </ComboBoxItem>
                 <ComboBoxItem Height="25" Margin="14,0,-3.4,0">
-                    <CheckBox x:Name="filtG11" Content="Триллер/ужасы" HorizontalAlignment="Left" VerticalAlignment="Top" Width="129" Checked="gen"/>
+                    <CheckBox x:Name="filtG11" Content="Триллер/ужасы" HorizontalAlignment="Left" VerticalAlignment="Top" Width="129" Checked="Gen"/>
                 </ComboBoxItem>
                 <ComboBoxItem Height="25" Margin="14,0,-3.4,0">
-                    <CheckBox x:Name="filtG12" Content="Фантастика" HorizontalAlignment="Left" VerticalAlignment="Top" Width="129" Checked="gen"/>
+                    <CheckBox x:Name="filtG12" Content="Фантастика" HorizontalAlignment="Left" VerticalAlignment="Top" Width="129" Checked="Gen"/>
                 </ComboBoxItem>
                 <ComboBoxItem Height="25" Margin="14,0,-3.4,0">
-                    <CheckBox x:Name="filtG13" Content="Фэнтези/сказки" HorizontalAlignment="Left" VerticalAlignment="Top" Width="129" Checked="gen"/>
+                    <CheckBox x:Name="filtG13" Content="Фэнтези/сказки" HorizontalAlignment="Left" VerticalAlignment="Top" Width="129" Checked="Gen"/>
                 </ComboBoxItem>
                 <ComboBoxItem Height="25" Margin="14,0,-3.4,0">
-                    <CheckBox x:Name="filtG14" Content="Роман" HorizontalAlignment="Left" VerticalAlignment="Top" Width="129" Checked="gen"/>
+                    <CheckBox x:Name="filtG14" Content="Роман" HorizontalAlignment="Left" VerticalAlignment="Top" Width="129" Checked="Gen"/>
                 </ComboBoxItem>
             </ComboBox>
         </StackPanel>

@@ -36,7 +36,7 @@ namespace myLibrary
             }
         }
 
-        public String findGen()
+        public String FindGen()
         {
             string gen="";
             if (filtG.IsChecked == true)  gen = filtG.Content.ToString();
@@ -56,12 +56,17 @@ namespace myLibrary
             return gen;
         }
 
-        public void search()
+        public void Search(String sql)
         {
-            String book = searchBook.Text;
+            try { 
+            DataTable dt = new DataTable();
             textBook.Content = "Результат поиска:";
-            string sql = "SELECT b.nameBook as Название, b.author as Автор, b.year as Год, g.nameGen as Жанр,p.namePub as Издательство FROM books as b inner join genre as g inner join publishers as p on b.idGen = g.idGenre and b.idPub = p.idPub and b.namebook Like Concat('%', '" + book + "', '%')";
-            testCon(sql);
+            dataGrid.DataContext= connect.TestCon(sql);
+            }
+            catch (MySqlException e)
+            {
+                MessageBox.Show("Ошибка подключения "+ e);
+            }
         }
         public loginLib(string login)
         {
@@ -95,7 +100,7 @@ namespace myLibrary
             {
                 sql = "Select * from issuedbooks";
             }
-            testCon(sql);
+            Search(sql);
 
         }
 
@@ -107,90 +112,93 @@ namespace myLibrary
             this.Close();
         }
 
-        private void srok_Click(object sender, RoutedEventArgs e)
+        private void Srok_Click(object sender, RoutedEventArgs e)
         {
             textBook.Content = "Ваши книги и сроки:";
 
             String user = username.Content.ToString();
             String search = textBook.Content.ToString();
-            string isdSql = "Select b.nameBook as 'Книги', isd.issuedDate as 'Дата выдачи', isd.returnDate as 'Дата возврата' from issuedbooks as isd inner join library_card as lc inner join books as b inner join login as l on isd.id_library_card = lc.id_library_card and lc.id_login = l.id_login and isd.idBooks = b.idBooks and l.login = '" + user + "'";
-
-            testCon(isdSql);
+            string sql = "Select b.nameBook as 'Книги', isd.issuedDate as 'Дата выдачи', isd.returnDate as 'Дата возврата' from issuedbooks as isd inner join library_card as lc inner join books as b inner join login as l on isd.id_library_card = lc.id_library_card and lc.id_login = l.id_login and isd.idBooks = b.idBooks and l.login = '" + user + "'";
+            Search(sql);
         }
 
-        private void fine_Click(object sender, RoutedEventArgs e)
+        private void Fine_Click(object sender, RoutedEventArgs e)
         {
             textBook.Content = "Ваши штрафы:";
             String user = username.Content.ToString();
             string sql = "SELECT card.id_library_card as номер, sum(f.sanction) as штраф from card_fines as card inner join library_card as lcard inner join readers as r inner join fines as f on lcard.id_library_card = card.id_library_card and r.idReaders = lcard.idReaders and f.id_fines = card.id_fines and card.id_library_card = (Select id_library_card from library_card where id_login = (Select id_login from login where login = '" + user + "')) group by card.id_library_card; ";
-
-            testCon(sql);
+            Search(sql);
 
         }
 
-        private void searchBook_TextChanged(object sender, TextChangedEventArgs e)
+        private void SearchBook_TextChanged(object sender, TextChangedEventArgs e)
         {
-            search();
+            String book = searchBook.Text;
+            string sql = "SELECT b.nameBook as Название, b.author as Автор, b.year as Год, g.nameGen as Жанр,p.namePub as Издательство FROM books as b inner join genre as g inner join publishers as p on b.idGen = g.idGenre and b.idPub = p.idPub and b.namebook Like Concat('%', '" + book + "', '%')";
+
+            Search(sql);
         }
 
-        private void prof_Click(object sender, RoutedEventArgs e)
+        private void Prof_Click(object sender, RoutedEventArgs e)
         {
-            profile win1 = new profile();
+            profile win1 = new profile(username.Content.ToString());
             win1.Show();
+            this.Close();
         }
 
-        private void recom_Click(object sender, RoutedEventArgs e)
+        private void Recom_Click(object sender, RoutedEventArgs e)
         {
             textBook.Content = "Ваши рекомендации:";
             String user = username.Content.ToString();
             string sql = "Select b.nameBook as Книга, b.author as Автор from books as b inner join genre as g on b.idGen = g.idGenre and nameGen LIKE (Select  g.nameGen from issuedbooks as isd inner join genre as g inner join books as b inner join library_card as lc inner join login as l  on isd.idBooks = b.idBooks and g.idGenre = b.idGen and isd.id_library_card = lc.id_library_card and lc.id_login = (Select id_login from login where login = '" + user + "') LIMIT 1) LIMIT 10; ";
-            testCon(sql);
+            Search(sql);
         }
 
-        private void secondF1_Checked(object sender, RoutedEventArgs e)
+        private void SecondF1_Checked(object sender, RoutedEventArgs e)
         {
-            //UncheckAllF();
-            //firstF1.IsChecked = true;
             secondF1.IsChecked = false;
             String book = searchBook.Text;
             textBook.Content = "Результат поиска:";
             string sql = "SELECT b.nameBook as Название, b.author as Автор, b.year as Год, g.nameGen as Жанр,p.namePub as Издательство FROM books as b inner join genre as g inner join publishers as p on b.idGen = g.idGenre and b.idPub = p.idPub and b.namebook Like Concat('%', '" + book + "', '%') order by b.year desc";
-            testCon(sql);
+            Search(sql);
         }
-        private void secondF1_Uncheck(object sender, RoutedEventArgs e)
+        private void SecondF1_Uncheck(object sender, RoutedEventArgs e)
         {
-            search();
+            String book = searchBook.Text;
+            string sql = "SELECT b.nameBook as Название, b.author as Автор, b.year as Год, g.nameGen as Жанр,p.namePub as Издательство FROM books as b inner join genre as g inner join publishers as p on b.idGen = g.idGenre and b.idPub = p.idPub and b.namebook Like Concat('%', '" + book + "', '%')";
+            Search(sql);
         }
 
-        private void secondF2_Checked(object sender, RoutedEventArgs e)
+        private void SecondF2_Checked(object sender, RoutedEventArgs e)
         {
-            //UncheckAllF();
-            //secondF2.IsChecked = true;
             firstF1.IsChecked = false;
             String book = searchBook.Text;
             textBook.Content = "Результат поиска:";
             string sql = "SELECT b.nameBook as Название, b.author as Автор, b.year as Год, g.nameGen as Жанр,p.namePub as Издательство FROM books as b inner join genre as g inner join publishers as p on b.idGen = g.idGenre and b.idPub = p.idPub and b.namebook Like Concat('%', '" + book + "', '%') order by b.nameBook asc";
-            testCon(sql);
+            Search(sql);
         }
-        private void secondF2_Uncheck(object sender, RoutedEventArgs e)
+        private void SecondF2_Uncheck(object sender, RoutedEventArgs e)
         {
-            search();
+            String book = searchBook.Text;
+            string sql = "SELECT b.nameBook as Название, b.author as Автор, b.year as Год, g.nameGen as Жанр,p.namePub as Издательство FROM books as b inner join genre as g inner join publishers as p on b.idGen = g.idGenre and b.idPub = p.idPub and b.namebook Like Concat('%', '" + book + "', '%')";
+
+            Search(sql);
         }
 
-        private void catalog_Click(object sender, RoutedEventArgs e)
+        private void Catalog_Click(object sender, RoutedEventArgs e)
         {
             catalog win1 = new catalog();
             win1.Show();
             this.Close();
         }
 
-        private void gen(object sender, RoutedEventArgs e)
+        private void Gen(object sender, RoutedEventArgs e)
         {
-            string gen=findGen();
+            string gen = FindGen();
             String book = searchBook.Text;
             textBook.Content = "Результат поиска:";
             string sql = "SELECT b.nameBook as Название, b.author as Автор, b.year as Год, g.nameGen as Жанр,p.namePub as Издательство FROM books as b inner join genre as g inner join publishers as p on b.idGen = g.idGenre and b.idPub = p.idPub and b.namebook Like Concat('%', '" + book + "', '%') and g.nameGen= '"+gen+"'";
-            testCon(sql);
+            Search(sql);
         }
     }
 }
