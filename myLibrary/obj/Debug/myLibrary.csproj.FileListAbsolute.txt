@@ -85,7 +85,6 @@ C:\Users\remne\Source\Repos\library-coursework\myLibrary\bin\Debug\System.Runtim
 C:\Users\remne\Source\Repos\library-coursework\myLibrary\obj\Debug\myLibrary.csprojAssemblyReference.cache
 C:\Users\remne\Source\Repos\library-coursework\myLibrary\obj\Debug\catalog.g.cs
 C:\Users\remne\Source\Repos\library-coursework\myLibrary\obj\Debug\loginLib.g.cs
-C:\Users\remne\Source\Repos\library-coursework\myLibrary\obj\Debug\loginUs.g.cs
 C:\Users\remne\Source\Repos\library-coursework\myLibrary\obj\Debug\logpas.g.cs
 C:\Users\remne\Source\Repos\library-coursework\myLibrary\obj\Debug\MainWindow.g.cs
 C:\Users\remne\Source\Repos\library-coursework\myLibrary\obj\Debug\profile.g.cs
@@ -99,7 +98,6 @@ C:\Users\remne\Source\Repos\library-coursework\myLibrary\obj\Debug\catalog.baml
 C:\Users\remne\Source\Repos\library-coursework\myLibrary\obj\Debug\Colors.baml
 C:\Users\remne\Source\Repos\library-coursework\myLibrary\obj\Debug\Dictionary1.baml
 C:\Users\remne\Source\Repos\library-coursework\myLibrary\obj\Debug\loginLib.baml
-C:\Users\remne\Source\Repos\library-coursework\myLibrary\obj\Debug\loginUs.baml
 C:\Users\remne\Source\Repos\library-coursework\myLibrary\obj\Debug\logpas.baml
 C:\Users\remne\Source\Repos\library-coursework\myLibrary\obj\Debug\MainWindow.baml
 C:\Users\remne\Source\Repos\library-coursework\myLibrary\obj\Debug\profile.baml

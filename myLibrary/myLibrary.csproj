@@ -150,10 +150,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="loginUs.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="logpas.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -168,9 +164,6 @@
     </Compile>
     <Compile Include="loginLib.xaml.cs">
       <DependentUpon>loginLib.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="loginUs.xaml.cs">
-      <DependentUpon>loginUs.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
@@ -258,6 +251,15 @@
     <Resource Include="images\libr.ico" />
     <Resource Include="images\library.png" />
     <Resource Include="images\search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="bamb.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="bamn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="list.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

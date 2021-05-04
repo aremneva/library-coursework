@@ -9,8 +9,17 @@
                 <ResourceDictionary Source="Dictionary1.xaml"/>
                
             </ResourceDictionary.MergedDictionaries>
+            
+            <Color x:Key="OneColor">#C4AF8D</Color>
+            <Color x:Key="TwoColor">#8f977f</Color>
+            <Color x:Key="ThreeColor">#5a796a</Color>
+            <Color x:Key="FourColor">#505e79</Color>
+            <Color x:Key="FiveColor">#80a4be</Color>
+            <Color x:Key="SixColor">#b6e8e7</Color>
         </ResourceDictionary>
 
+        
+        
     </Application.Resources>
     
     

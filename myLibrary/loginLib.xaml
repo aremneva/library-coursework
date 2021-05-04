@@ -9,68 +9,30 @@
     <Window.Resources>
         <local:newlibraryDataSet x:Key="newlibraryDataSet"/>
         <CollectionViewSource x:Key="booksViewSource" Source="{Binding books, Source={StaticResource newlibraryDataSet}}"/>
+        <SolidColorBrush x:Key="third" Color="#FF5A796A"/>
+        <SolidColorBrush x:Key="four" Color="#FF505E79"/>
     </Window.Resources>
 
     <Grid Margin="-2,0,1.8,0">
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <Button x:Name="back" Content="Exit"  HorizontalAlignment="Left" Margin="517,312,0,0" VerticalAlignment="Top" Width="103" Height="32" Foreground="White" BorderBrush="#FFEA6C6C" FontSize="20" Click="Back_Click" Style="{DynamicResource Rounded}">
-            <Button.Background>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="#FFC36666"/>
-                    <GradientStop Color="#FF7A0D0D" Offset="1"/>
-                </LinearGradientBrush>
-            </Button.Background>
-        </Button>
+        <Button x:Name="back" Content="Exit"  HorizontalAlignment="Left" Margin="517,312,0,0" VerticalAlignment="Top" Width="103" Height="32" Foreground="White" BorderBrush="White" FontSize="20" Click="Back_Click" Style="{DynamicResource Rounded}" Background="#FFE9AAA5"/>
         <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Height="209" Margin="54,135,0,0" ItemsSource="{Binding}" VerticalAlignment="Top" Width="445" VerticalGridLinesBrush="#FF262626" HorizontalGridLinesBrush="#FF262626"/>
-        <Label x:Name="username" Content="username" HorizontalAlignment="Left" Margin="517,12,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.612,0.855" Foreground="#FF299A05" FontSize="14"/>
-        <Label x:Name="username_Copy" Content="User:" HorizontalAlignment="Left" Margin="475,12,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.612,0.855" Foreground="#FF299A05" FontSize="14"/>
-        <Image x:Name="myLib" HorizontalAlignment="Left" Height="29" Margin="23,12,0,0" VerticalAlignment="Top" Width="151" Source="library.png"/>
-        <Label x:Name="textBook" Content="Ваши книги и сроки сдачи:" HorizontalAlignment="Left" Margin="54,90,0,0" VerticalAlignment="Top" Background="White" Foreground="#FF154B15" FontSize="22"/>
+        <Label x:Name="username" Content="username" HorizontalAlignment="Left" Margin="517,12,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.612,0.855" Foreground="{DynamicResource four}" FontSize="14"/>
+        <Label x:Name="username_Copy" Content="User:" HorizontalAlignment="Left" Margin="475,12,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.612,0.855" Foreground="{DynamicResource four}" FontSize="14"/>
+        <Image x:Name="myLib" HorizontalAlignment="Left" Height="83" Margin="10,-12,0,0" VerticalAlignment="Top" Width="177" Source="library.png"/>
+        <Label x:Name="textBook" Content="Ваши книги и сроки сдачи:" HorizontalAlignment="Left" Margin="54,90,0,0" VerticalAlignment="Top" Background="White" Foreground="{DynamicResource four}" FontSize="22"/>
         <TextBox x:Name="searchBook" HorizontalAlignment="Left" Height="23" Margin="213,16,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="198" TextChanged="SearchBook_TextChanged" Cursor="IBeam"/>
-        <Button x:Name="fine" Content="Мои штрафы" HorizontalAlignment="Left" Margin="517,198,0,0" VerticalAlignment="Top" Width="103" Height="39" Foreground="White" BorderBrush="FloralWhite" FontSize="14" Click="Fine_Click" Style="{DynamicResource Rounded}">
-            <Button.Background>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="#FFB2F0A2"/>
-                    <GradientStop Color="#FF258816" Offset="1"/>
-                </LinearGradientBrush>
-            </Button.Background>
+        <Button x:Name="fine" Content="Мои штрафы" HorizontalAlignment="Left" Margin="517,198,0,0" VerticalAlignment="Top" Width="103" Height="39" Foreground="White" BorderBrush="FloralWhite" FontSize="14" Click="Fine_Click" Style="{DynamicResource Rounded}" Background="{DynamicResource four}">
+
         </Button>
-        <Button x:Name="srok" Content="Мои сроки" HorizontalAlignment="Left" Margin="517,135,0,0" VerticalAlignment="Top" Width="103" Height="40" Foreground="White" BorderBrush="FloralWhite" FontSize="14" Click="Srok_Click" Style="{DynamicResource Rounded}">
-            <Button.Background>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="#FFB2F0A2"/>
-                    <GradientStop Color="#FF258816" Offset="1"/>
-                </LinearGradientBrush>
-            </Button.Background>
-        </Button>
-        <Button x:Name="profile" Content="Профиль" HorizontalAlignment="Left" Margin="592,12,0,0" VerticalAlignment="Top" Width="65" Height="27" Foreground="White" BorderBrush="FloralWhite" Click="Prof_Click" Style="{DynamicResource Rounded}">
-            <Button.Background>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="#FFB2F0A2"/>
-                    <GradientStop Color="#FF258816" Offset="1"/>
-                </LinearGradientBrush>
-            </Button.Background>
-        </Button>
+        <Button x:Name="srok" Content="Мои сроки" HorizontalAlignment="Left" Margin="517,135,0,0" VerticalAlignment="Top" Width="103" Height="40" Foreground="White" BorderBrush="FloralWhite" FontSize="14" Click="Srok_Click" Style="{DynamicResource Rounded}" Background="{DynamicResource four}"/>
+        <Button x:Name="profile" Content="Профиль" HorizontalAlignment="Left" Margin="592,12,0,0" VerticalAlignment="Top" Width="65" Height="27" Foreground="White" BorderBrush="FloralWhite" Click="Prof_Click" Style="{DynamicResource Rounded}" Background="{DynamicResource third}"/>
         <Image HorizontalAlignment="Left" Height="23" Margin="411,16,0,0" VerticalAlignment="Top" Width="24" Source="search.png" RenderTransformOrigin="0.793,0.309" Opacity="0.5"/>
-        <Button x:Name="recom" Content="Рекомендации" HorizontalAlignment="Left" Margin="517,258,0,0" VerticalAlignment="Top" Width="103" Height="40" Foreground="White" BorderBrush="FloralWhite" FontSize="14" Click="Recom_Click" Style="{DynamicResource Rounded}">
-            <Button.Background>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="#FFB2F0A2"/>
-                    <GradientStop Color="#FF258816" Offset="1"/>
-                </LinearGradientBrush>
-            </Button.Background>
-        </Button>
-        <Button x:Name="catalog" Content="Каталог" HorizontalAlignment="Left" Margin="592,44,0,0" VerticalAlignment="Top" Width="65" Height="27" Foreground="White" BorderBrush="FloralWhite" Click="Catalog_Click" Style="{DynamicResource Rounded}">
-            <Button.Background>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="#FFB2F0A2"/>
-                    <GradientStop Color="#FF258816" Offset="1"/>
-                </LinearGradientBrush>
-            </Button.Background>
-        </Button>
-        <StackPanel HorizontalAlignment="Left" Height="20" Margin="371,53,0,0" VerticalAlignment="Top" Width="131" >
+        <Button x:Name="recom" Content="Рекомендации" HorizontalAlignment="Left" Margin="517,258,0,0" VerticalAlignment="Top" Width="103" Height="40" Foreground="White" BorderBrush="FloralWhite" FontSize="14" Click="Recom_Click" Style="{DynamicResource Rounded}" Background="{DynamicResource four}"/>
+        <Button x:Name="catalog" Content="Каталог" HorizontalAlignment="Left" Margin="592,44,0,0" VerticalAlignment="Top" Width="65" Height="27" Foreground="White" BorderBrush="FloralWhite" Click="Catalog_Click" Style="{DynamicResource Rounded}" Background="{DynamicResource four}"/>
+        <StackPanel HorizontalAlignment="Left" Height="20" Margin="370,59,0,0" VerticalAlignment="Top" Width="131" >
             <ComboBox x:Name="filter" Text="Фильтры" Height="18" Margin="0,0,0.2,0" >
                 <ComboBoxItem  Margin="14,0,-3.4,0" Height="25">
                     <CheckBox x:Name="firstF" Content="По году" HorizontalAlignment="Left" VerticalAlignment="Top"  Width="129"/>
@@ -87,7 +49,7 @@
                 </ComboBoxItem>
             </ComboBox>
         </StackPanel>
-        <StackPanel HorizontalAlignment="Left" Height="20" Margin="371,53,0,0" VerticalAlignment="Top" Width="144" >
+        <StackPanel HorizontalAlignment="Left" Height="20" Margin="370,59,0,0" VerticalAlignment="Top" Width="144" >
             <ComboBox x:Name="filter1" Text="Фильтры" Height="19" >
                 <ComboBoxItem  Margin="14,0,-3.4,0" Height="25">
                     <RadioButton x:Name="firstF1" Content="По году" HorizontalAlignment="Left" VerticalAlignment="Top"  Width="140" Unchecked="SecondF1_Uncheck" Checked="SecondF1_Checked"/>
@@ -97,7 +59,7 @@
                 </ComboBoxItem>
             </ComboBox>
         </StackPanel>
-        <StackPanel HorizontalAlignment="Left" Height="20" Margin="127,51,0,0" VerticalAlignment="Top" Width="131" >
+        <StackPanel HorizontalAlignment="Left" Height="20" Margin="126,57,0,0" VerticalAlignment="Top" Width="131" >
             <ComboBox x:Name="filter2" Text="Фильтры" Height="18" Margin="0,0,0.2,0" >
                 <ComboBoxItem  Margin="14,0,-3.4,0" Height="25">
                     <CheckBox x:Name="firstF2" Content="Ужасы" HorizontalAlignment="Left" VerticalAlignment="Top"  Width="129"/>
@@ -114,7 +76,7 @@
                 </ComboBoxItem>
             </ComboBox>
         </StackPanel>
-        <StackPanel HorizontalAlignment="Left" Height="20" Margin="127,51,0,0" VerticalAlignment="Top" Width="131" >
+        <StackPanel HorizontalAlignment="Left" Height="20" Margin="126,57,0,0" VerticalAlignment="Top" Width="131" >
             <ComboBox x:Name="filter3" Text="Фильтры" Height="18" Margin="0,0,0.2,0" >
                 <ComboBoxItem  Margin="14,0,-3.4,0" Height="25" >
                     <CheckBox x:Name="filtG" Content="Боевик" HorizontalAlignment="Left" VerticalAlignment="Top"  Width="129" Checked="Gen"/>
@@ -160,8 +122,8 @@
                 </ComboBoxItem>
             </ComboBox>
         </StackPanel>
-        <Label x:Name="textBook_Copy" Content="Жанр:" HorizontalAlignment="Left" Margin="69,46,0,0" VerticalAlignment="Top" Background="White" Foreground="#FF154B15" FontSize="14" Width="53" Height="35"/>
-        <Label x:Name="textBook_Copy1" Content="Сортировать:" HorizontalAlignment="Left" Margin="267,45,0,0" VerticalAlignment="Top" Background="White" Foreground="#FF154B15" FontSize="14" Width="99" Height="31"/>
+        <Label x:Name="textBook_Copy" Content="Жанр:" HorizontalAlignment="Left" Margin="68,52,0,0" VerticalAlignment="Top" Background="White" Foreground="{DynamicResource four}" FontSize="14" Width="53" Height="35"/>
+        <Label x:Name="textBook_Copy1" Content="Сортировать:" HorizontalAlignment="Left" Margin="266,51,0,0" VerticalAlignment="Top" Background="White" Foreground="{DynamicResource four}" FontSize="14" Width="99" Height="31"/>
     </Grid>
 
 </Window>
