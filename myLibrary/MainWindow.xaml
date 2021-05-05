@@ -6,7 +6,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:myLibrary"
         mc:Ignorable="d"
-        Title="MyLibrary" Height="430.971" Width="470.667" WindowStyle="ThreeDBorderWindow">
+        Title="MyLibrary" Height="409.971" Width="470.667" WindowStyle="ThreeDBorderWindow">
     <Window.Resources>
         <SolidColorBrush x:Key="first" Color="#FFC4AF8D"/>
         <SolidColorBrush x:Key="second" Color="#FFE9AAA5"/>
@@ -19,11 +19,11 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <Button x:Name="login" Content="Log in"    HorizontalAlignment="Left" Margin="139,109,0,0" VerticalAlignment="Top" Width="177" Height="50" Background="{DynamicResource third}" Foreground="White" FontSize="24" FontFamily="Arial" Click="login_Click" Style="{DynamicResource Rounded}" BorderBrush="White"/>
-        <Button x:Name="SignIn" Content="Sign in "  HorizontalAlignment="Left" Margin="139,177,0,0" VerticalAlignment="Top" Width="177" Height="50" Background="{DynamicResource third}" Foreground="White" FontSize="24" FontFamily="Arial" Style="{DynamicResource Rounded}" Click="SignIn_Click" BorderBrush="White"/>
-        <Button x:Name="exit" Content="Exit"  HorizontalAlignment="Left" Margin="155,322,0,0" VerticalAlignment="Top" Width="145" Height="37" Background="{DynamicResource second}" Foreground="White" FontSize="24" Click="exit_Click" FontFamily="Arial" Style="{DynamicResource Rounded}" BorderBrush="White"/>
-        <Image x:Name="myLib" HorizontalAlignment="Left" Height="187" Margin="58,-28,0,0" VerticalAlignment="Top" Width="348" Source="library.png"/>
-        <Button x:Name="guest" Content="Guest"  HorizontalAlignment="Left" Margin="139,248,0,0" VerticalAlignment="Top" Width="177" Height="50" Background="{DynamicResource third}" Foreground="White" FontSize="24" FontFamily="Arial" Style="{DynamicResource Rounded}" Click="Guest_Click" BorderBrush="White"/>
+        <Button x:Name="login" Content="Log in"    HorizontalAlignment="Left" Margin="151,111,0,0" VerticalAlignment="Top" Width="177" Height="50" Background="{DynamicResource third}" Foreground="White" FontSize="24" FontFamily="Arial" Click="login_Click" Style="{DynamicResource Rounded}" BorderBrush="White"/>
+        <Button x:Name="SignIn" Content="Sign in "  HorizontalAlignment="Left" Margin="151,179,0,0" VerticalAlignment="Top" Width="177" Height="50" Background="{DynamicResource third}" Foreground="White" FontSize="24" FontFamily="Arial" Style="{DynamicResource Rounded}" Click="SignIn_Click" BorderBrush="White"/>
+        <Button x:Name="exit" Content="Exit"  HorizontalAlignment="Left" Margin="167,324,0,0" VerticalAlignment="Top" Width="145" Height="37" Background="{DynamicResource second}" Foreground="White" FontSize="24" Click="exit_Click" FontFamily="Arial" Style="{DynamicResource Rounded}" BorderBrush="White"/>
+        <Image x:Name="myLib" HorizontalAlignment="Left" Height="187" Margin="70,-26,0,0" VerticalAlignment="Top" Width="348" Source="library.png"/>
+        <Button x:Name="guest" Content="Catalog"  HorizontalAlignment="Left" Margin="151,250,0,0" VerticalAlignment="Top" Width="177" Height="50" Background="{DynamicResource third}" Foreground="White" FontSize="24" FontFamily="Arial" Style="{DynamicResource Rounded}" Click="Guest_Click" BorderBrush="White"/>
 
     </Grid>
 

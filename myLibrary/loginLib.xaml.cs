@@ -84,13 +84,14 @@ namespace myLibrary
             }
             if (access == "user")
             {
+                books.Visibility = Visibility.Hidden;
                 sql = "Select b.nameBook as 'Книги', isd.issuedDate as 'Дата выдачи', isd.returnDate as 'Дата возврата' from issuedbooks as isd inner join library_card as lc inner join books as b inner join login as l on isd.id_library_card = lc.id_library_card and lc.id_login = l.id_login and isd.idBooks = b.idBooks and l.login = '" + user + "'";
+                
             }
             if (access == "admin")
             {
-
+                MessageBox.Show( "Вы зашли как администратор!", "Вход", MessageBoxButton.OK, MessageBoxImage.Information);
                 profile.Visibility = Visibility.Hidden;
-                catalog.Visibility = Visibility.Hidden;
                 srok.Visibility = Visibility.Hidden;
                 fine.Visibility = Visibility.Hidden;
                 recom.Visibility = Visibility.Hidden;
@@ -98,6 +99,11 @@ namespace myLibrary
             }
             if (access == "librarian")
             {
+                MessageBox.Show("Вы зашли как библиотекарь!", "Вход", MessageBoxButton.OK, MessageBoxImage.Information);
+                profile.Visibility = Visibility.Hidden;
+                srok.Visibility = Visibility.Hidden;
+                fine.Visibility = Visibility.Hidden;
+                recom.Visibility = Visibility.Hidden;
                 sql = "Select * from issuedbooks";
             }
             Search(sql);
@@ -199,6 +205,29 @@ namespace myLibrary
             textBook.Content = "Результат поиска:";
             string sql = "SELECT b.nameBook as Название, b.author as Автор, b.year as Год, g.nameGen as Жанр,p.namePub as Издательство FROM books as b inner join genre as g inner join publishers as p on b.idGen = g.idGenre and b.idPub = p.idPub and b.namebook Like Concat('%', '" + book + "', '%') and g.nameGen= '"+gen+"'";
             Search(sql);
+        }
+
+        private void books_Click(object sender, RoutedEventArgs e)
+        {
+            textBook.Content = "Выданные книги:";
+            string sql = "SELECT * From issuedbooks";
+            Search(sql);
+        }
+
+        private void saveBook(object sender, RoutedEventArgs e)
+        {
+            String changed;
+            
+        }
+
+        private void dataGrid_SelectedCellsChanged(object sender, SelectedCellsChangedEventArgs e)
+        {
+           /* 
+            if(dataGrid.SelectedItem !=null)
+            {
+                string change = dataGrid.SelectedCells.ToString();
+                MessageBox.Show(change);
+            }*/
         }
     }
 }

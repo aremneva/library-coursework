@@ -29,7 +29,7 @@ namespace myLibrary
             }
             catch (MySqlException e)
             {
-                MessageBox.Show("Ошибка подключения " + e);
+                MessageBox.Show(""+e, "Ошибка SQL", MessageBoxButton.OK, MessageBoxImage.Error);
             }
             return dt;
         }
