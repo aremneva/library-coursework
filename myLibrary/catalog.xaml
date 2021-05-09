@@ -5,20 +5,20 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:myLibrary"
         mc:Ignorable="d"
-        Title="Книги" Height="551.505" Width="800">
+        Title="Книги" Height="551.505" Width="800" Background="White">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <Image Source="library.png">
-            
+        <Image Source="library.png" OpacityMask="#33000000">
+
         </Image>
         <ListBox Margin="0,0,-0.4,0"  ScrollViewer.VerticalScrollBarVisibility="Visible">
             <ListBoxItem>
                 <StackPanel Orientation="Horizontal" Width="603">
                     <Image x:Name="book1" Margin="3" Source="images/1.jpeg" Height="248" Width="160"/>
                     <TextBlock
-                        FontFamily="Century Gothic" FontSize="16" FontStretch="UltraExpanded" FontStyle="Italic" 
+                        FontFamily="Century Gothic" FontSize="16" FontStretch="UltraExpanded" FontStyle="Normal" 
                         Margin="3"
                         Text="Анна Каренина " LineHeight="Auto"
                         Padding="5,10,5,10" Width="459"/>
@@ -29,7 +29,7 @@
                 <StackPanel Orientation="Horizontal" Width="603">
                     <Image x:Name="book2" Margin="3" Source="images/2.jpg" Height="248" Width="160"/>
                     <TextBlock
-                        FontFamily="Century Gothic" FontSize="16" FontStretch="UltraExpanded" FontStyle="Italic" 
+                        FontFamily="Century Gothic" FontSize="16" FontStretch="UltraExpanded" FontStyle="Normal" 
                         Margin="3"
                         Text="Преступление и наказние " LineHeight="Auto"
                         Padding="5,10,5,10" Width="459"/>
@@ -39,7 +39,7 @@
                 <StackPanel Orientation="Horizontal" Width="603">
                     <Image x:Name="book3" Margin="3" Source="images/3.jpg" Height="248" Width="160"/>
                     <TextBlock
-                        FontFamily="Century Gothic" FontSize="16" FontStretch="UltraExpanded" FontStyle="Italic" 
+                        FontFamily="Century Gothic" FontSize="16" FontStretch="UltraExpanded" FontStyle="Normal" 
                         Margin="3"
                         Text="451 градус по фаренгейту " LineHeight="Auto"
                         Padding="5,10,5,10" Width="459"/>

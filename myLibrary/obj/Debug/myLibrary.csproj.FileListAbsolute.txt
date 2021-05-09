@@ -110,3 +110,8 @@ C:\Users\remne\Source\Repos\library-coursework\myLibrary\obj\Debug\myLibrary.csp
 C:\Users\remne\Source\Repos\library-coursework\myLibrary\obj\Debug\myLibrary.csproj.CopyComplete
 C:\Users\remne\Source\Repos\library-coursework\myLibrary\obj\Debug\myLibrary.exe
 C:\Users\remne\Source\Repos\library-coursework\myLibrary\obj\Debug\myLibrary.pdb
+C:\Users\remne\Source\Repos\library-coursework\myLibrary\bin\Debug\MaterialDesignColors.dll
+C:\Users\remne\Source\Repos\library-coursework\myLibrary\bin\Debug\MaterialDesignThemes.Wpf.dll
+C:\Users\remne\Source\Repos\library-coursework\myLibrary\bin\Debug\MaterialDesignColors.pdb
+C:\Users\remne\Source\Repos\library-coursework\myLibrary\bin\Debug\MaterialDesignThemes.Wpf.pdb
+C:\Users\remne\Source\Repos\library-coursework\myLibrary\bin\Debug\MaterialDesignThemes.Wpf.xml

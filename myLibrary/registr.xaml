@@ -5,17 +5,22 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:myLibrary"
         mc:Ignorable="d"
-        Title="registr" Height="450" Width="530">
+        Title="registr" Height="450" Width="530"
+         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+     TextElement.FontWeight="Regular"
+     TextElement.FontSize="13"
+     TextOptions.TextFormattingMode="Ideal"
+     TextOptions.TextRenderingMode="Auto"
+     Background="{DynamicResource MaterialDesignPaper}"
+     FontFamily="{DynamicResource MaterialDesignFont}">
     <Grid>
-        <Button x:Name="login" Content="Sign in"  HorizontalAlignment="Left" Margin="205,323,0,0" VerticalAlignment="Top" Width="153" Height="49" Foreground="White" BorderBrush="FloralWhite" FontSize="20" Click="Login" Style="{DynamicResource Rounded}" Background="#FF505E79"  />
-        <Button x:Name="back" Content="Back"  HorizontalAlignment="Left" Margin="394,364,0,0" VerticalAlignment="Top" Width="91" Height="33" Foreground="White" BorderBrush="White" FontSize="20" Click="Back_Click" Style="{DynamicResource Rounded}" Background="#FFE9AAA5" RenderTransformOrigin="0.587,0.449"/>
-        <TextBox x:Name="name"   TextWrapping="Wrap"  VerticalAlignment="Top" Opacity="0.85" TabIndex="0" Margin="165,153,0,0" Height="39" TextAlignment="Center" FontSize="22" FontFamily="{DynamicResource {x:Static SystemFonts.MessageFontFamilyKey}}" Background="White" Foreground="Black" HorizontalAlignment="Left" Width="231"/>
-        <PasswordBox x:Name="pas1" HorizontalAlignment="Left" Margin="165,211,0,0" VerticalAlignment="Top" Width="231" Height="40" FontSize="22"/>
-        <Label Content="SIGN IN" HorizontalAlignment="Left" Margin="178,68,0,0" VerticalAlignment="Top" Background="White" FontSize="60" FontFamily="Poor Richard" Height="66" Width="205" BorderBrush="#FF5A796A" Foreground="#FF5A796A"/>
-        <Label Content="Login:" HorizontalAlignment="Left" Margin="96,153,0,0" VerticalAlignment="Top" Background="White" Foreground="#FF024002" FontSize="20"/>
-        <Label Content="Password:" HorizontalAlignment="Left" Margin="62,211,0,0" VerticalAlignment="Top" Background="White" Foreground="#FF024002" FontSize="20"/>
-        <PasswordBox x:Name="pas2" HorizontalAlignment="Left" Margin="165,266,0,0" VerticalAlignment="Top" Width="231" Height="40" FontSize="22"/>
-        <Label Content="Password:" HorizontalAlignment="Left" Margin="62,266,0,0" VerticalAlignment="Top" Background="White" Foreground="#FF024002" FontSize="20"/>
+        <Button x:Name="login" Content="Sign in"  HorizontalAlignment="Left" Margin="188,323,0,0" VerticalAlignment="Top" Width="153" Height="49" Foreground="White" BorderBrush="FloralWhite" FontSize="20" Click="Login" Style="{DynamicResource Rounded}" Background="#FF505E79"  />
+        <Button x:Name="back" Content="Back"  HorizontalAlignment="Left" Margin="409,361,0,0" VerticalAlignment="Top" Width="91" Height="33" Foreground="White" BorderBrush="White" FontSize="20" Click="Back_Click" Style="{DynamicResource Rounded}" Background="#FFE9AAA5" RenderTransformOrigin="0.574,0.102"/>
+        <TextBox x:Name="name"  materialDesign:HintAssist.Hint="Enter login..." TextWrapping="Wrap"  VerticalAlignment="Top" Opacity="0.85" TabIndex="0" Margin="95,149,0,0" Height="39" TextAlignment="Center" FontSize="22" FontFamily="{DynamicResource {x:Static SystemFonts.MessageFontFamilyKey}}" Background="White" Foreground="Black" HorizontalAlignment="Left" Width="320"/>
+        <PasswordBox x:Name="pas1" materialDesign:HintAssist.Hint="Enter password..."  HorizontalAlignment="Left" Margin="95,207,0,0" VerticalAlignment="Top" Width="320" Height="40" FontSize="22"/>
+        <Label Content="SIGN IN" HorizontalAlignment="Left" Margin="158,58,0,0" VerticalAlignment="Top" Background="White" FontSize="60" FontFamily="Poor Richard" Height="66" Width="205" BorderBrush="#FF5A796A" Foreground="#FF5A796A"/>
+        <PasswordBox x:Name="pas2" materialDesign:HintAssist.Hint="Repeat password..." HorizontalAlignment="Left" Margin="95,262,0,0" VerticalAlignment="Top" Width="320" Height="40" FontSize="22"/>
         <Image x:Name="myLib" HorizontalAlignment="Left" Height="91" Margin="10,-18,0,0" VerticalAlignment="Top" Width="191" Source="library.png"/>
 
     </Grid>

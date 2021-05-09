@@ -5,18 +5,27 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:myLibrary"
         mc:Ignorable="d"
-        Title="Мой профиль" Height="435.067" Width="524.8">
+        Title="Мой профиль" Height="435.067" Width="524.8"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+     TextElement.FontWeight="Regular"
+     TextElement.FontSize="13"
+     TextOptions.TextFormattingMode="Ideal"
+     TextOptions.TextRenderingMode="Auto"
+     Background="{DynamicResource MaterialDesignPaper}"
+     FontFamily="{DynamicResource MaterialDesignFont}">
     <Window.Resources>
         <SolidColorBrush x:Key="fo" Color="#FF505E79"/>
     </Window.Resources>
     <Grid Margin="-3,0,3.4,0">
-        <Button x:Name="save" Content="Save" HorizontalAlignment="Left" Margin="207,344,0,0" VerticalAlignment="Top" Width="118" Height="40" Foreground="White" BorderBrush="FloralWhite" Style="{DynamicResource Rounded}" RenderTransformOrigin="1.625,-3.933" FontSize="16" Click="save_Click" Background="{DynamicResource fo}"/>
-        <TextBox x:Name="familia" HorizontalAlignment="Left" Height="23" Margin="113,107,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="nameUs" HorizontalAlignment="Left" Height="23" Margin="113,163,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="otchestv" HorizontalAlignment="Left" Height="23" Margin="113,220,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="phone" HorizontalAlignment="Left" Height="23" Margin="367,102,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="passport" HorizontalAlignment="Left" Height="23" Margin="367,158,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="adress1" ScrollViewer.VerticalScrollBarVisibility="Auto" HorizontalAlignment="Left" Height="23" Margin="367,216,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+
+        <Button x:Name="save"  Content="Save" HorizontalAlignment="Left" Margin="207,344,0,0" VerticalAlignment="Top" Width="118" Height="40" Foreground="White" BorderBrush="FloralWhite" Style="{DynamicResource Rounded}" RenderTransformOrigin="1.625,-3.933" FontSize="16" Click="save_Click" Background="{DynamicResource fo}"/>
+        <TextBox x:Name="familia" materialDesign:HintAssist.Hint="Enter lastname..." HorizontalAlignment="Left" Height="23" Margin="107,106,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="148"  />
+        <TextBox x:Name="nameUs" materialDesign:HintAssist.Hint="Enter name..." HorizontalAlignment="Left" Height="23" Margin="107,162,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="148"/>
+        <TextBox x:Name="otchestv" materialDesign:HintAssist.Hint="Enter patronymic..." HorizontalAlignment="Left" Height="23" Margin="107,219,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="148"/>
+        <TextBox x:Name="phone" materialDesign:HintAssist.Hint="Enter phone number..." HorizontalAlignment="Left" Height="23" Margin="364,99,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="138"/>
+        <TextBox x:Name="passport" materialDesign:HintAssist.Hint="Enter password..." HorizontalAlignment="Left" Height="23" Margin="364,155,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="138"/>
+        <TextBox x:Name="adress1"  materialDesign:HintAssist.Hint="Enter adress..." ScrollViewer.VerticalScrollBarVisibility="Auto" HorizontalAlignment="Left" Height="23" Margin="364,213,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="138"/>
         <Label Content="Фамилия:" HorizontalAlignment="Left" Margin="32,103,0,0" VerticalAlignment="Top"/>
         <Label Content="Имя:" HorizontalAlignment="Left" Margin="35,159,0,0" VerticalAlignment="Top"/>
         <Label Content="Отчество:" HorizontalAlignment="Left" Margin="32,217,0,0" VerticalAlignment="Top"/>
@@ -27,13 +36,13 @@
         <Image x:Name="myLib" HorizontalAlignment="Left" Height="107" Margin="10,0,0,0" VerticalAlignment="Top" Width="206" Source="library.png"/>
         <Label x:Name="username" Content="username" HorizontalAlignment="Left" Margin="409,40,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.612,0.855" Foreground="{DynamicResource fo}" FontSize="14"/>
         <Label x:Name="username_Copy" Content="User:" HorizontalAlignment="Left" Margin="367,40,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.612,0.855" Foreground="{DynamicResource fo}" FontSize="14"/>
-        <StackPanel HorizontalAlignment="Left" Height="57" Margin="364,254,0,0" VerticalAlignment="Top" Width="100">
+        <StackPanel HorizontalAlignment="Left" Height="69" Margin="364,254,0,0" VerticalAlignment="Top" Width="113">
             <Label Content="Пол:" Height="25"/>
             <RadioButton x:Name="Fem" Content="Женский"/>
             <RadioButton x:Name="Male" Content="Мужской"/>
         </StackPanel>
-        <Label Content="Дата рождения:" HorizontalAlignment="Left" Margin="15,272,0,0" VerticalAlignment="Top"/>
-        <DatePicker x:Name="birth" HorizontalAlignment="Left" Margin="113,274,0,0" VerticalAlignment="Top" Width="120" DisplayDateStart="1920-01-01"/>
+        <Label Content="Дата рождения:" HorizontalAlignment="Left" Margin="0,274,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.373,0.726"/>
+        <DatePicker x:Name="birth" materialDesign:HintAssist.Hint="Choose date" HorizontalAlignment="Left" Margin="107,273,0,0" VerticalAlignment="Top" Width="148" DisplayDateStart="1920-01-01"/>
 
     </Grid>
 </Window>

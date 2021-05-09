@@ -38,21 +38,7 @@ namespace myLibrary
 
         public String FindGen()
         {
-            string gen="";
-            if (filtG.IsChecked == true)  gen = filtG.Content.ToString();
-            if (filtG2.IsChecked == true) gen = filtG2.Content.ToString();
-            if (filtG3.IsChecked == true) gen = filtG3.Content.ToString();
-            if (filtG4.IsChecked == true) gen = filtG4.Content.ToString();
-            if (filtG5.IsChecked == true) gen = filtG5.Content.ToString();
-            if (filtG6.IsChecked == true) gen = filtG6.Content.ToString();
-            if (filtG7.IsChecked == true) gen = filtG7.Content.ToString();
-            if (filtG8.IsChecked == true) gen = filtG8.Content.ToString();
-            if (filtG9.IsChecked == true) gen = filtG9.Content.ToString();
-            if (filtG10.IsChecked == true) gen = filtG10.Content.ToString();
-            if (filtG11.IsChecked == true) gen = filtG11.Content.ToString();
-            if (filtG12.IsChecked == true) gen = filtG12.Content.ToString();
-            if (filtG13.IsChecked == true) gen = filtG13.Content.ToString();
-            if (filtG14.IsChecked == true) gen = filtG14.Content.ToString();
+            string gen = filterG.SelectedItem.ToString();
             return gen;
         }
 
@@ -85,6 +71,7 @@ namespace myLibrary
             if (access == "user")
             {
                 books.Visibility = Visibility.Hidden;
+                saveB.Visibility = Visibility.Hidden;
                 sql = "Select b.nameBook as 'Книги', isd.issuedDate as 'Дата выдачи', isd.returnDate as 'Дата возврата' from issuedbooks as isd inner join library_card as lc inner join books as b inner join login as l on isd.id_library_card = lc.id_library_card and lc.id_login = l.id_login and isd.idBooks = b.idBooks and l.login = '" + user + "'";
                 
             }
@@ -139,10 +126,11 @@ namespace myLibrary
 
         private void SearchBook_TextChanged(object sender, TextChangedEventArgs e)
         {
-            String book = searchBook.Text;
-            string sql = "SELECT b.nameBook as Название, b.author as Автор, b.year as Год, g.nameGen as Жанр,p.namePub as Издательство FROM books as b inner join genre as g inner join publishers as p on b.idGen = g.idGenre and b.idPub = p.idPub and b.namebook Like Concat('%', '" + book + "', '%')";
+            /*  String book = searchBook.Text;
+              string sql = "SELECT b.nameBook as Название, b.author as Автор, b.year as Год, g.nameGen as Жанр,p.namePub as Издательство FROM books as b inner join genre as g inner join publishers as p on b.idGen = g.idGenre and b.idPub = p.idPub and b.namebook Like Concat('%', '" + book + "', '%')";
 
-            Search(sql);
+              Search(sql);*/
+            GetFilter();
         }
 
         private void Prof_Click(object sender, RoutedEventArgs e)
@@ -160,7 +148,7 @@ namespace myLibrary
             Search(sql);
         }
 
-        private void SecondF1_Checked(object sender, RoutedEventArgs e)
+       /* private void SecondF1_Checked(object sender, RoutedEventArgs e)
         {
             secondF1.IsChecked = false;
             String book = searchBook.Text;
@@ -189,7 +177,7 @@ namespace myLibrary
             string sql = "SELECT b.nameBook as Название, b.author as Автор, b.year as Год, g.nameGen as Жанр,p.namePub as Издательство FROM books as b inner join genre as g inner join publishers as p on b.idGen = g.idGenre and b.idPub = p.idPub and b.namebook Like Concat('%', '" + book + "', '%')";
 
             Search(sql);
-        }
+        }*/
 
         private void Catalog_Click(object sender, RoutedEventArgs e)
         {
@@ -198,7 +186,7 @@ namespace myLibrary
             this.Close();
         }
 
-        private void Gen(object sender, RoutedEventArgs e)
+       /* private void Gen(object sender, RoutedEventArgs e)
         {
             string gen = FindGen();
             String book = searchBook.Text;
@@ -206,7 +194,7 @@ namespace myLibrary
             string sql = "SELECT b.nameBook as Название, b.author as Автор, b.year as Год, g.nameGen as Жанр,p.namePub as Издательство FROM books as b inner join genre as g inner join publishers as p on b.idGen = g.idGenre and b.idPub = p.idPub and b.namebook Like Concat('%', '" + book + "', '%') and g.nameGen= '"+gen+"'";
             Search(sql);
         }
-
+*/
         private void books_Click(object sender, RoutedEventArgs e)
         {
             textBook.Content = "Выданные книги:";
@@ -216,7 +204,7 @@ namespace myLibrary
 
         private void saveBook(object sender, RoutedEventArgs e)
         {
-            String changed;
+          //  String changed;
             
         }
 
@@ -228,6 +216,48 @@ namespace myLibrary
                 string change = dataGrid.SelectedCells.ToString();
                 MessageBox.Show(change);
             }*/
+        }
+
+        private void all_Books(object sender, RoutedEventArgs e)
+        {
+            textBook.Content = "Все книги:";
+            string sql = "SELECT b.nameBook as Название, b.author as Автор, b.year as Год, g.nameGen as Жанр,p.namePub as Издательство FROM books as b inner join genre as g inner join publishers as p on b.idGen = g.idGenre and b.idPub = p.idPub";
+            Search(sql);
+        }
+
+        private void GetFilter() {
+            String book = searchBook.Text;
+            string fil = filter1.Text;
+            string gen = filterG.Text;
+            string sql="";
+
+            if ((fil == "-") || (gen == "-"))
+            {
+                if((fil=="-")&&(gen=="-")) sql = "SELECT b.nameBook as Название, b.author as Автор, b.year as Год, g.nameGen as Жанр,p.namePub as Издательство FROM books as b inner join genre as g inner join publishers as p on b.idGen = g.idGenre and b.idPub = p.idPub and b.namebook Like Concat('%', '" + book + "', '%')";
+               
+                if ((fil == "-") && (gen != "-")) sql = "SELECT b.nameBook as Название, b.author as Автор, b.year as Год, g.nameGen as Жанр,p.namePub as Издательство FROM books as b inner join genre as g inner join publishers as p on b.idGen = g.idGenre and b.idPub = p.idPub and b.namebook Like Concat('%', '" + book + "', '%') and g.nameGen= '" + gen + "'";
+                if ((fil != "-") && (gen == "-"))
+                {
+                    if (fil == "По году") sql = "SELECT b.nameBook as Название, b.author as Автор, b.year as Год, g.nameGen as Жанр,p.namePub as Издательство FROM books as b inner join genre as g inner join publishers as p on b.idGen = g.idGenre and b.idPub = p.idPub and b.namebook Like Concat('%', '" + book + "', '%') order by b.year desc";
+                    if (fil == "По названию") sql = "SELECT b.nameBook as Название, b.author as Автор, b.year as Год, g.nameGen as Жанр,p.namePub as Издательство FROM books as b inner join genre as g inner join publishers as p on b.idGen = g.idGenre and b.idPub = p.idPub and b.namebook Like Concat('%', '" + book + "', '%') order by b.nameBook asc";
+                }
+            }
+            else {
+                if (fil == "По году") sql = "SELECT b.nameBook as Название, b.author as Автор, b.year as Год, g.nameGen as Жанр,p.namePub as Издательство FROM books as b inner join genre as g inner join publishers as p on b.idGen = g.idGenre and b.idPub = p.idPub and b.namebook Like Concat('%', '" + book + "', '%') and g.nameGen= '" + gen + "' order by b.year desc";
+                if (fil == "По названию") sql = "SELECT b.nameBook as Название, b.author as Автор, b.year as Год, g.nameGen as Жанр,p.namePub as Издательство FROM books as b inner join genre as g inner join publishers as p on b.idGen = g.idGenre and b.idPub = p.idPub and b.namebook Like Concat('%', '" + book + "', '%') and g.nameGen= '" + gen + "' order by b.nameBook asc";
+            }
+            Search(sql);
+        }
+
+
+        private void filterG_DropDownClosed(object sender, EventArgs e)
+        {
+            GetFilter();
+        }
+
+        private void filter1_DropDownClosed(object sender, EventArgs e)
+        {
+            GetFilter();
         }
     }
 }
