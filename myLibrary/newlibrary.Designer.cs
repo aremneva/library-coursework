@@ -20,9 +20,9 @@ namespace myLibrary {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("newlibraryDataSet")]
+    [global::System.Xml.Serialization.XmlRootAttribute("newlibrary")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class newlibraryDataSet : global::System.Data.DataSet {
+    public partial class newlibrary : global::System.Data.DataSet {
         
         private booksDataTable tablebooks;
         
@@ -82,13 +82,15 @@ namespace myLibrary {
         
         private global::System.Data.DataRelation relationidReaders;
         
+        private global::System.Data.DataRelation relationid_login;
+        
         private global::System.Data.DataRelation relationidPost;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public newlibraryDataSet() {
+        public newlibrary() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -99,7 +101,7 @@ namespace myLibrary {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        protected newlibraryDataSet(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected newlibrary(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -432,7 +434,7 @@ namespace myLibrary {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            newlibraryDataSet cln = ((newlibraryDataSet)(base.Clone()));
+            newlibrary cln = ((newlibrary)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -679,15 +681,16 @@ namespace myLibrary {
             this.relationidBooks = this.Relations["idBooks"];
             this.relationidStaff = this.Relations["idStaff"];
             this.relationidReaders = this.Relations["idReaders"];
+            this.relationid_login = this.Relations["id_login"];
             this.relationidPost = this.Relations["idPost"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "newlibraryDataSet";
+            this.DataSetName = "newlibrary";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/newlibraryDataSet.xsd";
+            this.Namespace = "http://tempuri.org/newlibrary.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
             this.tablebooks = new booksDataTable();
@@ -766,6 +769,10 @@ namespace myLibrary {
                         this.tablereaders.idReadersColumn}, new global::System.Data.DataColumn[] {
                         this.tablelibrary_card.idReadersColumn}, false);
             this.Relations.Add(this.relationidReaders);
+            this.relationid_login = new global::System.Data.DataRelation("id_login", new global::System.Data.DataColumn[] {
+                        this.tablelogin.id_loginColumn}, new global::System.Data.DataColumn[] {
+                        this.tablestaff.id_loginColumn}, false);
+            this.Relations.Add(this.relationid_login);
             this.relationidPost = new global::System.Data.DataRelation("idPost", new global::System.Data.DataColumn[] {
                         this.tablepost.idPostColumn}, new global::System.Data.DataColumn[] {
                         this.tablestaff.idPostColumn}, false);
@@ -903,7 +910,7 @@ namespace myLibrary {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            newlibraryDataSet ds = new newlibraryDataSet();
+            newlibrary ds = new newlibrary();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -1306,7 +1313,7 @@ namespace myLibrary {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                newlibraryDataSet ds = new newlibraryDataSet();
+                newlibrary ds = new newlibrary();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -1589,7 +1596,7 @@ namespace myLibrary {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                newlibraryDataSet ds = new newlibraryDataSet();
+                newlibrary ds = new newlibrary();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -1879,7 +1886,7 @@ namespace myLibrary {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                newlibraryDataSet ds = new newlibraryDataSet();
+                newlibrary ds = new newlibrary();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -2170,7 +2177,7 @@ namespace myLibrary {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                newlibraryDataSet ds = new newlibraryDataSet();
+                newlibrary ds = new newlibrary();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -2527,7 +2534,7 @@ namespace myLibrary {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                newlibraryDataSet ds = new newlibraryDataSet();
+                newlibrary ds = new newlibrary();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -2599,6 +2606,8 @@ namespace myLibrary {
             
             private global::System.Data.DataColumn columndate_of_issue;
             
+            private global::System.Data.DataColumn columnid_login;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public library_cardDataTable() {
@@ -2658,6 +2667,14 @@ namespace myLibrary {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn id_loginColumn {
+                get {
+                    return this.columnid_login;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -2693,12 +2710,13 @@ namespace myLibrary {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public library_cardRow Addlibrary_cardRow(readersRow parentreadersRowByidReaders, System.DateTime date_of_issue) {
+            public library_cardRow Addlibrary_cardRow(readersRow parentreadersRowByidReaders, System.DateTime date_of_issue, int id_login) {
                 library_cardRow rowlibrary_cardRow = ((library_cardRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         null,
-                        date_of_issue};
+                        date_of_issue,
+                        id_login};
                 if ((parentreadersRowByidReaders != null)) {
                     columnValuesArray[1] = parentreadersRowByidReaders[0];
                 }
@@ -2734,6 +2752,7 @@ namespace myLibrary {
                 this.columnid_library_card = base.Columns["id_library_card"];
                 this.columnidReaders = base.Columns["idReaders"];
                 this.columndate_of_issue = base.Columns["date_of_issue"];
+                this.columnid_login = base.Columns["id_login"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2745,6 +2764,8 @@ namespace myLibrary {
                 base.Columns.Add(this.columnidReaders);
                 this.columndate_of_issue = new global::System.Data.DataColumn("date_of_issue", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columndate_of_issue);
+                this.columnid_login = new global::System.Data.DataColumn("id_login", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnid_login);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnid_library_card}, true));
                 this.columnid_library_card.AutoIncrement = true;
@@ -2820,7 +2841,7 @@ namespace myLibrary {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                newlibraryDataSet ds = new newlibraryDataSet();
+                newlibrary ds = new newlibrary();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -2886,11 +2907,13 @@ namespace myLibrary {
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class loginDataTable : global::System.Data.TypedTableBase<loginRow> {
             
-            private global::System.Data.DataColumn columnid_user;
+            private global::System.Data.DataColumn columnid_login;
             
             private global::System.Data.DataColumn columnlogin;
             
             private global::System.Data.DataColumn columnpassword;
+            
+            private global::System.Data.DataColumn columnaccess;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
@@ -2927,9 +2950,9 @@ namespace myLibrary {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn id_userColumn {
+            public global::System.Data.DataColumn id_loginColumn {
                 get {
-                    return this.columnid_user;
+                    return this.columnid_login;
                 }
             }
             
@@ -2946,6 +2969,14 @@ namespace myLibrary {
             public global::System.Data.DataColumn passwordColumn {
                 get {
                     return this.columnpassword;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn accessColumn {
+                get {
+                    return this.columnaccess;
                 }
             }
             
@@ -2986,12 +3017,13 @@ namespace myLibrary {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public loginRow AddloginRow(string login, string password) {
+            public loginRow AddloginRow(string login, string password, string access) {
                 loginRow rowloginRow = ((loginRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         login,
-                        password};
+                        password,
+                        access};
                 rowloginRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowloginRow);
                 return rowloginRow;
@@ -2999,9 +3031,9 @@ namespace myLibrary {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public loginRow FindByid_user(int id_user) {
+            public loginRow FindByid_login(int id_login) {
                 return ((loginRow)(this.Rows.Find(new object[] {
-                            id_user})));
+                            id_login})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3021,29 +3053,36 @@ namespace myLibrary {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             internal void InitVars() {
-                this.columnid_user = base.Columns["id_user"];
+                this.columnid_login = base.Columns["id_login"];
                 this.columnlogin = base.Columns["login"];
                 this.columnpassword = base.Columns["password"];
+                this.columnaccess = base.Columns["access"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             private void InitClass() {
-                this.columnid_user = new global::System.Data.DataColumn("id_user", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnid_user);
+                this.columnid_login = new global::System.Data.DataColumn("id_login", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnid_login);
                 this.columnlogin = new global::System.Data.DataColumn("login", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnlogin);
                 this.columnpassword = new global::System.Data.DataColumn("password", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnpassword);
+                this.columnaccess = new global::System.Data.DataColumn("access", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnaccess);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnid_user}, true));
-                this.columnid_user.AutoIncrement = true;
-                this.columnid_user.AutoIncrementSeed = -1;
-                this.columnid_user.AutoIncrementStep = -1;
-                this.columnid_user.AllowDBNull = false;
-                this.columnid_user.Unique = true;
+                                this.columnid_login}, true));
+                this.columnid_login.AutoIncrement = true;
+                this.columnid_login.AutoIncrementSeed = -1;
+                this.columnid_login.AutoIncrementStep = -1;
+                this.columnid_login.AllowDBNull = false;
+                this.columnid_login.Unique = true;
+                this.columnlogin.AllowDBNull = false;
                 this.columnlogin.MaxLength = 45;
-                this.columnpassword.MaxLength = 45;
+                this.columnpassword.AllowDBNull = false;
+                this.columnpassword.MaxLength = 255;
+                this.columnaccess.AllowDBNull = false;
+                this.columnaccess.MaxLength = 45;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3111,7 +3150,7 @@ namespace myLibrary {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                newlibraryDataSet ds = new newlibraryDataSet();
+                newlibrary ds = new newlibrary();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -3432,7 +3471,7 @@ namespace myLibrary {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                newlibraryDataSet ds = new newlibraryDataSet();
+                newlibrary ds = new newlibrary();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -3738,7 +3777,7 @@ namespace myLibrary {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                newlibraryDataSet ds = new newlibraryDataSet();
+                newlibrary ds = new newlibrary();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -4118,7 +4157,7 @@ namespace myLibrary {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                newlibraryDataSet ds = new newlibraryDataSet();
+                newlibrary ds = new newlibrary();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -4205,6 +4244,8 @@ namespace myLibrary {
             private global::System.Data.DataColumn columnPasport;
             
             private global::System.Data.DataColumn columncoef;
+            
+            private global::System.Data.DataColumn columnid_login;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
@@ -4329,6 +4370,14 @@ namespace myLibrary {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn id_loginColumn {
+                get {
+                    return this.columnid_login;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -4364,7 +4413,7 @@ namespace myLibrary {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public staffRow AddstaffRow(postRow parentpostRowByidPost, string Familia, string Imya, string Otchestvo, int Vozrast, string Pol, string Adress, string Phone, int Pasport, double coef) {
+            public staffRow AddstaffRow(postRow parentpostRowByidPost, string Familia, string Imya, string Otchestvo, int Vozrast, string Pol, string Adress, string Phone, int Pasport, float coef, loginRow parentloginRowByid_login) {
                 staffRow rowstaffRow = ((staffRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -4377,9 +4426,13 @@ namespace myLibrary {
                         Adress,
                         Phone,
                         Pasport,
-                        coef};
+                        coef,
+                        null};
                 if ((parentpostRowByidPost != null)) {
                     columnValuesArray[1] = parentpostRowByidPost[0];
+                }
+                if ((parentloginRowByid_login != null)) {
+                    columnValuesArray[11] = parentloginRowByid_login[0];
                 }
                 rowstaffRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowstaffRow);
@@ -4421,6 +4474,7 @@ namespace myLibrary {
                 this.columnPhone = base.Columns["Phone"];
                 this.columnPasport = base.Columns["Pasport"];
                 this.columncoef = base.Columns["coef"];
+                this.columnid_login = base.Columns["id_login"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4446,8 +4500,10 @@ namespace myLibrary {
                 base.Columns.Add(this.columnPhone);
                 this.columnPasport = new global::System.Data.DataColumn("Pasport", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnPasport);
-                this.columncoef = new global::System.Data.DataColumn("coef", typeof(double), null, global::System.Data.MappingType.Element);
+                this.columncoef = new global::System.Data.DataColumn("coef", typeof(float), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columncoef);
+                this.columnid_login = new global::System.Data.DataColumn("id_login", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnid_login);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnidStaff}, true));
                 this.columnidStaff.AutoIncrement = true;
@@ -4529,7 +4585,7 @@ namespace myLibrary {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                newlibraryDataSet ds = new newlibraryDataSet();
+                newlibrary ds = new newlibrary();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -4820,7 +4876,7 @@ namespace myLibrary {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                newlibraryDataSet ds = new newlibraryDataSet();
+                newlibrary ds = new newlibrary();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -5083,7 +5139,7 @@ namespace myLibrary {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                newlibraryDataSet ds = new newlibraryDataSet();
+                newlibrary ds = new newlibrary();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -5371,7 +5427,7 @@ namespace myLibrary {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                newlibraryDataSet ds = new newlibraryDataSet();
+                newlibrary ds = new newlibrary();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -5678,7 +5734,7 @@ namespace myLibrary {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                newlibraryDataSet ds = new newlibraryDataSet();
+                newlibrary ds = new newlibrary();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -5956,7 +6012,7 @@ namespace myLibrary {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                newlibraryDataSet ds = new newlibraryDataSet();
+                newlibrary ds = new newlibrary();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -6219,7 +6275,7 @@ namespace myLibrary {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                newlibraryDataSet ds = new newlibraryDataSet();
+                newlibrary ds = new newlibrary();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -6496,7 +6552,7 @@ namespace myLibrary {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                newlibraryDataSet ds = new newlibraryDataSet();
+                newlibrary ds = new newlibrary();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -6769,7 +6825,7 @@ namespace myLibrary {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                newlibraryDataSet ds = new newlibraryDataSet();
+                newlibrary ds = new newlibrary();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -7047,7 +7103,7 @@ namespace myLibrary {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                newlibraryDataSet ds = new newlibraryDataSet();
+                newlibrary ds = new newlibrary();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -7813,6 +7869,22 @@ namespace myLibrary {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int id_login {
+                get {
+                    try {
+                        return ((int)(this[this.tablelibrary_card.id_loginColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'id_login\' в таблице \'library_card\' равно DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablelibrary_card.id_loginColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public readersRow readersRow {
                 get {
                     return ((readersRow)(this.GetParentRow(this.Table.ParentRelations["idReaders"])));
@@ -7832,6 +7904,18 @@ namespace myLibrary {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void Setdate_of_issueNull() {
                 this[this.tablelibrary_card.date_of_issueColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isid_loginNull() {
+                return this.IsNull(this.tablelibrary_card.id_loginColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setid_loginNull() {
+                this[this.tablelibrary_card.id_loginColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7873,12 +7957,12 @@ namespace myLibrary {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int id_user {
+            public int id_login {
                 get {
-                    return ((int)(this[this.tablelogin.id_userColumn]));
+                    return ((int)(this[this.tablelogin.id_loginColumn]));
                 }
                 set {
-                    this[this.tablelogin.id_userColumn] = value;
+                    this[this.tablelogin.id_loginColumn] = value;
                 }
             }
             
@@ -7886,12 +7970,7 @@ namespace myLibrary {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string login {
                 get {
-                    try {
-                        return ((string)(this[this.tablelogin.loginColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Значение для столбца \'login\' в таблице \'login\' равно DBNull.", e);
-                    }
+                    return ((string)(this[this.tablelogin.loginColumn]));
                 }
                 set {
                     this[this.tablelogin.loginColumn] = value;
@@ -7902,12 +7981,7 @@ namespace myLibrary {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string password {
                 get {
-                    try {
-                        return ((string)(this[this.tablelogin.passwordColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Значение для столбца \'password\' в таблице \'login\' равно DBNull.", e);
-                    }
+                    return ((string)(this[this.tablelogin.passwordColumn]));
                 }
                 set {
                     this[this.tablelogin.passwordColumn] = value;
@@ -7916,26 +7990,24 @@ namespace myLibrary {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsloginNull() {
-                return this.IsNull(this.tablelogin.loginColumn);
+            public string access {
+                get {
+                    return ((string)(this[this.tablelogin.accessColumn]));
+                }
+                set {
+                    this[this.tablelogin.accessColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetloginNull() {
-                this[this.tablelogin.loginColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IspasswordNull() {
-                return this.IsNull(this.tablelogin.passwordColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetpasswordNull() {
-                this[this.tablelogin.passwordColumn] = global::System.Convert.DBNull;
+            public staffRow[] GetstaffRows() {
+                if ((this.Table.ChildRelations["id_login"] == null)) {
+                    return new staffRow[0];
+                }
+                else {
+                    return ((staffRow[])(base.GetChildRows(this.Table.ChildRelations["id_login"])));
+                }
             }
         }
         
@@ -8619,10 +8691,10 @@ namespace myLibrary {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public double coef {
+            public float coef {
                 get {
                     try {
-                        return ((double)(this[this.tablestaff.coefColumn]));
+                        return ((float)(this[this.tablestaff.coefColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("Значение для столбца \'coef\' в таблице \'staff\' равно DBNull.", e);
@@ -8630,6 +8702,33 @@ namespace myLibrary {
                 }
                 set {
                     this[this.tablestaff.coefColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int id_login {
+                get {
+                    try {
+                        return ((int)(this[this.tablestaff.id_loginColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'id_login\' в таблице \'staff\' равно DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablestaff.id_loginColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public loginRow loginRow {
+                get {
+                    return ((loginRow)(this.GetParentRow(this.Table.ParentRelations["id_login"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["id_login"]);
                 }
             }
             
@@ -8750,6 +8849,18 @@ namespace myLibrary {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetcoefNull() {
                 this[this.tablestaff.coefColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isid_loginNull() {
+                return this.IsNull(this.tablestaff.id_loginColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setid_loginNull() {
+                this[this.tablestaff.id_loginColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -10183,7 +10294,7 @@ namespace myLibrary {
         }
     }
 }
-namespace myLibrary.newlibraryDataSetTableAdapters {
+namespace myLibrary.newlibraryTableAdapters {
     
     
     /// <summary>
@@ -10632,7 +10743,7 @@ namespace myLibrary.newlibraryDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(newlibraryDataSet.booksDataTable dataTable) {
+        public virtual int Fill(newlibrary.booksDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -10645,9 +10756,9 @@ namespace myLibrary.newlibraryDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual newlibraryDataSet.booksDataTable GetData() {
+        public virtual newlibrary.booksDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            newlibraryDataSet.booksDataTable dataTable = new newlibraryDataSet.booksDataTable();
+            newlibrary.booksDataTable dataTable = new newlibrary.booksDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -10655,14 +10766,14 @@ namespace myLibrary.newlibraryDataSetTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(newlibraryDataSet.booksDataTable dataTable) {
+        public virtual int Update(newlibrary.booksDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(newlibraryDataSet dataSet) {
+        public virtual int Update(newlibrary dataSet) {
             return this.Adapter.Update(dataSet, "books");
         }
         
@@ -11044,7 +11155,7 @@ namespace myLibrary.newlibraryDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(newlibraryDataSet.card_finesDataTable dataTable) {
+        public virtual int Fill(newlibrary.card_finesDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -11057,9 +11168,9 @@ namespace myLibrary.newlibraryDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual newlibraryDataSet.card_finesDataTable GetData() {
+        public virtual newlibrary.card_finesDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            newlibraryDataSet.card_finesDataTable dataTable = new newlibraryDataSet.card_finesDataTable();
+            newlibrary.card_finesDataTable dataTable = new newlibrary.card_finesDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -11067,14 +11178,14 @@ namespace myLibrary.newlibraryDataSetTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(newlibraryDataSet.card_finesDataTable dataTable) {
+        public virtual int Update(newlibrary.card_finesDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(newlibraryDataSet dataSet) {
+        public virtual int Update(newlibrary dataSet) {
             return this.Adapter.Update(dataSet, "card_fines");
         }
         
@@ -11403,7 +11514,7 @@ namespace myLibrary.newlibraryDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(newlibraryDataSet.finesDataTable dataTable) {
+        public virtual int Fill(newlibrary.finesDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -11416,9 +11527,9 @@ namespace myLibrary.newlibraryDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual newlibraryDataSet.finesDataTable GetData() {
+        public virtual newlibrary.finesDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            newlibraryDataSet.finesDataTable dataTable = new newlibraryDataSet.finesDataTable();
+            newlibrary.finesDataTable dataTable = new newlibrary.finesDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -11426,14 +11537,14 @@ namespace myLibrary.newlibraryDataSetTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(newlibraryDataSet.finesDataTable dataTable) {
+        public virtual int Update(newlibrary.finesDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(newlibraryDataSet dataSet) {
+        public virtual int Update(newlibrary dataSet) {
             return this.Adapter.Update(dataSet, "fines");
         }
         
@@ -11854,7 +11965,7 @@ namespace myLibrary.newlibraryDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(newlibraryDataSet.genreDataTable dataTable) {
+        public virtual int Fill(newlibrary.genreDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -11867,9 +11978,9 @@ namespace myLibrary.newlibraryDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual newlibraryDataSet.genreDataTable GetData() {
+        public virtual newlibrary.genreDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            newlibraryDataSet.genreDataTable dataTable = new newlibraryDataSet.genreDataTable();
+            newlibrary.genreDataTable dataTable = new newlibrary.genreDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -11877,14 +11988,14 @@ namespace myLibrary.newlibraryDataSetTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(newlibraryDataSet.genreDataTable dataTable) {
+        public virtual int Update(newlibrary.genreDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(newlibraryDataSet dataSet) {
+        public virtual int Update(newlibrary dataSet) {
             return this.Adapter.Update(dataSet, "genre");
         }
         
@@ -12453,7 +12564,7 @@ namespace myLibrary.newlibraryDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(newlibraryDataSet.issuedbooksDataTable dataTable) {
+        public virtual int Fill(newlibrary.issuedbooksDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -12466,9 +12577,9 @@ namespace myLibrary.newlibraryDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual newlibraryDataSet.issuedbooksDataTable GetData() {
+        public virtual newlibrary.issuedbooksDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            newlibraryDataSet.issuedbooksDataTable dataTable = new newlibraryDataSet.issuedbooksDataTable();
+            newlibrary.issuedbooksDataTable dataTable = new newlibrary.issuedbooksDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -12476,14 +12587,14 @@ namespace myLibrary.newlibraryDataSetTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(newlibraryDataSet.issuedbooksDataTable dataTable) {
+        public virtual int Update(newlibrary.issuedbooksDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(newlibraryDataSet dataSet) {
+        public virtual int Update(newlibrary dataSet) {
             return this.Adapter.Update(dataSet, "issuedbooks");
         }
         
@@ -12788,11 +12899,13 @@ namespace myLibrary.newlibraryDataSetTableAdapters {
             tableMapping.ColumnMappings.Add("id_library_card", "id_library_card");
             tableMapping.ColumnMappings.Add("idReaders", "idReaders");
             tableMapping.ColumnMappings.Add("date_of_issue", "date_of_issue");
+            tableMapping.ColumnMappings.Add("id_login", "id_login");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
             this._adapter.DeleteCommand.CommandText = "DELETE FROM `library_card` WHERE ((`id_library_card` = @p1) AND (`idReaders` = @p" +
-                "2) AND ((@p3 = 1 AND `date_of_issue` IS NULL) OR (`date_of_issue` = @p4)))";
+                "2) AND ((@p3 = 1 AND `date_of_issue` IS NULL) OR (`date_of_issue` = @p4)) AND ((" +
+                "@p5 = 1 AND `id_login` IS NULL) OR (`id_login` = @p6)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             global::MySql.Data.MySqlClient.MySqlParameter param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p1";
@@ -12827,9 +12940,27 @@ namespace myLibrary.newlibraryDataSetTableAdapters {
             param.SourceColumn = "date_of_issue";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p5";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.IsNullable = true;
+            param.SourceColumn = "id_login";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p6";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.IsNullable = true;
+            param.SourceColumn = "id_login";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.DeleteCommand.Parameters.Add(param);
             this._adapter.InsertCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO `library_card` (`idReaders`, `date_of_issue`) VALUES (@p1, @p2)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO `library_card` (`idReaders`, `date_of_issue`, `id_login`) VALUES (@p1" +
+                ", @p2, @p3)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p1";
@@ -12847,11 +12978,17 @@ namespace myLibrary.newlibraryDataSetTableAdapters {
             param.SourceColumn = "date_of_issue";
             param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.InsertCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p3";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.IsNullable = true;
+            param.SourceColumn = "id_login";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
+            this._adapter.InsertCommand.Parameters.Add(param);
             this._adapter.UpdateCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = "UPDATE `library_card` SET `idReaders` = @p1, `date_of_issue` = @p2 WHERE ((`id_li" +
-                "brary_card` = @p3) AND (`idReaders` = @p4) AND ((@p5 = 1 AND `date_of_issue` IS " +
-                "NULL) OR (`date_of_issue` = @p6)))";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE `library_card` SET `idReaders` = @p1, `date_of_issue` = @p2, `id_login` = @p3 WHERE ((`id_library_card` = @p4) AND (`idReaders` = @p5) AND ((@p6 = 1 AND `date_of_issue` IS NULL) OR (`date_of_issue` = @p7)) AND ((@p8 = 1 AND `id_login` IS NULL) OR (`id_login` = @p9)))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p1";
@@ -12874,11 +13011,19 @@ namespace myLibrary.newlibraryDataSetTableAdapters {
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
+            param.SourceColumn = "id_login";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p4";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.IsNullable = true;
             param.SourceColumn = "id_library_card";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p4";
+            param.ParameterName = "@p5";
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
@@ -12886,7 +13031,7 @@ namespace myLibrary.newlibraryDataSetTableAdapters {
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p5";
+            param.ParameterName = "@p6";
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
@@ -12895,11 +13040,28 @@ namespace myLibrary.newlibraryDataSetTableAdapters {
             param.SourceColumnNullMapping = true;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p6";
+            param.ParameterName = "@p7";
             param.DbType = global::System.Data.DbType.Date;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Date;
             param.IsNullable = true;
             param.SourceColumn = "date_of_issue";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p8";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.IsNullable = true;
+            param.SourceColumn = "id_login";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p9";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.IsNullable = true;
+            param.SourceColumn = "id_login";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.UpdateCommand.Parameters.Add(param);
         }
@@ -12917,7 +13079,8 @@ namespace myLibrary.newlibraryDataSetTableAdapters {
             this._commandCollection = new global::MySql.Data.MySqlClient.MySqlCommand[1];
             this._commandCollection[0] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT `id_library_card`, `idReaders`, `date_of_issue` FROM `library_card`";
+            this._commandCollection[0].CommandText = "SELECT `id_library_card`, `idReaders`, `date_of_issue`, `id_login` FROM `library_" +
+                "card`";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -12925,7 +13088,7 @@ namespace myLibrary.newlibraryDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(newlibraryDataSet.library_cardDataTable dataTable) {
+        public virtual int Fill(newlibrary.library_cardDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -12938,9 +13101,9 @@ namespace myLibrary.newlibraryDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual newlibraryDataSet.library_cardDataTable GetData() {
+        public virtual newlibrary.library_cardDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            newlibraryDataSet.library_cardDataTable dataTable = new newlibraryDataSet.library_cardDataTable();
+            newlibrary.library_cardDataTable dataTable = new newlibrary.library_cardDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -12948,14 +13111,14 @@ namespace myLibrary.newlibraryDataSetTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(newlibraryDataSet.library_cardDataTable dataTable) {
+        public virtual int Update(newlibrary.library_cardDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(newlibraryDataSet dataSet) {
+        public virtual int Update(newlibrary dataSet) {
             return this.Adapter.Update(dataSet, "library_card");
         }
         
@@ -12978,7 +13141,7 @@ namespace myLibrary.newlibraryDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int p1, int p2, global::System.Nullable<global::System.DateTime> p4) {
+        public virtual int Delete(int p1, int p2, global::System.Nullable<global::System.DateTime> p4, global::System.Nullable<int> p6) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(p1));
             this.Adapter.DeleteCommand.Parameters[1].Value = ((int)(p2));
             if ((p4.HasValue == true)) {
@@ -12988,6 +13151,14 @@ namespace myLibrary.newlibraryDataSetTableAdapters {
             else {
                 this.Adapter.DeleteCommand.Parameters[2].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            if ((p6.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((int)(p6.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -13009,13 +13180,19 @@ namespace myLibrary.newlibraryDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(int p1, global::System.Nullable<global::System.DateTime> p2) {
+        public virtual int Insert(int p1, global::System.Nullable<global::System.DateTime> p2, global::System.Nullable<int> p3) {
             this.Adapter.InsertCommand.Parameters[0].Value = ((int)(p1));
             if ((p2.HasValue == true)) {
                 this.Adapter.InsertCommand.Parameters[1].Value = ((System.DateTime)(p2.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((p3.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[2].Value = ((int)(p3.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -13037,7 +13214,7 @@ namespace myLibrary.newlibraryDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int p1, global::System.Nullable<global::System.DateTime> p2, int p3, int p4, global::System.Nullable<global::System.DateTime> p6) {
+        public virtual int Update(int p1, global::System.Nullable<global::System.DateTime> p2, global::System.Nullable<int> p3, int p4, int p5, global::System.Nullable<global::System.DateTime> p7, global::System.Nullable<int> p9) {
             this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(p1));
             if ((p2.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[1].Value = ((System.DateTime)(p2.Value));
@@ -13045,15 +13222,29 @@ namespace myLibrary.newlibraryDataSetTableAdapters {
             else {
                 this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(p3));
-            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(p4));
-            if ((p6.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((System.DateTime)(p6.Value));
+            if ((p3.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(p3.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(p4));
+            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(p5));
+            if ((p7.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((System.DateTime)(p7.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            if ((p9.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(p9.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -13193,61 +13384,51 @@ namespace myLibrary.newlibraryDataSetTableAdapters {
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "login";
-            tableMapping.ColumnMappings.Add("id_user", "id_user");
+            tableMapping.ColumnMappings.Add("id_login", "id_login");
             tableMapping.ColumnMappings.Add("login", "login");
             tableMapping.ColumnMappings.Add("password", "password");
+            tableMapping.ColumnMappings.Add("access", "access");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM `login` WHERE ((`id_user` = @p1) AND ((@p2 = 1 AND `login` IS NULL) O" +
-                "R (`login` = @p3)) AND ((@p4 = 1 AND `password` IS NULL) OR (`password` = @p5)))" +
-                "";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM `login` WHERE ((`id_login` = @p1) AND (`login` = @p2) AND (`password`" +
+                " = @p3) AND (`access` = @p4))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             global::MySql.Data.MySqlClient.MySqlParameter param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p1";
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
-            param.SourceColumn = "id_user";
+            param.SourceColumn = "id_login";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.DeleteCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p2";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.DbType = global::System.Data.DbType.String;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
             param.SourceColumn = "login";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
             this._adapter.DeleteCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p3";
             param.DbType = global::System.Data.DbType.String;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
-            param.SourceColumn = "login";
+            param.SourceColumn = "password";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.DeleteCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p4";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
-            param.IsNullable = true;
-            param.SourceColumn = "password";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p5";
             param.DbType = global::System.Data.DbType.String;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
-            param.SourceColumn = "password";
+            param.SourceColumn = "access";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.DeleteCommand.Parameters.Add(param);
             this._adapter.InsertCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO `login` (`login`, `password`) VALUES (@p1, @p2)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO `login` (`login`, `password`, `access`) VALUES (@p1, @p2, @p3)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p1";
@@ -13265,11 +13446,18 @@ namespace myLibrary.newlibraryDataSetTableAdapters {
             param.SourceColumn = "password";
             param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.InsertCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p3";
+            param.DbType = global::System.Data.DbType.String;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
+            param.IsNullable = true;
+            param.SourceColumn = "access";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
+            this._adapter.InsertCommand.Parameters.Add(param);
             this._adapter.UpdateCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = "UPDATE `login` SET `login` = @p1, `password` = @p2 WHERE ((`id_user` = @p3) AND (" +
-                "(@p4 = 1 AND `login` IS NULL) OR (`login` = @p5)) AND ((@p6 = 1 AND `password` I" +
-                "S NULL) OR (`password` = @p7)))";
+            this._adapter.UpdateCommand.CommandText = "UPDATE `login` SET `login` = @p1, `password` = @p2, `access` = @p3 WHERE ((`id_lo" +
+                "gin` = @p4) AND (`login` = @p5) AND (`password` = @p6) AND (`access` = @p7))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p1";
@@ -13289,20 +13477,19 @@ namespace myLibrary.newlibraryDataSetTableAdapters {
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p3";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.DbType = global::System.Data.DbType.String;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
-            param.SourceColumn = "id_user";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumn = "access";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p4";
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
-            param.SourceColumn = "login";
+            param.SourceColumn = "id_login";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p5";
@@ -13314,19 +13501,18 @@ namespace myLibrary.newlibraryDataSetTableAdapters {
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p6";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.DbType = global::System.Data.DbType.String;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
             param.SourceColumn = "password";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p7";
             param.DbType = global::System.Data.DbType.String;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
-            param.SourceColumn = "password";
+            param.SourceColumn = "access";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.UpdateCommand.Parameters.Add(param);
         }
@@ -13344,7 +13530,7 @@ namespace myLibrary.newlibraryDataSetTableAdapters {
             this._commandCollection = new global::MySql.Data.MySqlClient.MySqlCommand[1];
             this._commandCollection[0] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT `id_user`, `login`, `password` FROM `login`";
+            this._commandCollection[0].CommandText = "SELECT `id_login`, `login`, `password`, `access` FROM `login`";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -13352,7 +13538,7 @@ namespace myLibrary.newlibraryDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(newlibraryDataSet.loginDataTable dataTable) {
+        public virtual int Fill(newlibrary.loginDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -13365,9 +13551,9 @@ namespace myLibrary.newlibraryDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual newlibraryDataSet.loginDataTable GetData() {
+        public virtual newlibrary.loginDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            newlibraryDataSet.loginDataTable dataTable = new newlibraryDataSet.loginDataTable();
+            newlibrary.loginDataTable dataTable = new newlibrary.loginDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -13375,14 +13561,14 @@ namespace myLibrary.newlibraryDataSetTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(newlibraryDataSet.loginDataTable dataTable) {
+        public virtual int Update(newlibrary.loginDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(newlibraryDataSet dataSet) {
+        public virtual int Update(newlibrary dataSet) {
             return this.Adapter.Update(dataSet, "login");
         }
         
@@ -13405,23 +13591,25 @@ namespace myLibrary.newlibraryDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int p1, string p3, string p5) {
+        public virtual int Delete(int p1, string p2, string p3, string p4) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(p1));
-            if ((p3 == null)) {
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[2].Value = global::System.DBNull.Value;
+            if ((p2 == null)) {
+                throw new global::System.ArgumentNullException("p2");
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((string)(p2));
+            }
+            if ((p3 == null)) {
+                throw new global::System.ArgumentNullException("p3");
+            }
+            else {
                 this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(p3));
             }
-            if ((p5 == null)) {
-                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[4].Value = global::System.DBNull.Value;
+            if ((p4 == null)) {
+                throw new global::System.ArgumentNullException("p4");
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[4].Value = ((string)(p5));
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((string)(p4));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -13443,18 +13631,24 @@ namespace myLibrary.newlibraryDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string p1, string p2) {
+        public virtual int Insert(string p1, string p2, string p3) {
             if ((p1 == null)) {
-                this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
+                throw new global::System.ArgumentNullException("p1");
             }
             else {
                 this.Adapter.InsertCommand.Parameters[0].Value = ((string)(p1));
             }
             if ((p2 == null)) {
-                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
+                throw new global::System.ArgumentNullException("p2");
             }
             else {
                 this.Adapter.InsertCommand.Parameters[1].Value = ((string)(p2));
+            }
+            if ((p3 == null)) {
+                throw new global::System.ArgumentNullException("p3");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(p3));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -13476,34 +13670,42 @@ namespace myLibrary.newlibraryDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string p1, string p2, int p3, string p5, string p7) {
+        public virtual int Update(string p1, string p2, string p3, int p4, string p5, string p6, string p7) {
             if ((p1 == null)) {
-                this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
+                throw new global::System.ArgumentNullException("p1");
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(p1));
             }
             if ((p2 == null)) {
-                this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
+                throw new global::System.ArgumentNullException("p2");
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(p2));
             }
-            this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(p3));
-            if ((p5 == null)) {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
+            if ((p3 == null)) {
+                throw new global::System.ArgumentNullException("p3");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(p3));
+            }
+            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(p4));
+            if ((p5 == null)) {
+                throw new global::System.ArgumentNullException("p5");
+            }
+            else {
                 this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(p5));
             }
-            if ((p7 == null)) {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
+            if ((p6 == null)) {
+                throw new global::System.ArgumentNullException("p6");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(p6));
+            }
+            if ((p7 == null)) {
+                throw new global::System.ArgumentNullException("p7");
+            }
+            else {
                 this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(p7));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
@@ -13886,7 +14088,7 @@ namespace myLibrary.newlibraryDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(newlibraryDataSet.postDataTable dataTable) {
+        public virtual int Fill(newlibrary.postDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -13899,9 +14101,9 @@ namespace myLibrary.newlibraryDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual newlibraryDataSet.postDataTable GetData() {
+        public virtual newlibrary.postDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            newlibraryDataSet.postDataTable dataTable = new newlibraryDataSet.postDataTable();
+            newlibrary.postDataTable dataTable = new newlibrary.postDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -13909,14 +14111,14 @@ namespace myLibrary.newlibraryDataSetTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(newlibraryDataSet.postDataTable dataTable) {
+        public virtual int Update(newlibrary.postDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(newlibraryDataSet dataSet) {
+        public virtual int Update(newlibrary dataSet) {
             return this.Adapter.Update(dataSet, "post");
         }
         
@@ -14438,7 +14640,7 @@ namespace myLibrary.newlibraryDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(newlibraryDataSet.publishersDataTable dataTable) {
+        public virtual int Fill(newlibrary.publishersDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -14451,9 +14653,9 @@ namespace myLibrary.newlibraryDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual newlibraryDataSet.publishersDataTable GetData() {
+        public virtual newlibrary.publishersDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            newlibraryDataSet.publishersDataTable dataTable = new newlibraryDataSet.publishersDataTable();
+            newlibrary.publishersDataTable dataTable = new newlibrary.publishersDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -14461,14 +14663,14 @@ namespace myLibrary.newlibraryDataSetTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(newlibraryDataSet.publishersDataTable dataTable) {
+        public virtual int Update(newlibrary.publishersDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(newlibraryDataSet dataSet) {
+        public virtual int Update(newlibrary dataSet) {
             return this.Adapter.Update(dataSet, "publishers");
         }
         
@@ -15221,7 +15423,7 @@ namespace myLibrary.newlibraryDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(newlibraryDataSet.readersDataTable dataTable) {
+        public virtual int Fill(newlibrary.readersDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -15234,9 +15436,9 @@ namespace myLibrary.newlibraryDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual newlibraryDataSet.readersDataTable GetData() {
+        public virtual newlibrary.readersDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            newlibraryDataSet.readersDataTable dataTable = new newlibraryDataSet.readersDataTable();
+            newlibrary.readersDataTable dataTable = new newlibrary.readersDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -15244,14 +15446,14 @@ namespace myLibrary.newlibraryDataSetTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(newlibraryDataSet.readersDataTable dataTable) {
+        public virtual int Update(newlibrary.readersDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(newlibraryDataSet dataSet) {
+        public virtual int Update(newlibrary dataSet) {
             return this.Adapter.Update(dataSet, "readers");
         }
         
@@ -15709,10 +15911,11 @@ namespace myLibrary.newlibraryDataSetTableAdapters {
             tableMapping.ColumnMappings.Add("Phone", "Phone");
             tableMapping.ColumnMappings.Add("Pasport", "Pasport");
             tableMapping.ColumnMappings.Add("coef", "coef");
+            tableMapping.ColumnMappings.Add("id_login", "id_login");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM `staff` WHERE ((`idStaff` = @p1) AND (`idPost` = @p2) AND ((@p3 = 1 AND `Familia` IS NULL) OR (`Familia` = @p4)) AND ((@p5 = 1 AND `Imya` IS NULL) OR (`Imya` = @p6)) AND ((@p7 = 1 AND `Otchestvo` IS NULL) OR (`Otchestvo` = @p8)) AND ((@p9 = 1 AND `Vozrast` IS NULL) OR (`Vozrast` = @p10)) AND ((@p11 = 1 AND `Pol` IS NULL) OR (`Pol` = @p12)) AND ((@p13 = 1 AND `Adress` IS NULL) OR (`Adress` = @p14)) AND ((@p15 = 1 AND `Phone` IS NULL) OR (`Phone` = @p16)) AND ((@p17 = 1 AND `Pasport` IS NULL) OR (`Pasport` = @p18)) AND ((@p19 = 1 AND `coef` IS NULL) OR (`coef` = @p20)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM `staff` WHERE ((`idStaff` = @p1) AND (`idPost` = @p2) AND ((@p3 = 1 AND `Familia` IS NULL) OR (`Familia` = @p4)) AND ((@p5 = 1 AND `Imya` IS NULL) OR (`Imya` = @p6)) AND ((@p7 = 1 AND `Otchestvo` IS NULL) OR (`Otchestvo` = @p8)) AND ((@p9 = 1 AND `Vozrast` IS NULL) OR (`Vozrast` = @p10)) AND ((@p11 = 1 AND `Pol` IS NULL) OR (`Pol` = @p12)) AND ((@p13 = 1 AND `Adress` IS NULL) OR (`Adress` = @p14)) AND ((@p15 = 1 AND `Phone` IS NULL) OR (`Phone` = @p16)) AND ((@p17 = 1 AND `Pasport` IS NULL) OR (`Pasport` = @p18)) AND ((@p19 = 1 AND `coef` IS NULL) OR (`coef` = @p20)) AND ((@p21 = 1 AND `id_login` IS NULL) OR (`id_login` = @p22)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             global::MySql.Data.MySqlClient.MySqlParameter param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p1";
@@ -15877,17 +16080,34 @@ namespace myLibrary.newlibraryDataSetTableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p20";
-            param.DbType = global::System.Data.DbType.Double;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Double;
+            param.DbType = global::System.Data.DbType.Single;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Float;
             param.IsNullable = true;
             param.SourceColumn = "coef";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p21";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.IsNullable = true;
+            param.SourceColumn = "id_login";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p22";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.IsNullable = true;
+            param.SourceColumn = "id_login";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.DeleteCommand.Parameters.Add(param);
             this._adapter.InsertCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
             this._adapter.InsertCommand.CommandText = "INSERT INTO `staff` (`idPost`, `Familia`, `Imya`, `Otchestvo`, `Vozrast`, `Pol`, " +
-                "`Adress`, `Phone`, `Pasport`, `coef`) VALUES (@p1, @p2, @p3, @p4, @p5, @p6, @p7," +
-                " @p8, @p9, @p10)";
+                "`Adress`, `Phone`, `Pasport`, `coef`, `id_login`) VALUES (@p1, @p2, @p3, @p4, @p" +
+                "5, @p6, @p7, @p8, @p9, @p10, @p11)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p1";
@@ -15963,15 +16183,23 @@ namespace myLibrary.newlibraryDataSetTableAdapters {
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p10";
-            param.DbType = global::System.Data.DbType.Double;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Double;
+            param.DbType = global::System.Data.DbType.Single;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Float;
             param.IsNullable = true;
             param.SourceColumn = "coef";
             param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.InsertCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p11";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.IsNullable = true;
+            param.SourceColumn = "id_login";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
+            this._adapter.InsertCommand.Parameters.Add(param);
             this._adapter.UpdateCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE `staff` SET `idPost` = @p1, `Familia` = @p2, `Imya` = @p3, `Otchestvo` = @p4, `Vozrast` = @p5, `Pol` = @p6, `Adress` = @p7, `Phone` = @p8, `Pasport` = @p9, `coef` = @p10 WHERE ((`idStaff` = @p11) AND (`idPost` = @p12) AND ((@p13 = 1 AND `Familia` IS NULL) OR (`Familia` = @p14)) AND ((@p15 = 1 AND `Imya` IS NULL) OR (`Imya` = @p16)) AND ((@p17 = 1 AND `Otchestvo` IS NULL) OR (`Otchestvo` = @p18)) AND ((@p19 = 1 AND `Vozrast` IS NULL) OR (`Vozrast` = @p20)) AND ((@p21 = 1 AND `Pol` IS NULL) OR (`Pol` = @p22)) AND ((@p23 = 1 AND `Adress` IS NULL) OR (`Adress` = @p24)) AND ((@p25 = 1 AND `Phone` IS NULL) OR (`Phone` = @p26)) AND ((@p27 = 1 AND `Pasport` IS NULL) OR (`Pasport` = @p28)) AND ((@p29 = 1 AND `coef` IS NULL) OR (`coef` = @p30)))";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE `staff` SET `idPost` = @p1, `Familia` = @p2, `Imya` = @p3, `Otchestvo` = @p4, `Vozrast` = @p5, `Pol` = @p6, `Adress` = @p7, `Phone` = @p8, `Pasport` = @p9, `coef` = @p10, `id_login` = @p11 WHERE ((`idStaff` = @p12) AND (`idPost` = @p13) AND ((@p14 = 1 AND `Familia` IS NULL) OR (`Familia` = @p15)) AND ((@p16 = 1 AND `Imya` IS NULL) OR (`Imya` = @p17)) AND ((@p18 = 1 AND `Otchestvo` IS NULL) OR (`Otchestvo` = @p19)) AND ((@p20 = 1 AND `Vozrast` IS NULL) OR (`Vozrast` = @p21)) AND ((@p22 = 1 AND `Pol` IS NULL) OR (`Pol` = @p23)) AND ((@p24 = 1 AND `Adress` IS NULL) OR (`Adress` = @p25)) AND ((@p26 = 1 AND `Phone` IS NULL) OR (`Phone` = @p27)) AND ((@p28 = 1 AND `Pasport` IS NULL) OR (`Pasport` = @p29)) AND ((@p30 = 1 AND `coef` IS NULL) OR (`coef` = @p31)) AND ((@p32 = 1 AND `id_login` IS NULL) OR (`id_login` = @p33)))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p1";
@@ -16047,8 +16275,8 @@ namespace myLibrary.newlibraryDataSetTableAdapters {
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p10";
-            param.DbType = global::System.Data.DbType.Double;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Double;
+            param.DbType = global::System.Data.DbType.Single;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Float;
             param.IsNullable = true;
             param.SourceColumn = "coef";
             param.SourceVersion = global::System.Data.DataRowVersion.Current;
@@ -16058,15 +16286,15 @@ namespace myLibrary.newlibraryDataSetTableAdapters {
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
-            param.SourceColumn = "idStaff";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumn = "id_login";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p12";
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
-            param.SourceColumn = "idPost";
+            param.SourceColumn = "idStaff";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
@@ -16074,12 +16302,20 @@ namespace myLibrary.newlibraryDataSetTableAdapters {
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
-            param.SourceColumn = "Familia";
+            param.SourceColumn = "idPost";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p14";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.IsNullable = true;
+            param.SourceColumn = "Familia";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p15";
             param.DbType = global::System.Data.DbType.String;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
@@ -16087,24 +16323,24 @@ namespace myLibrary.newlibraryDataSetTableAdapters {
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p15";
+            param.ParameterName = "@p16";
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
             param.SourceColumn = "Imya";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             param.SourceColumnNullMapping = true;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p16";
-            param.DbType = global::System.Data.DbType.String;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
-            param.IsNullable = true;
-            param.SourceColumn = "Imya";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p17";
+            param.DbType = global::System.Data.DbType.String;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
+            param.IsNullable = true;
+            param.SourceColumn = "Imya";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p18";
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
@@ -16113,21 +16349,12 @@ namespace myLibrary.newlibraryDataSetTableAdapters {
             param.SourceColumnNullMapping = true;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p18";
+            param.ParameterName = "@p19";
             param.DbType = global::System.Data.DbType.String;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
             param.SourceColumn = "Otchestvo";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p19";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
-            param.IsNullable = true;
-            param.SourceColumn = "Vozrast";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p20";
@@ -16136,18 +16363,27 @@ namespace myLibrary.newlibraryDataSetTableAdapters {
             param.IsNullable = true;
             param.SourceColumn = "Vozrast";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p21";
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
-            param.SourceColumn = "Pol";
+            param.SourceColumn = "Vozrast";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p22";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.IsNullable = true;
+            param.SourceColumn = "Pol";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p23";
             param.DbType = global::System.Data.DbType.String;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
@@ -16155,24 +16391,24 @@ namespace myLibrary.newlibraryDataSetTableAdapters {
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p23";
+            param.ParameterName = "@p24";
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
             param.SourceColumn = "Adress";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             param.SourceColumnNullMapping = true;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p24";
-            param.DbType = global::System.Data.DbType.String;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
-            param.IsNullable = true;
-            param.SourceColumn = "Adress";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p25";
+            param.DbType = global::System.Data.DbType.String;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
+            param.IsNullable = true;
+            param.SourceColumn = "Adress";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p26";
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
@@ -16181,21 +16417,12 @@ namespace myLibrary.newlibraryDataSetTableAdapters {
             param.SourceColumnNullMapping = true;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p26";
+            param.ParameterName = "@p27";
             param.DbType = global::System.Data.DbType.String;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
             param.SourceColumn = "Phone";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p27";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
-            param.IsNullable = true;
-            param.SourceColumn = "Pasport";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p28";
@@ -16204,9 +16431,18 @@ namespace myLibrary.newlibraryDataSetTableAdapters {
             param.IsNullable = true;
             param.SourceColumn = "Pasport";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p29";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.IsNullable = true;
+            param.SourceColumn = "Pasport";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p30";
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
@@ -16215,11 +16451,28 @@ namespace myLibrary.newlibraryDataSetTableAdapters {
             param.SourceColumnNullMapping = true;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p30";
-            param.DbType = global::System.Data.DbType.Double;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Double;
+            param.ParameterName = "@p31";
+            param.DbType = global::System.Data.DbType.Single;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Float;
             param.IsNullable = true;
             param.SourceColumn = "coef";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p32";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.IsNullable = true;
+            param.SourceColumn = "id_login";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p33";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.IsNullable = true;
+            param.SourceColumn = "id_login";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.UpdateCommand.Parameters.Add(param);
         }
@@ -16238,7 +16491,7 @@ namespace myLibrary.newlibraryDataSetTableAdapters {
             this._commandCollection[0] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT `idStaff`, `idPost`, `Familia`, `Imya`, `Otchestvo`, `Vozrast`, `Pol`, `Ad" +
-                "ress`, `Phone`, `Pasport`, `coef` FROM `staff`";
+                "ress`, `Phone`, `Pasport`, `coef`, `id_login` FROM `staff`";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -16246,7 +16499,7 @@ namespace myLibrary.newlibraryDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(newlibraryDataSet.staffDataTable dataTable) {
+        public virtual int Fill(newlibrary.staffDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -16259,9 +16512,9 @@ namespace myLibrary.newlibraryDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual newlibraryDataSet.staffDataTable GetData() {
+        public virtual newlibrary.staffDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            newlibraryDataSet.staffDataTable dataTable = new newlibraryDataSet.staffDataTable();
+            newlibrary.staffDataTable dataTable = new newlibrary.staffDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -16269,14 +16522,14 @@ namespace myLibrary.newlibraryDataSetTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(newlibraryDataSet.staffDataTable dataTable) {
+        public virtual int Update(newlibrary.staffDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(newlibraryDataSet dataSet) {
+        public virtual int Update(newlibrary dataSet) {
             return this.Adapter.Update(dataSet, "staff");
         }
         
@@ -16299,7 +16552,7 @@ namespace myLibrary.newlibraryDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int p1, int p2, string p4, string p6, string p8, global::System.Nullable<int> p10, string p12, string p14, string p16, global::System.Nullable<int> p18, global::System.Nullable<double> p20) {
+        public virtual int Delete(int p1, int p2, string p4, string p6, string p8, global::System.Nullable<int> p10, string p12, string p14, string p16, global::System.Nullable<int> p18, global::System.Nullable<float> p20, global::System.Nullable<int> p22) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(p1));
             this.Adapter.DeleteCommand.Parameters[1].Value = ((int)(p2));
             if ((p4 == null)) {
@@ -16368,11 +16621,19 @@ namespace myLibrary.newlibraryDataSetTableAdapters {
             }
             if ((p20.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[18].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[19].Value = ((double)(p20.Value));
+                this.Adapter.DeleteCommand.Parameters[19].Value = ((float)(p20.Value));
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[18].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[19].Value = global::System.DBNull.Value;
+            }
+            if ((p22.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[20].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[21].Value = ((int)(p22.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[20].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[21].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -16394,7 +16655,7 @@ namespace myLibrary.newlibraryDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(int p1, string p2, string p3, string p4, global::System.Nullable<int> p5, string p6, string p7, string p8, global::System.Nullable<int> p9, global::System.Nullable<double> p10) {
+        public virtual int Insert(int p1, string p2, string p3, string p4, global::System.Nullable<int> p5, string p6, string p7, string p8, global::System.Nullable<int> p9, global::System.Nullable<float> p10, global::System.Nullable<int> p11) {
             this.Adapter.InsertCommand.Parameters[0].Value = ((int)(p1));
             if ((p2 == null)) {
                 this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
@@ -16445,10 +16706,16 @@ namespace myLibrary.newlibraryDataSetTableAdapters {
                 this.Adapter.InsertCommand.Parameters[8].Value = global::System.DBNull.Value;
             }
             if ((p10.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[9].Value = ((double)(p10.Value));
+                this.Adapter.InsertCommand.Parameters[9].Value = ((float)(p10.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[9].Value = global::System.DBNull.Value;
+            }
+            if ((p11.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[10].Value = ((int)(p11.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[10].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -16480,18 +16747,20 @@ namespace myLibrary.newlibraryDataSetTableAdapters {
                     string p7, 
                     string p8, 
                     global::System.Nullable<int> p9, 
-                    global::System.Nullable<double> p10, 
-                    int p11, 
+                    global::System.Nullable<float> p10, 
+                    global::System.Nullable<int> p11, 
                     int p12, 
-                    string p14, 
-                    string p16, 
-                    string p18, 
-                    global::System.Nullable<int> p20, 
-                    string p22, 
-                    string p24, 
-                    string p26, 
-                    global::System.Nullable<int> p28, 
-                    global::System.Nullable<double> p30) {
+                    int p13, 
+                    string p15, 
+                    string p17, 
+                    string p19, 
+                    global::System.Nullable<int> p21, 
+                    string p23, 
+                    string p25, 
+                    string p27, 
+                    global::System.Nullable<int> p29, 
+                    global::System.Nullable<float> p31, 
+                    global::System.Nullable<int> p33) {
             this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(p1));
             if ((p2 == null)) {
                 this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
@@ -16542,84 +16811,98 @@ namespace myLibrary.newlibraryDataSetTableAdapters {
                 this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
             }
             if ((p10.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((double)(p10.Value));
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((float)(p10.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[10].Value = ((int)(p11));
+            if ((p11.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((int)(p11.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
+            }
             this.Adapter.UpdateCommand.Parameters[11].Value = ((int)(p12));
-            if ((p14 == null)) {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
+            this.Adapter.UpdateCommand.Parameters[12].Value = ((int)(p13));
+            if ((p15 == null)) {
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[14].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((string)(p14));
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((string)(p15));
             }
-            if ((p16 == null)) {
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[15].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((string)(p16));
-            }
-            if ((p18 == null)) {
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[17].Value = global::System.DBNull.Value;
+            if ((p17 == null)) {
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[16].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[17].Value = ((string)(p18));
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((string)(p17));
             }
-            if ((p20.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[19].Value = ((int)(p20.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[19].Value = global::System.DBNull.Value;
-            }
-            if ((p22 == null)) {
-                this.Adapter.UpdateCommand.Parameters[20].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[21].Value = global::System.DBNull.Value;
+            if ((p19 == null)) {
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[18].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[20].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[21].Value = ((string)(p22));
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((string)(p19));
             }
-            if ((p24 == null)) {
-                this.Adapter.UpdateCommand.Parameters[22].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[23].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[22].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[23].Value = ((string)(p24));
-            }
-            if ((p26 == null)) {
-                this.Adapter.UpdateCommand.Parameters[24].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[25].Value = global::System.DBNull.Value;
+            if ((p21.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[20].Value = ((int)(p21.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[24].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[25].Value = ((string)(p26));
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[20].Value = global::System.DBNull.Value;
             }
-            if ((p28.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[26].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[27].Value = ((int)(p28.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[26].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[27].Value = global::System.DBNull.Value;
-            }
-            if ((p30.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[28].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[29].Value = ((double)(p30.Value));
+            if ((p23 == null)) {
+                this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[22].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[28].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[29].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[22].Value = ((string)(p23));
+            }
+            if ((p25 == null)) {
+                this.Adapter.UpdateCommand.Parameters[23].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[24].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[23].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[24].Value = ((string)(p25));
+            }
+            if ((p27 == null)) {
+                this.Adapter.UpdateCommand.Parameters[25].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[26].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[25].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[26].Value = ((string)(p27));
+            }
+            if ((p29.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[27].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[28].Value = ((int)(p29.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[27].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[28].Value = global::System.DBNull.Value;
+            }
+            if ((p31.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[29].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[30].Value = ((float)(p31.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[29].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[30].Value = global::System.DBNull.Value;
+            }
+            if ((p33.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[31].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[32].Value = ((int)(p33.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[31].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[32].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -16917,7 +17200,7 @@ namespace myLibrary.newlibraryDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(newlibraryDataSet.storageDataTable dataTable) {
+        public virtual int Fill(newlibrary.storageDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -16930,9 +17213,9 @@ namespace myLibrary.newlibraryDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual newlibraryDataSet.storageDataTable GetData() {
+        public virtual newlibrary.storageDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            newlibraryDataSet.storageDataTable dataTable = new newlibraryDataSet.storageDataTable();
+            newlibrary.storageDataTable dataTable = new newlibrary.storageDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -16940,14 +17223,14 @@ namespace myLibrary.newlibraryDataSetTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(newlibraryDataSet.storageDataTable dataTable) {
+        public virtual int Update(newlibrary.storageDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(newlibraryDataSet dataSet) {
+        public virtual int Update(newlibrary dataSet) {
             return this.Adapter.Update(dataSet, "storage");
         }
         
@@ -17243,7 +17526,7 @@ namespace myLibrary.newlibraryDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(newlibraryDataSet.book_readerDataTable dataTable, string bk) {
+        public virtual int Fill(newlibrary.book_readerDataTable dataTable, string bk) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((bk == null)) {
                 this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
@@ -17262,7 +17545,7 @@ namespace myLibrary.newlibraryDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual newlibraryDataSet.book_readerDataTable GetData(string bk) {
+        public virtual newlibrary.book_readerDataTable GetData(string bk) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((bk == null)) {
                 this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
@@ -17270,7 +17553,7 @@ namespace myLibrary.newlibraryDataSetTableAdapters {
             else {
                 this.Adapter.SelectCommand.Parameters[0].Value = ((string)(bk));
             }
-            newlibraryDataSet.book_readerDataTable dataTable = new newlibraryDataSet.book_readerDataTable();
+            newlibrary.book_readerDataTable dataTable = new newlibrary.book_readerDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -17432,7 +17715,7 @@ namespace myLibrary.newlibraryDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(newlibraryDataSet.calculate_okladDataTable dataTable, global::System.Nullable<int> id) {
+        public virtual int Fill(newlibrary.calculate_okladDataTable dataTable, global::System.Nullable<int> id) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((id.HasValue == true)) {
                 this.Adapter.SelectCommand.Parameters[0].Value = ((int)(id.Value));
@@ -17451,7 +17734,7 @@ namespace myLibrary.newlibraryDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual newlibraryDataSet.calculate_okladDataTable GetData(global::System.Nullable<int> id) {
+        public virtual newlibrary.calculate_okladDataTable GetData(global::System.Nullable<int> id) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((id.HasValue == true)) {
                 this.Adapter.SelectCommand.Parameters[0].Value = ((int)(id.Value));
@@ -17459,7 +17742,7 @@ namespace myLibrary.newlibraryDataSetTableAdapters {
             else {
                 this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
-            newlibraryDataSet.calculate_okladDataTable dataTable = new newlibraryDataSet.calculate_okladDataTable();
+            newlibrary.calculate_okladDataTable dataTable = new newlibrary.calculate_okladDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -17623,7 +17906,7 @@ namespace myLibrary.newlibraryDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(newlibraryDataSet.find_finesDataTable dataTable, global::System.Nullable<int> id) {
+        public virtual int Fill(newlibrary.find_finesDataTable dataTable, global::System.Nullable<int> id) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((id.HasValue == true)) {
                 this.Adapter.SelectCommand.Parameters[0].Value = ((int)(id.Value));
@@ -17642,7 +17925,7 @@ namespace myLibrary.newlibraryDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual newlibraryDataSet.find_finesDataTable GetData(global::System.Nullable<int> id) {
+        public virtual newlibrary.find_finesDataTable GetData(global::System.Nullable<int> id) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((id.HasValue == true)) {
                 this.Adapter.SelectCommand.Parameters[0].Value = ((int)(id.Value));
@@ -17650,7 +17933,7 @@ namespace myLibrary.newlibraryDataSetTableAdapters {
             else {
                 this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
-            newlibraryDataSet.find_finesDataTable dataTable = new newlibraryDataSet.find_finesDataTable();
+            newlibrary.find_finesDataTable dataTable = new newlibrary.find_finesDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -17812,7 +18095,7 @@ namespace myLibrary.newlibraryDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(newlibraryDataSet.find_storageDataTable dataTable, string book) {
+        public virtual int Fill(newlibrary.find_storageDataTable dataTable, string book) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((book == null)) {
                 this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
@@ -17831,7 +18114,7 @@ namespace myLibrary.newlibraryDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual newlibraryDataSet.find_storageDataTable GetData(string book) {
+        public virtual newlibrary.find_storageDataTable GetData(string book) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((book == null)) {
                 this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
@@ -17839,7 +18122,7 @@ namespace myLibrary.newlibraryDataSetTableAdapters {
             else {
                 this.Adapter.SelectCommand.Parameters[0].Value = ((string)(book));
             }
-            newlibraryDataSet.find_storageDataTable dataTable = new newlibraryDataSet.find_storageDataTable();
+            newlibrary.find_storageDataTable dataTable = new newlibrary.find_storageDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -18000,7 +18283,7 @@ namespace myLibrary.newlibraryDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(newlibraryDataSet.recommendationDataTable dataTable, global::System.Nullable<int> id) {
+        public virtual int Fill(newlibrary.recommendationDataTable dataTable, global::System.Nullable<int> id) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((id.HasValue == true)) {
                 this.Adapter.SelectCommand.Parameters[0].Value = ((int)(id.Value));
@@ -18019,7 +18302,7 @@ namespace myLibrary.newlibraryDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual newlibraryDataSet.recommendationDataTable GetData(global::System.Nullable<int> id) {
+        public virtual newlibrary.recommendationDataTable GetData(global::System.Nullable<int> id) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((id.HasValue == true)) {
                 this.Adapter.SelectCommand.Parameters[0].Value = ((int)(id.Value));
@@ -18027,7 +18310,7 @@ namespace myLibrary.newlibraryDataSetTableAdapters {
             else {
                 this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
-            newlibraryDataSet.recommendationDataTable dataTable = new newlibraryDataSet.recommendationDataTable();
+            newlibrary.recommendationDataTable dataTable = new newlibrary.recommendationDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -18189,7 +18472,7 @@ namespace myLibrary.newlibraryDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(newlibraryDataSet.reportDataTable dataTable, global::System.Nullable<global::System.DateTime> dat) {
+        public virtual int Fill(newlibrary.reportDataTable dataTable, global::System.Nullable<global::System.DateTime> dat) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((dat.HasValue == true)) {
                 this.Adapter.SelectCommand.Parameters[0].Value = ((System.DateTime)(dat.Value));
@@ -18208,7 +18491,7 @@ namespace myLibrary.newlibraryDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual newlibraryDataSet.reportDataTable GetData(global::System.Nullable<global::System.DateTime> dat) {
+        public virtual newlibrary.reportDataTable GetData(global::System.Nullable<global::System.DateTime> dat) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((dat.HasValue == true)) {
                 this.Adapter.SelectCommand.Parameters[0].Value = ((System.DateTime)(dat.Value));
@@ -18216,7 +18499,7 @@ namespace myLibrary.newlibraryDataSetTableAdapters {
             else {
                 this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
-            newlibraryDataSet.reportDataTable dataTable = new newlibraryDataSet.reportDataTable();
+            newlibrary.reportDataTable dataTable = new newlibrary.reportDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -18377,7 +18660,7 @@ namespace myLibrary.newlibraryDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(newlibraryDataSet.staff_issuedDataTable dataTable, global::System.Nullable<int> id) {
+        public virtual int Fill(newlibrary.staff_issuedDataTable dataTable, global::System.Nullable<int> id) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((id.HasValue == true)) {
                 this.Adapter.SelectCommand.Parameters[0].Value = ((int)(id.Value));
@@ -18396,7 +18679,7 @@ namespace myLibrary.newlibraryDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual newlibraryDataSet.staff_issuedDataTable GetData(global::System.Nullable<int> id) {
+        public virtual newlibrary.staff_issuedDataTable GetData(global::System.Nullable<int> id) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((id.HasValue == true)) {
                 this.Adapter.SelectCommand.Parameters[0].Value = ((int)(id.Value));
@@ -18404,7 +18687,7 @@ namespace myLibrary.newlibraryDataSetTableAdapters {
             else {
                 this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
-            newlibraryDataSet.staff_issuedDataTable dataTable = new newlibraryDataSet.staff_issuedDataTable();
+            newlibrary.staff_issuedDataTable dataTable = new newlibrary.staff_issuedDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -18574,7 +18857,7 @@ namespace myLibrary.newlibraryDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(newlibraryDataSet.top_booksDataTable dataTable, string monthT, global::System.Nullable<int> yearT) {
+        public virtual int Fill(newlibrary.top_booksDataTable dataTable, string monthT, global::System.Nullable<int> yearT) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((monthT == null)) {
                 this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
@@ -18599,7 +18882,7 @@ namespace myLibrary.newlibraryDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual newlibraryDataSet.top_booksDataTable GetData(string monthT, global::System.Nullable<int> yearT) {
+        public virtual newlibrary.top_booksDataTable GetData(string monthT, global::System.Nullable<int> yearT) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((monthT == null)) {
                 this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
@@ -18613,7 +18896,7 @@ namespace myLibrary.newlibraryDataSetTableAdapters {
             else {
                 this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
-            newlibraryDataSet.top_booksDataTable dataTable = new newlibraryDataSet.top_booksDataTable();
+            newlibrary.top_booksDataTable dataTable = new newlibrary.top_booksDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -19076,7 +19359,7 @@ namespace myLibrary.newlibraryDataSetTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private int UpdateUpdatedRows(newlibraryDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(newlibrary dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             if ((this._readersTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.readers.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
@@ -19123,6 +19406,15 @@ namespace myLibrary.newlibraryDataSetTableAdapters {
                     allChangedRows.AddRange(updatedRows);
                 }
             }
+            if ((this._loginTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.login.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._loginTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
             if ((this._staffTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.staff.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
@@ -19141,21 +19433,21 @@ namespace myLibrary.newlibraryDataSetTableAdapters {
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._library_cardTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.library_card.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._library_cardTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
             if ((this._finesTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.fines.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
                     result = (result + this._finesTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._library_cardTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.library_card.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._library_cardTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -19177,15 +19469,6 @@ namespace myLibrary.newlibraryDataSetTableAdapters {
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._loginTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.login.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._loginTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
             return result;
         }
         
@@ -19194,7 +19477,7 @@ namespace myLibrary.newlibraryDataSetTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private int UpdateInsertedRows(newlibraryDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(newlibrary dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             if ((this._readersTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.readers.Select(null, null, global::System.Data.DataViewRowState.Added);
@@ -19236,6 +19519,14 @@ namespace myLibrary.newlibraryDataSetTableAdapters {
                     allAddedRows.AddRange(addedRows);
                 }
             }
+            if ((this._loginTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.login.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._loginTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
             if ((this._staffTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.staff.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
@@ -19252,19 +19543,19 @@ namespace myLibrary.newlibraryDataSetTableAdapters {
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._library_cardTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.library_card.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._library_cardTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
             if ((this._finesTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.fines.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
                     result = (result + this._finesTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._library_cardTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.library_card.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._library_cardTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -19284,14 +19575,6 @@ namespace myLibrary.newlibraryDataSetTableAdapters {
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._loginTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.login.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._loginTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
             return result;
         }
         
@@ -19300,16 +19583,8 @@ namespace myLibrary.newlibraryDataSetTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private int UpdateDeletedRows(newlibraryDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(newlibrary dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
-            if ((this._loginTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.login.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._loginTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
             if ((this._card_finesTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.card_fines.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
@@ -19326,19 +19601,19 @@ namespace myLibrary.newlibraryDataSetTableAdapters {
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._finesTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.fines.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._finesTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
             if ((this._library_cardTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.library_card.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
                     result = (result + this._library_cardTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._finesTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.fines.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._finesTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -19355,6 +19630,14 @@ namespace myLibrary.newlibraryDataSetTableAdapters {
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
                     result = (result + this._staffTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._loginTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.login.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._loginTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -19430,7 +19713,7 @@ namespace myLibrary.newlibraryDataSetTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public virtual int UpdateAll(newlibraryDataSet dataSet) {
+        public virtual int UpdateAll(newlibrary dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }

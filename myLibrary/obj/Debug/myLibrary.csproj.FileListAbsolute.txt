@@ -14,10 +14,8 @@ C:\Users\alina\repo\library-coursework\myLibrary\obj\Debug\myLibrary.exe
 C:\Users\alina\repo\library-coursework\myLibrary\obj\Debug\myLibrary.pdb
 C:\Users\alina\repo\library-coursework\myLibrary\obj\Debug\App.baml
 C:\Users\alina\repo\library-coursework\myLibrary\obj\Debug\loginLib.g.cs
-C:\Users\alina\repo\library-coursework\myLibrary\obj\Debug\loginUs.g.cs
 C:\Users\alina\repo\library-coursework\myLibrary\obj\Debug\registr.g.cs
 C:\Users\alina\repo\library-coursework\myLibrary\obj\Debug\loginLib.baml
-C:\Users\alina\repo\library-coursework\myLibrary\obj\Debug\loginUs.baml
 C:\Users\alina\repo\library-coursework\myLibrary\obj\Debug\registr.baml
 C:\Users\alina\repo\library-coursework\myLibrary\bin\Debug\BouncyCastle.Crypto.dll
 C:\Users\alina\repo\library-coursework\myLibrary\bin\Debug\Google.Protobuf.dll
@@ -115,3 +113,8 @@ C:\Users\remne\Source\Repos\library-coursework\myLibrary\bin\Debug\MaterialDesig
 C:\Users\remne\Source\Repos\library-coursework\myLibrary\bin\Debug\MaterialDesignColors.pdb
 C:\Users\remne\Source\Repos\library-coursework\myLibrary\bin\Debug\MaterialDesignThemes.Wpf.pdb
 C:\Users\remne\Source\Repos\library-coursework\myLibrary\bin\Debug\MaterialDesignThemes.Wpf.xml
+C:\Users\alina\repo\library-coursework\myLibrary\bin\Debug\MaterialDesignColors.dll
+C:\Users\alina\repo\library-coursework\myLibrary\bin\Debug\MaterialDesignThemes.Wpf.dll
+C:\Users\alina\repo\library-coursework\myLibrary\bin\Debug\MaterialDesignColors.pdb
+C:\Users\alina\repo\library-coursework\myLibrary\bin\Debug\MaterialDesignThemes.Wpf.pdb
+C:\Users\alina\repo\library-coursework\myLibrary\bin\Debug\MaterialDesignThemes.Wpf.xml
