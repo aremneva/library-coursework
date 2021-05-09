@@ -42,7 +42,6 @@ C:\Users\alina\repo\library-coursework\myLibrary\bin\Debug\System.Memory.xml
 C:\Users\alina\repo\library-coursework\myLibrary\bin\Debug\System.Numerics.Vectors.xml
 C:\Users\alina\repo\library-coursework\myLibrary\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 C:\Users\alina\repo\library-coursework\myLibrary\obj\Debug\myLibrary.csproj.CopyComplete
-C:\Users\alina\repo\library-coursework\myLibrary\obj\Debug\GeneratedInternalTypeHelper.g.cs
 C:\Users\alina\repo\library-coursework\myLibrary\obj\Debug\logpas.g.cs
 C:\Users\alina\repo\library-coursework\myLibrary\obj\Debug\logpas.baml
 C:\Users\alina\repo\library-coursework\myLibrary\obj\Debug\Dictionary1.baml
@@ -118,3 +117,7 @@ C:\Users\alina\repo\library-coursework\myLibrary\bin\Debug\MaterialDesignThemes.
 C:\Users\alina\repo\library-coursework\myLibrary\bin\Debug\MaterialDesignColors.pdb
 C:\Users\alina\repo\library-coursework\myLibrary\bin\Debug\MaterialDesignThemes.Wpf.pdb
 C:\Users\alina\repo\library-coursework\myLibrary\bin\Debug\MaterialDesignThemes.Wpf.xml
+C:\Users\alina\repo\library-coursework\myLibrary\bin\Debug\MySqlConnector.dll
+C:\Users\alina\repo\library-coursework\myLibrary\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\alina\repo\library-coursework\myLibrary\bin\Debug\MySqlConnector.xml
+C:\Users\alina\repo\library-coursework\myLibrary\bin\Debug\System.Threading.Tasks.Extensions.xml

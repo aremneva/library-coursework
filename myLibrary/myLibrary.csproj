@@ -124,11 +124,6 @@
       <DependentUpon>catalog.xaml</DependentUpon>
     </Compile>
     <Compile Include="connect.cs" />
-    <Compile Include="dataSetLib.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>dataSetLib.xsd</DependentUpon>
-    </Compile>
     <Compile Include="logpas.xaml.cs">
       <DependentUpon>logpas.xaml</DependentUpon>
     </Compile>
@@ -137,15 +132,13 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>myRes.resx</DependentUpon>
     </Compile>
+    <Compile Include="newlibrary.cs">
+      <DependentUpon>newlibrary.xsd</DependentUpon>
+    </Compile>
     <Compile Include="newlibrary.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>newlibrary.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="newlibraryDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>newlibraryDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="profile.xaml.cs">
       <DependentUpon>profile.xaml</DependentUpon>
@@ -219,17 +212,6 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="dataSetLib.xsc">
-      <DependentUpon>dataSetLib.xsd</DependentUpon>
-    </None>
-    <None Include="dataSetLib.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>dataSetLib.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="dataSetLib.xss">
-      <DependentUpon>dataSetLib.xsd</DependentUpon>
-    </None>
     <None Include="newlibrary.xsc">
       <DependentUpon>newlibrary.xsd</DependentUpon>
     </None>
@@ -240,17 +222,6 @@
     </None>
     <None Include="newlibrary.xss">
       <DependentUpon>newlibrary.xsd</DependentUpon>
-    </None>
-    <None Include="newlibraryDataSet.xsc">
-      <DependentUpon>newlibraryDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="newlibraryDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>newlibraryDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="newlibraryDataSet.xss">
-      <DependentUpon>newlibraryDataSet.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

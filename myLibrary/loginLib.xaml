@@ -15,8 +15,7 @@
      Background="{DynamicResource MaterialDesignPaper}"
      FontFamily="{DynamicResource MaterialDesignFont}">
     <Window.Resources>
-        <local:newlibraryDataSet x:Key="newlibraryDataSet"/>
-        <CollectionViewSource x:Key="booksViewSource" Source="{Binding books, Source={StaticResource newlibraryDataSet}}"/>
+        
         <SolidColorBrush x:Key="third" Color="#FF5A796A"/>
         <SolidColorBrush x:Key="four" Color="#FF505E79"/>
     </Window.Resources>
