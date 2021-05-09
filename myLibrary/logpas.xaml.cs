@@ -40,31 +40,39 @@ namespace myLibrary
         {
             string log = name.Text;
             string pasw = SHA1(pas.Password);
-            MySqlConnection cn = connect.GetConnection();
-            try
+            if ((log == "") || (pas.Password == ""))
             {
-               
-                connect.GetConnection();
-
-            }
-            catch (MySqlException)
-            {
-
-                MessageBox.Show("Ошибка подключения");
-            }
-            string sql = "SELECT * FROM login WHERE login='"+ log+"'" + " AND password= '" + pasw + "';";
-            MySqlCommand cmd = new MySqlCommand(sql, cn);
-            object result = cmd.ExecuteScalar();
-            
-            if (result is null)
-            {
-                MessageBox.Show("Такого пользователя нет или неверно введен пароль");
+                if (log == "") MessageBox.Show("Вы не ввели логин!");
+                if (pas.Password == "") MessageBox.Show("Вы не ввели пароль!");
             }
             else
             {
-                loginLib win = new loginLib(log);
-                win.Show();
-                this.Close();
+                MySqlConnection cn = connect.GetConnection();
+                try
+                {
+
+                    connect.GetConnection();
+
+                }
+                catch (MySqlException)
+                {
+
+                    MessageBox.Show("Ошибка подключения");
+                }
+                string sql = "SELECT * FROM login WHERE login='" + log + "'" + " AND password= '" + pasw + "';";
+                MySqlCommand cmd = new MySqlCommand(sql, cn);
+                object result = cmd.ExecuteScalar();
+
+                if (result is null)
+                {
+                    MessageBox.Show("Такого пользователя нет или неверно введен пароль");
+                }
+                else
+                {
+                    loginLib win = new loginLib(log);
+                    win.Show();
+                    this.Close();
+                }
             }
 
         }
