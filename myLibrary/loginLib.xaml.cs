@@ -148,36 +148,6 @@ namespace myLibrary
             Search(sql);
         }
 
-       /* private void SecondF1_Checked(object sender, RoutedEventArgs e)
-        {
-            secondF1.IsChecked = false;
-            String book = searchBook.Text;
-            textBook.Content = "Результат поиска:";
-            string sql = "SELECT b.nameBook as Название, b.author as Автор, b.year as Год, g.nameGen as Жанр,p.namePub as Издательство FROM books as b inner join genre as g inner join publishers as p on b.idGen = g.idGenre and b.idPub = p.idPub and b.namebook Like Concat('%', '" + book + "', '%') order by b.year desc";
-            Search(sql);
-        }
-        private void SecondF1_Uncheck(object sender, RoutedEventArgs e)
-        {
-            String book = searchBook.Text;
-            string sql = "SELECT b.nameBook as Название, b.author as Автор, b.year as Год, g.nameGen as Жанр,p.namePub as Издательство FROM books as b inner join genre as g inner join publishers as p on b.idGen = g.idGenre and b.idPub = p.idPub and b.namebook Like Concat('%', '" + book + "', '%')";
-            Search(sql);
-        }
-
-        private void SecondF2_Checked(object sender, RoutedEventArgs e)
-        {
-            firstF1.IsChecked = false;
-            String book = searchBook.Text;
-            textBook.Content = "Результат поиска:";
-            string sql = "SELECT b.nameBook as Название, b.author as Автор, b.year as Год, g.nameGen as Жанр,p.namePub as Издательство FROM books as b inner join genre as g inner join publishers as p on b.idGen = g.idGenre and b.idPub = p.idPub and b.namebook Like Concat('%', '" + book + "', '%') order by b.nameBook asc";
-            Search(sql);
-        }
-        private void SecondF2_Uncheck(object sender, RoutedEventArgs e)
-        {
-            String book = searchBook.Text;
-            string sql = "SELECT b.nameBook as Название, b.author as Автор, b.year as Год, g.nameGen as Жанр,p.namePub as Издательство FROM books as b inner join genre as g inner join publishers as p on b.idGen = g.idGenre and b.idPub = p.idPub and b.namebook Like Concat('%', '" + book + "', '%')";
-
-            Search(sql);
-        }*/
 
         private void Catalog_Click(object sender, RoutedEventArgs e)
         {
@@ -186,15 +156,7 @@ namespace myLibrary
             this.Close();
         }
 
-       /* private void Gen(object sender, RoutedEventArgs e)
-        {
-            string gen = FindGen();
-            String book = searchBook.Text;
-            textBook.Content = "Результат поиска:";
-            string sql = "SELECT b.nameBook as Название, b.author as Автор, b.year as Год, g.nameGen as Жанр,p.namePub as Издательство FROM books as b inner join genre as g inner join publishers as p on b.idGen = g.idGenre and b.idPub = p.idPub and b.namebook Like Concat('%', '" + book + "', '%') and g.nameGen= '"+gen+"'";
-            Search(sql);
-        }
-*/
+
         private void books_Click(object sender, RoutedEventArgs e)
         {
             textBook.Content = "Выданные книги:";

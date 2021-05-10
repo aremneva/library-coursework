@@ -69,9 +69,28 @@ namespace myLibrary
                 }
                 else
                 {
-                    loginLib win = new loginLib(log);
-                    win.Show();
-                    this.Close();
+                    //Проверка доступа
+                   
+                    string access = "user";
+                    string sql_acs = "Select access from login where login = '" + log + "'";
+                    MySqlCommand cmdAc = new MySqlCommand(sql_acs, connect.GetConnection());
+                    MySqlDataReader reader = cmdAc.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        access = reader.GetString(0);
+                    }
+                    if (access == "user")
+                    {
+                        loginLib win = new loginLib(log);
+                        win.Show();
+                        this.Close();
+                    }
+                    if (access == "librarian")
+                    {
+                        librarian win = new librarian(log);
+                        win.Show();
+                        this.Close();
+                    }
                 }
             }
 

@@ -31,7 +31,12 @@ namespace myLibrary
             {
                 MessageBox.Show(""+e, "Ошибка SQL", MessageBoxButton.OK, MessageBoxImage.Error);
             }
+            
             return dt;
+        }
+        public static void CloseConnection(MySqlConnection con)
+        {
+            con.Close();
         }
     }
 }

@@ -124,6 +124,9 @@
       <DependentUpon>catalog.xaml</DependentUpon>
     </Compile>
     <Compile Include="connect.cs" />
+    <Compile Include="librarian.xaml.cs">
+      <DependentUpon>librarian.xaml</DependentUpon>
+    </Compile>
     <Compile Include="logpas.xaml.cs">
       <DependentUpon>logpas.xaml</DependentUpon>
     </Compile>
@@ -155,6 +158,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Dictionary1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="librarian.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -87,7 +87,6 @@ C:\Users\remne\Source\Repos\library-coursework\myLibrary\obj\Debug\MainWindow.g.
 C:\Users\remne\Source\Repos\library-coursework\myLibrary\obj\Debug\profile.g.cs
 C:\Users\remne\Source\Repos\library-coursework\myLibrary\obj\Debug\registr.g.cs
 C:\Users\remne\Source\Repos\library-coursework\myLibrary\obj\Debug\App.g.cs
-C:\Users\remne\Source\Repos\library-coursework\myLibrary\obj\Debug\GeneratedInternalTypeHelper.g.cs
 C:\Users\remne\Source\Repos\library-coursework\myLibrary\obj\Debug\myLibrary_MarkupCompile.cache
 C:\Users\remne\Source\Repos\library-coursework\myLibrary\obj\Debug\myLibrary_MarkupCompile.lref
 C:\Users\remne\Source\Repos\library-coursework\myLibrary\obj\Debug\App.baml
@@ -121,3 +120,9 @@ C:\Users\alina\repo\library-coursework\myLibrary\bin\Debug\MySqlConnector.dll
 C:\Users\alina\repo\library-coursework\myLibrary\bin\Debug\System.Threading.Tasks.Extensions.dll
 C:\Users\alina\repo\library-coursework\myLibrary\bin\Debug\MySqlConnector.xml
 C:\Users\alina\repo\library-coursework\myLibrary\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\remne\Source\Repos\library-coursework\myLibrary\bin\Debug\MySqlConnector.dll
+C:\Users\remne\Source\Repos\library-coursework\myLibrary\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\remne\Source\Repos\library-coursework\myLibrary\bin\Debug\MySqlConnector.xml
+C:\Users\remne\Source\Repos\library-coursework\myLibrary\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\remne\Source\Repos\library-coursework\myLibrary\obj\Debug\librarian.g.cs
+C:\Users\remne\Source\Repos\library-coursework\myLibrary\obj\Debug\librarian.baml
