@@ -126,3 +126,5 @@ C:\Users\remne\Source\Repos\library-coursework\myLibrary\bin\Debug\MySqlConnecto
 C:\Users\remne\Source\Repos\library-coursework\myLibrary\bin\Debug\System.Threading.Tasks.Extensions.xml
 C:\Users\remne\Source\Repos\library-coursework\myLibrary\obj\Debug\librarian.g.cs
 C:\Users\remne\Source\Repos\library-coursework\myLibrary\obj\Debug\librarian.baml
+C:\Users\alina\repo\library-coursework\myLibrary\obj\Debug\librarian.g.cs
+C:\Users\alina\repo\library-coursework\myLibrary\obj\Debug\librarian.baml

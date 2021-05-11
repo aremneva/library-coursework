@@ -21,11 +21,12 @@
     <Grid>
         <Image x:Name="myLib" HorizontalAlignment="Left" Height="110" Margin="10,-14,0,0" VerticalAlignment="Top" Width="215" Source="library.png"/>
         <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Height="257" Margin="20,101,0,0" ItemsSource="{Binding}" VerticalAlignment="Top" Width="502" VerticalGridLinesBrush="#FF262626" HorizontalGridLinesBrush="#FF262626" />
-        <ComboBox x:Name="tablesL" HorizontalAlignment="Left" Margin="539,113,0,0" VerticalAlignment="Top" Width="183" DropDownClosed="ComboBox_DropDownClosed" RenderTransformOrigin="0.514,0.848">
+        <ComboBox x:Name="tablesL" HorizontalAlignment="Left" Margin="539,101,0,0" VerticalAlignment="Top" Width="183" DropDownClosed="ComboBox_DropDownClosed" RenderTransformOrigin="0.514,0.848" Height="34">
             <ComboBoxItem Name="l1" Content="Выдать книгу" />
             <ComboBoxItem Name="l2" Content="Посмотреть должников"/>
             <ComboBoxItem Name="l3" Content="Книги"/>
             <ComboBoxItem Name="l4" Content="Читательские билеты"/>
+            <ComboBoxItem Name="delete" Content="Удалить запись"/>
         </ComboBox>
         <Label x:Name="username_Copy" Content="User:" HorizontalAlignment="Left" Margin="618,20,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.612,0.855" Foreground="{DynamicResource four}" FontSize="14"/>
         <Button x:Name="save" Content="Save" HorizontalAlignment="Left" Margin="589,260,0,0" VerticalAlignment="Top" Width="84" Background="{DynamicResource three}" Height="30" Style="{DynamicResource Rounded}" Foreground="White" BorderBrush="White" FontSize="20" Visibility="Hidden" Click="save_Click"/>
@@ -33,6 +34,8 @@
         <Label x:Name="un" Content="username" HorizontalAlignment="Left" Margin="675,20,0,0" VerticalAlignment="Top" Background="{x:Null}" Foreground="{DynamicResource four}" RenderTransformOrigin="0.136,-0.264"/>
         <TextBox x:Name="idBook" materialDesign:HintAssist.Hint="idBook..."  HorizontalAlignment="Left" Height="23" Margin="539,179,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="183" Visibility="Hidden"/>
         <TextBox x:Name="idCard"  materialDesign:HintAssist.Hint="idLibraryCard..." HorizontalAlignment="Left" Height="23" Margin="539,219,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="183" Visibility="Hidden"/>
+        <TextBox x:Name="delIsd" materialDesign:HintAssist.Hint="Enter id issue..." HorizontalAlignment="Left" Height="23" Margin="539,179,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="183" Visibility="Hidden"/>
+        <Button x:Name="delB" Content="Delete" HorizontalAlignment="Left" Margin="589,229,0,0" VerticalAlignment="Top" Width="84" Background="#FFE9AAA5" Style="{DynamicResource Rounded}" BorderBrush="White" Foreground="White" Click="delB_Click" Height="26" Visibility="Hidden"/>
 
     </Grid>
 </Window>

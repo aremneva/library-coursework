@@ -47,10 +47,17 @@ namespace myLibrary
             idBook.Visibility = hide;
             idCard.Visibility = hide;
             save.Visibility = hide;
+            
+        }
+        private void DelHide(Visibility hide)
+        {
+            delIsd.Visibility = hide;
+            delB.Visibility = hide;
         }
         private void ComboBox_DropDownClosed(object sender, EventArgs e)
         {
             IssuedHide(Visibility.Hidden);
+            DelHide(Visibility.Hidden);
             string sql = "";
             if (tablesL.SelectedItem == l1)
             {
@@ -72,6 +79,11 @@ namespace myLibrary
             {
                 sql = "Select * from library_card";
             }
+            if (tablesL.SelectedItem == delete)
+            {
+                sql = "Select * from issuedbooks";
+                DelHide(Visibility.Visible);
+            }
             if (tablesL.SelectedItem != null) SearchQ(sql);
         }
 
@@ -88,8 +100,7 @@ namespace myLibrary
             string idC = idCard.Text;
             int idL=1;
             string sqlFindID = "select s.idStaff as idStaff from login inner join staff as s on s.id_login = login.id_login where login='"+un.Content.ToString()+"'";
-        
-         
+      
             DataTable dtL, dtLC;
             dtL = connect.TestCon(sqlFindID);
             try
@@ -107,6 +118,23 @@ namespace myLibrary
                 {
              MessageBox.Show("Что-то пошло не так");
                 }
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show("" + ex, "Некорректно введены данные");
+            }
+        }
+
+        private void delB_Click(object sender, RoutedEventArgs e)
+        {
+           
+            DataTable dtDEL;
+            try
+            {
+                string sqlDL = "DELETE FROM issuedbooks WHERE(`idIssued` = '"+delIsd.Text+"'); ";
+                dtDEL = connect.TestCon(sqlDL);
+                string sql = "Select * from issuedbooks";
+                SearchQ(sql);
             }
             catch (MySqlException ex)
             {

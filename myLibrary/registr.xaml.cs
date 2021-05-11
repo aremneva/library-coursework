@@ -26,6 +26,7 @@ namespace myLibrary
         public registr()
         {
             InitializeComponent();
+            
         }
 
         private void Login(object sender, RoutedEventArgs e)
